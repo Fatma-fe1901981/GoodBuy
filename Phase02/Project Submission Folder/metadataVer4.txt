@@ -1,0 +1,168 @@
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+------------------------   METADATA TABLES CREATION   --------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+drop table IndexMetadata;
+drop table tableMetadata;
+drop table columnMetadata;
+
+create table IndexMetadata
+(
+tableName VARCHAR2(15),
+indexName VARCHAR2(15), --airplaneIndex
+Main_Indexing_Type VARCHAR2(15), --clustering
+Indexing_Key VARCHAR2(20),
+Secondary_Indexing_Key VARCHAR2(50),
+leafBlocks NUMBER(6), --?
+Blevel NUMBER(6)--branch level????
+);
+create table tableMetadata(
+tableName VARCHAR2(15),
+indexName VARCHAR2(15), --airplaneIndex
+primKey VARCHAR2(20), 
+forKey VARCHAR2(20),
+recordsNo NUMBER(10),
+blocksNo NUMBER(6)
+);
+create table columnMetadata(
+tableName VARCHAR2(50),
+columnName VARCHAR2(50), 
+minValue NUMBER(6),
+maxValue NUMBER(6),
+distinctKeys NUMBER(6),
+selectivity NUMBER(4,3),
+description VARCHAR2(100)
+);
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------   METADATA POPULATION   -----------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+----------------------------   IndexMetadata   ---------------------------------
+--assuming fanout is 100
+insert into IndexMetadata values('AIRPLANE','AIRPLANE_I', 'CLUSTERING','TYPE_NAME','TOTAL_SEATS_AVAIL',4489,3);
+insert into IndexMetadata values('AIRPLANE_TYPE','AIRPLANE_TYPE_I', 'CLUSTERING','COMPANY','MAX_SEATS',1,1);
+
+----------------------------   tableMetadata   --------------------------------
+
+insert into tableMetadata values ('AIRPLANE','AIRPLANE_I','AIRPLANE_ID','TYPE_NAME',5000,75);
+insert into tableMetadata values ('AIRPLANE_TYPE','AIRPLANE_TYPE_I','TYPE_NAME',null,15,1);
+
+----------------------------   columnMetadata   --------------------------------
+
+insert into columnMetadata values('AIRPLANE','AIRPLANE_ID',0,0,5000,5000/5000,'A unique identifier for each airplane.');
+insert into columnMetadata values('AIRPLANE','TOTAL_SEATS_AVAIL',0,853,1208,1208/5000,'The number of availble seats.');
+insert into columnMetadata values('AIRPLANE','TYPE_NAME',0,0,15,15/5000,'The type of airplane, which is a foreign key referencing the AIRPLANE_TYPE table.');
+insert into columnMetadata values('AIRPLANE_TYPE','TYPE_NAME',0,0,15,15/15,'The name of the airplane type.');
+insert into columnMetadata values('AIRPLANE_TYPE','COMPANY',0,0,4,4/15,'The COMPANY that manufactures the airplane type.');
+insert into columnMetadata values('AIRPLANE_TYPE','MAX_SEATS',20,853,12,12/15,'The total number of seats in an airplane. ');
+
+select * from IndexMetaData;
+select * from tableMetadata;
+select * from columnMetadata;
+select blocksNo, recordsNo  from tableMetadata where tablename = 'AIRPLANE';
+--Select selectivity from columnMetadata where TABLENAME = 'AIRPLANE_TYPE' AND columNname ='COMPANY';
+--select blocksNo from tableMetadata where tablename = 'AIRPLANE_TYPE';
+--select blocksNo from tableMetadata where tablename = 'AIRPLANE';
+--select blocksNo, recordsNo from tableMetadata where tablename like 'AIRPLANE_TYPE';
+--Select selectivity from columnMetadata where TABLENAME = 'AIRPLANE' AND columNname ='TYPE_NAME';
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+----------------------------   TABLES CREATION   -------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--DROPPING ALL TABLES IF NECESSARY
+DROP TABLE AIRPLANE;
+DROP TABLE AIRPLANE_TYPE;
+
+--commiting
+commit;
+--------------------------------------------------------------------------------
+--1. Create the AIRPLANE_TYPE relation 
+CREATE TABLE AIRPLANE_TYPE( 
+    TYPE_NAME VARCHAR2(30) PRIMARY KEY, 
+    COMPANY VARCHAR2(30) NOT NULL, 
+    MAX_SEATS INT NOT NULL,
+    
+    CONSTRAINT CHECK__MAX_SEATS__AT CHECK (MAX_SEATS > 0 AND MAX_SEATS < 854),
+    CONSTRAINT CHECK__TYPE_NAME__AT CHECK (TYPE_NAME like 'Boeing 737'
+                                        OR TYPE_NAME like 'Boeing 747'
+                                        OR TYPE_NAME like 'Boeing 777'
+                                        OR TYPE_NAME like 'Boeing 787 Dreamliner'
+                                        OR TYPE_NAME like 'Airbus A320'
+                                        OR TYPE_NAME like 'Airbus A380'
+                                        OR TYPE_NAME like 'Embraer E175'
+                                        OR TYPE_NAME like 'Embraer E190'
+                                        OR TYPE_NAME like 'Bombardier CRJ900'
+                                        OR TYPE_NAME like 'Cessna 172'
+                                        OR TYPE_NAME like 'Gulfstream G650'
+                                        OR TYPE_NAME like 'Bombardier CRJ700'
+                                        OR TYPE_NAME like 'McDonnell Douglas MD-80'
+                                        OR TYPE_NAME like 'Beechcraft King Air'
+                                        OR TYPE_NAME like 'Lockheed C-130 Hercules')
+);
+
+
+--2. Create the AIRPLANE relation
+CREATE TABLE AIRPLANE(
+    AIRPLANE_ID VARCHAR2(7) NOT NULL,
+    TOTAL_SEATS_AVAIL NUMBER(3) NOT NULL, 
+    TYPE_NAME VARCHAR2(23) NOT NULL,
+    
+    CONSTRAINT PK__AIRPLANE__A PRIMARY KEY (AIRPLANE_ID),
+    CONSTRAINT FK__TYPE_NAME__A FOREIGN KEY (TYPE_NAME) REFERENCES 
+    AIRPLANE_TYPE(TYPE_NAME),
+    CONSTRAINT CHK__SEATS__AVAIL CHECK (TOTAL_SEATS_AVAIL >= 0 AND 
+                                                TOTAL_SEATS_AVAIL < 854)
+);
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+---------------------------   TABLES POPULATION   ------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+
+--3. Populating the AIRPLANE_TYPE relation 
+INSERT INTO AIRPLANE_TYPE(TYPE_NAME, COMPANY, MAX_SEATS) 
+    VALUES ('Boeing 737', 'Boeing', 215);
+INSERT INTO AIRPLANE_TYPE(TYPE_NAME, COMPANY, MAX_SEATS) 
+    VALUES ('Airbus A320', 'Airbus', 220);
+INSERT INTO AIRPLANE_TYPE(TYPE_NAME, COMPANY, MAX_SEATS) 
+    VALUES ('Embraer E175', 'Embraer', 88);
+INSERT INTO AIRPLANE_TYPE(TYPE_NAME, COMPANY, MAX_SEATS) 
+    VALUES ('Bombardier CRJ900', 'Bombardier', 76);
+INSERT INTO AIRPLANE_TYPE(TYPE_NAME, COMPANY, MAX_SEATS) 
+    VALUES ('Bombardier CRJ700', 'Boeing', 550);
+
+--4. Populating the AIRPLANE relation
+INSERT INTO AIRPLANE(AIRPLANE_ID, TOTAL_SEATS_AVAIL, TYPE_NAME) 
+    VALUES ('JFK-101', 15, 'Boeing 737');
+INSERT INTO AIRPLANE(AIRPLANE_ID, TOTAL_SEATS_AVAIL, TYPE_NAME) 
+    VALUES ('JFK-102', 215, 'Boeing 737');
+INSERT INTO AIRPLANE(AIRPLANE_ID, TOTAL_SEATS_AVAIL, TYPE_NAME) 
+    VALUES ('LAX-101', 20, 'Airbus A320');
+INSERT INTO AIRPLANE(AIRPLANE_ID, TOTAL_SEATS_AVAIL, TYPE_NAME) 
+    VALUES ('ORD-101', 88, 'Embraer E175');
+INSERT INTO AIRPLANE(AIRPLANE_ID, TOTAL_SEATS_AVAIL, TYPE_NAME) 
+    VALUES ('DFW-101', 6, 'Bombardier CRJ900');
+INSERT INTO AIRPLANE(AIRPLANE_ID, TOTAL_SEATS_AVAIL, TYPE_NAME) 
+    VALUES ('ATL-101', 0, 'Bombardier CRJ700');
+
+select * from airplane;
+select * from airplane_type;
+
+

@@ -1,0 +1,280 @@
+--DROPPING ALL TABLES IF NECESSARY
+DROP TABLE AIRPORT;
+DROP TABLE AIRPLANE;
+DROP TABLE AIRPLANE_TYPE;
+DROP TABLE CAN_LAND;
+DROP TABLE FLIGHT;
+DROP TABLE FLIGHT_LEG;
+DROP TABLE FARE;
+DROP TABLE LEG_INSTANCE;
+DROP TABLE SEAT_RESERVATION;
+
+--1. Create the AIRPORT relation
+CREATE TABLE Airport( 
+    Airport_Code CHAR(3) PRIMARY KEY, 
+    Airport_City VARCHAR2(30) NOT NULL, 
+    Airport_State VARCHAR2(30) NOT NULL, 
+    Airport_Name VARCHAR2(50) NOT NULL
+);
+
+--2. Create the AIRPLANE_TYPE relation 
+CREATE TABLE AIRPLANE_TYPE( 
+    Type_Name VARCHAR2(30) PRIMARY KEY, 
+    Company VARCHAR2(30) NOT NULL, 
+    Max_Seats INT NOT NULL,
+    
+    CONSTRAINT CHECK__MAX_SEATS__AT CHECK (Max_Seats > 0 AND Max_Seats < 854),
+    CONSTRAINT CHECK__Type_Name__AT CHECK (Type_Name like 'Boeing 737'
+                                        OR Type_Name like 'Boeing 747'
+                                        OR Type_Name like 'Boeing 777'
+                                        OR Type_Name like 'Boeing 787 Dreamliner'
+                                        OR Type_Name like 'Airbus A320'
+                                        OR Type_Name like 'Airbus A380'
+                                        OR Type_Name like 'Embraer E175'
+                                        OR Type_Name like 'Embraer E190'
+                                        OR Type_Name like 'Bombardier CRJ900'
+                                        OR Type_Name like 'Cessna 172'
+                                        OR Type_Name like 'Gulfstream G650'
+                                        OR Type_Name like 'Bombardier CRJ700'
+                                        OR Type_Name like 'McDonnell Douglas MD-80'
+                                        OR Type_Name like 'Beechcraft King Air'
+                                        OR Type_Name like 'Lockheed C-130 Hercules')
+);
+
+--3. Create the CAN_LAND relation for the many-to-many relationship 
+CREATE TABLE CAN_LAND( 
+    Airport_Code CHAR(3), 
+    Type_Name VARCHAR2(30), 
+    
+    PRIMARY KEY (Airport_Code, type_name), 
+    FOREIGN KEY (Airport_Code) REFERENCES AIRPORT(Airport_Code), 
+    FOREIGN KEY (Type_Name) REFERENCES AIRPLANE_TYPE(Type_Name)
+);
+
+--4. Create the FLIGHT relation
+CREATE TABLE FLIGHT(
+Flight_Number VARCHAR2(8) NOT NULL,
+Airline VARCHAR2(20) NOT NULL,
+Weekdays VARCHAR2(21) NOT NULL,
+
+PRIMARY KEY (Flight_Number)
+);
+
+
+--5. Create the FARE relation
+CREATE TABLE FARE(
+Flight_Number VARCHAR2(8) NOT NULL,
+Fare_Code VARCHAR2(10) NOT NULL,
+Amount NUMBER(8, 2) NOT NULL,
+Restrictions VARCHAR(50),
+
+PRIMARY KEY (Flight_Number, Fare_Code),
+CONSTRAINT FK__FLIGHT_NUMBER__F FOREIGN KEY (Flight_Number) REFERENCES FLIGHT(Flight_Number)
+);
+
+--6. Create the AIRPLANE relation
+CREATE TABLE AIRPLANE(
+    Airplane_ID VARCHAR2(7) NOT NULL,
+    Total_Number_of_Seats NUMBER(3) NOT NULL, 
+    Type_Name VARCHAR2(23) NOT NULL,
+    
+    CONSTRAINT PK__AIRPLANE__A PRIMARY KEY (Airplane_ID),
+    CONSTRAINT FK__Type_Name__A FOREIGN KEY (Type_Name) REFERENCES AIRPLANE_TYPE(Type_Name),
+    CONSTRAINT CHK__TOTAL_NO_OF_SEATS__A CHECK (Total_Number_of_SEATS > 0 AND Total_Number_of_SEATS < 854)
+);
+
+--7. Create the FLIGHT_LEG relation
+CREATE TABLE FLIGHT_LEG (
+    Flight_Number VARCHAR2(8)  NOT NULL,
+    Leg_Number NUMBER(1) NOT NULL,
+    Departure_AirportCode CHAR(3) NOT NULL,
+    Scheduled_Departure_Time VARCHAR2(4) NOT NULL,
+    Arrival_AirportCode CHAR(3) NOT NULL,
+    Scheduled_Arival_Time VARCHAR2(4) NOT NULL,
+    
+    PRIMARY KEY (Flight_Number, Leg_Number),
+    CONSTRAINT FK__FLIGHT_NUMBER__FL FOREIGN KEY (Flight_Number) REFERENCES FLIGHT(Flight_Number),
+    CONSTRAINT FK__AIRPORT_CODE__FL FOREIGN KEY (Departure_AirportCode) REFERENCES Airport(Airport_Code),
+    CONSTRAINT FK__AIRPORT2_CODE__FL FOREIGN KEY (Arrival_AirportCode) REFERENCES Airport(Airport_Code)
+);
+
+--8. Create the LEG INSTANCE relation
+CREATE TABLE LEG_INSTANCE(
+    Flight_Number VARCHAR2(8) NOT NULL,
+    Leg_Number NUMBER(1) NOT NULL,
+    Leg_Instance_Date DATE NOT NULL, 
+    Airplane_ID VARCHAR2(8) NOT NULL,
+    Number_of_Avialable_Seats NUMBER(3) NOT NULL, 
+    Departure_AirportCode VARCHAR2(3) NOT NULL,
+    Departure_Time VARCHAR2(4) NOT NULL,
+    Arrival_AirportCode VARCHAR2(3) NOT NULL,
+    Arrival_Time VARCHAR2(4) NOT NULL,
+    
+    CONSTRAINT PK__LEG_INSTANCE__LI PRIMARY KEY (Flight_Number, Leg_Number, Leg_Instance_Date),
+    CONSTRAINT FK__FLIGHT_LEG_NUMBER__LI FOREIGN KEY (Flight_Number, Leg_Number) REFERENCES FLIGHT_LEG(Flight_Number, Leg_Number),
+    CONSTRAINT FK__AIRPLANE_ID__LI FOREIGN KEY (Airplane_ID) REFERENCES Airplane(Airplane_ID),
+    CONSTRAINT CHK__NO_OF_AVAILABLE_SEATS__LI CHECK (Number_of_Avialable_Seats > 0 AND Number_of_Avialable_Seats < 854)
+);
+
+--9. Create the SEAT RESERVATION relation
+CREATE TABLE SEAT_RESERVATION(
+    Flight_Number VARCHAR2(8) NOT NULL,
+    Leg_Number NUMBER(1) NOT NULL,
+    Leg_Instance_Date DATE NOT NULL,
+    Seat_Number VARCHAR(4) NOT NULL,
+    Customer_Name VARCHAR2(35) NOT NULL,
+    Customer_Phone VARCHAR2(15) NOT NULL,
+    AIRPLANE_ID VARCHAR2(10) NOT NULL,
+    
+    CONSTRAINT PK__SEAT_RESERVATION__SR PRIMARY KEY (Flight_Number, Leg_Number, Leg_Instance_Date, Seat_Number),
+    CONSTRAINT FK__SEAT_RESERVATION__SR FOREIGN KEY (Flight_Number, Leg_Number, Leg_Instance_Date) REFERENCES LEG_INSTANCE(Flight_Number, Leg_Number, Leg_Instance_Date),
+    CONSTRAINT FK__AIRPLANE_ID__SR FOREIGN KEY (Airplane_ID) REFERENCES Airplane(Airplane_ID)
+);   
+    
+    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------    
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------POPULATING--------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+    
+--1. Populating the AIRPORT relation
+INSERT INTO AIRPORT(Airport_Code, Airport_City, Airport_State, Airport_Name) 
+    VALUES ('JFK', 'New York', 'NY', 'John F. Kennedy International Airport');
+INSERT INTO AIRPORT(Airport_Code, Airport_City, Airport_State, Airport_Name) 
+    VALUES ('LAX', 'Los Angeles', 'CA', 'Los Angeles International Airport');
+INSERT INTO AIRPORT(Airport_Code, Airport_City, Airport_State, Airport_Name)
+    VALUES ('ORD', 'Chicago', 'IL', 'Los Angeles International Airport');
+INSERT INTO AIRPORT(Airport_Code, Airport_City, Airport_State, Airport_Name) 
+    VALUES ('DFW', 'Dallas', 'TX', 'Dallas/Fort Worth International Airport');
+INSERT INTO AIRPORT(Airport_Code, Airport_City, Airport_State, Airport_Name) 
+    VALUES ('ATL', 'Atlanta', 'GA', 'Hartsfield-Jackson Atlanta International Airport');
+INSERT INTO AIRPORT(Airport_Code, Airport_City, Airport_State, Airport_Name) 
+    VALUES('DOH', 'DOHA', 'DOHA', 'HAMAD INTERNATIONAL AIRPORT');
+
+--2. Populating the AIRPLANE_TYPE relation 
+INSERT INTO AIRPLANE_TYPE(Type_Name, Company, Max_Seats) 
+    VALUES ('Boeing 737', 'Boeing', 215);
+INSERT INTO AIRPLANE_TYPE(Type_Name, Company, Max_Seats) 
+    VALUES ('Airbus A320', 'Airbus', 220);
+INSERT INTO AIRPLANE_TYPE(Type_Name, Company, Max_Seats) 
+    VALUES ('Embraer E175', 'Embraer', 88);
+INSERT INTO AIRPLANE_TYPE(Type_Name, Company, Max_Seats) 
+    VALUES ('Bombardier CRJ900', 'Bombardier', 76);
+INSERT INTO AIRPLANE_TYPE(Type_Name, Company, Max_Seats) 
+    VALUES ('Bombardier CRJ700', 'Boeing', 550);
+
+--3. Populating the CAN_LAND relation
+INSERT INTO CAN_LAND(Airport_Code, Type_Name) 
+    VALUES ('JFK', 'Boeing 737');
+INSERT INTO CAN_LAND(Airport_Code, Type_Name) 
+    VALUES ('LAX', 'Airbus A320');
+INSERT INTO CAN_LAND(Airport_Code, Type_Name) 
+    VALUES ('ORD', 'Embraer E175');
+INSERT INTO CAN_LAND(Airport_Code, Type_Name) 
+    VALUES ('DFW', 'Bombardier CRJ900');
+INSERT INTO CAN_LAND(Airport_Code, Type_Name) 
+    VALUES ('ATL', 'Bombardier CRJ700');
+
+--4. Populating the FLIGHT relation
+INSERT INTO FLIGHT (Flight_Number, Airline, Weekdays )
+    VALUES('QA1306', 'QATAR AIRWAYS', 'SUN FRI' );
+INSERT INTO FLIGHT (Flight_Number, Airline, Weekdays )
+    VALUES('QA1505', 'QATAR AIRWAYS', 'TUE THU' );
+INSERT INTO FLIGHT (Flight_Number, Airline, Weekdays )
+    VALUES('DL1207', 'Delta Air Lines', 'SAT MON' );
+INSERT INTO FLIGHT (Flight_Number, Airline, Weekdays )
+    VALUES('AA1109', 'American Airlines', 'SUN  WED' );
+INSERT INTO FLIGHT (Flight_Number, Airline, Weekdays )
+    VALUES('AS1104', 'Alaska Airlines', 'WED SAT' );
+INSERT INTO FLIGHT (Flight_Number, Airline, Weekdays )
+    VALUES('LAA1302', 'LOS ANGLES AIRWAYS', 'THR SAT' );
+
+--5. Populating the FLIGHT_LEG relation
+INSERT INTO FLIGHT_LEG (Flight_Number, Leg_Number,
+Departure_AirportCode, Scheduled_Departure_Time,Arrival_AirportCode,
+Scheduled_Arival_Time)
+    VALUES('QA1306', 1,'DOH', '1100', 'ORD','1320' );
+INSERT INTO FLIGHT_LEG (Flight_Number, Leg_Number,
+Departure_AirportCode, Scheduled_Departure_Time,Arrival_AirportCode,
+Scheduled_Arival_Time)
+    VALUES('QA1505', 1,'DOH', '1205', 'JFK','1425' );
+INSERT INTO FLIGHT_LEG (Flight_Number, Leg_Number,
+Departure_AirportCode, Scheduled_Departure_Time,Arrival_AirportCode,
+Scheduled_Arival_Time)
+    VALUES('LAA1302', 1,'LAX', '1030', 'DFW','1450' );
+INSERT INTO FLIGHT_LEG (Flight_Number, Leg_Number,
+Departure_AirportCode, Scheduled_Departure_Time,Arrival_AirportCode,
+Scheduled_Arival_Time)
+    VALUES('AA1109', 1,'JFK', '1515', 'ATL','1720' );
+INSERT INTO FLIGHT_LEG (Flight_Number, Leg_Number,
+Departure_AirportCode, Scheduled_Departure_Time,Arrival_AirportCode,
+Scheduled_Arival_Time)
+    VALUES('DL1207', 1,'DFW', '1905', 'ATL','2215' );
+
+
+--6. Populating the Fare table
+INSERT INTO FARE(Flight_Number, Fare_Code, Amount, Restrictions )
+    VALUES('QA1306', '10001', 5000, 'NO REFUND IF CANCELLED');
+INSERT INTO FARE(Flight_Number, Fare_Code, Amount, Restrictions )
+    VALUES('QA1505', '10002', 6000, 'NO REFUND IF CANCELLED');
+INSERT INTO FARE(Flight_Number, Fare_Code, Amount, Restrictions )
+    VALUES('LAA1302', '10003', 7000, 'NO REFUND IF CANCELLED');
+INSERT INTO FARE(Flight_Number, Fare_Code, Amount, Restrictions )
+    VALUES('AA1109', '10004', 8000, 'NO REFUND IF CANCELLED');
+INSERT INTO FARE(Flight_Number, Fare_Code, Amount, Restrictions )
+    VALUES('DL1207', '10005', 9000, 'NO REFUND IF CANCELLED');
+
+--7. Populating the AIRPLANE relation
+INSERT INTO AIRPLANE(Airplane_ID, Total_Number_of_Seats, Type_Name) 
+    VALUES ('JFK-101', 215, 'Boeing 737');
+INSERT INTO AIRPLANE(Airplane_ID, Total_Number_of_Seats, Type_Name) 
+    VALUES ('JFK-102', 215, 'Boeing 737');
+INSERT INTO AIRPLANE(Airplane_ID, Total_Number_of_Seats, Type_Name) 
+    VALUES ('LAX-101', 220, 'Airbus A320');
+INSERT INTO AIRPLANE(Airplane_ID, Total_Number_of_Seats, Type_Name) 
+    VALUES ('ORD-101', 88, 'Embraer E175');
+INSERT INTO AIRPLANE(Airplane_ID, Total_Number_of_Seats, Type_Name) 
+    VALUES ('DFW-101', 76, 'Bombardier CRJ900');
+INSERT INTO AIRPLANE(Airplane_ID, Total_Number_of_Seats, Type_Name) 
+    VALUES ('ATL-101', 550, 'Bombardier CRJ700');
+
+--8. Populating the LEG INSTANCE relation
+INSERT INTO LEG_INSTANCE(Flight_Number, Leg_Number, Leg_Instance_Date, Airplane_ID, 
+                         Number_of_Avialable_Seats, Departure_AirportCode, 
+                         Arrival_AirportCode, Departure_Time, Arrival_Time) 
+    VALUES('DL1207', 1, '10-JAN-2023', 'JFK-101', 25, 'DFW', 'ATL', '1910','2230');
+INSERT INTO LEG_INSTANCE(Flight_Number, Leg_Number, Leg_Instance_Date, Airplane_ID, 
+                         Number_of_Avialable_Seats, Departure_AirportCode, 
+                         Arrival_AirportCode, Departure_Time, Arrival_Time) 
+    VALUES('QA1505', 1, '10-JAN-2023', 'JFK-101', 26, 'DOH', 'JFK', '1210', '1445');
+INSERT INTO LEG_INSTANCE(Flight_Number, Leg_Number, Leg_Instance_Date, Airplane_ID, 
+                         Number_of_Avialable_Seats, Departure_AirportCode, 
+                         Arrival_AirportCode, Departure_Time, Arrival_Time) 
+    VALUES('AA1109', 1, '10-JAN-2023', 'JFK-101', 26, 'JFK', 'ATL', '1515', '1720');
+ INSERT INTO LEG_INSTANCE(Flight_Number, Leg_Number, Leg_Instance_Date, Airplane_ID, 
+                         Number_of_Avialable_Seats, Departure_AirportCode, 
+                         Arrival_AirportCode, Departure_Time, Arrival_Time) 
+    VALUES('QA1306', 1, '10-JAN-2023', 'JFK-101', 26, 'DOH', 'ORD', '1100', '1320');
+INSERT INTO LEG_INSTANCE(Flight_Number, Leg_Number, Leg_Instance_Date, Airplane_ID, 
+                         Number_of_Avialable_Seats, Departure_AirportCode, 
+                         Arrival_AirportCode, Departure_Time, Arrival_Time) 
+    VALUES('LAA1302', 1, '10-JAN-2023', 'JFK-101', 26, 'LAX', 'DFW', '1100', '1320');
+
+
+--9. Populating the SEAT RESERVATION relation
+INSERT INTO SEAT_RESERVATION(Flight_Number, Leg_Number, Leg_Instance_Date, 
+Seat_Number, Customer_Name, Customer_Phone, AIRPLANE_ID)
+    VALUES('LAA1302', 1,'10-JAN-2023', 'J26', 'NORA JANE','66288188','JFK-101');
+INSERT INTO SEAT_RESERVATION(Flight_Number, Leg_Number, Leg_Instance_Date, 
+Seat_Number, Customer_Name, Customer_Phone, AIRPLANE_ID)
+    VALUES('LAA1302', 1,'10-JAN-2023', 'A25', 'FATMA ALAA','66218188','JFK-101');
+INSERT INTO SEAT_RESERVATION(Flight_Number, Leg_Number, Leg_Instance_Date, 
+Seat_Number, Customer_Name, Customer_Phone, AIRPLANE_ID)
+    VALUES('LAA1302', 1,'10-JAN-2023', 'B25', 'SARA BAHER','66218128','JFK-101');
+INSERT INTO SEAT_RESERVATION(Flight_Number, Leg_Number, Leg_Instance_Date, 
+Seat_Number, Customer_Name, Customer_Phone, AIRPLANE_ID)
+    VALUES('LAA1302', 1,'10-JAN-2023', 'C25', 'FARAH BAHEER','65218128','JFK-101');
+INSERT INTO SEAT_RESERVATION(Flight_Number, Leg_Number, Leg_Instance_Date, 
+Seat_Number, Customer_Name, Customer_Phone, AIRPLANE_ID)
+    VALUES('LAA1302', 1,'10-JAN-2023', 'D25', 'MARAH BAHOR','66248128','JFK-101');

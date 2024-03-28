@@ -1,14 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Goodbuy - Cart</title>
-      <link rel="stylesheet" href="css/common.css">
-      <link rel="stylesheet" href="css/cart.css">
-      <script src="https://kit.fontawesome.com/9881a1c8b4.js" crossorigin="anonymous"></script>
-</head>
-<body>
-      
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goodbuy - Cart</title>
+    <link rel="stylesheet" href="/css/common.css" />
+    <link rel="stylesheet" href="/css/cart.css" />
+    <script
+      src="https://kit.fontawesome.com/9881a1c8b4.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="container">
+      <section class="details">
+        <div class="image">
+          <p class="tag">tag</p>
+          <img
+            src="https://i.pinimg.com/564x/ea/6b/aa/ea6baa26f3a013464eb4523a9012c09a.jpg"
+            alt="product image"
+          />
+        </div>
+        <div class="side-details">
+          <p>
+            Name: Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
+            nam alias, fugit, ullam enim adipisci, non at dolore illum iste
+            veritatis commodi tenetur. Blanditiis, vel officia.
+          </p>
+          <p>Category</p>
+          <p>Brand</p>
+          <!-- inject name, category and brand name here -->
+        </div>
+        <div class="bottom-details">
+          <p>price</p>
+          <p>Available Quantity</p>
+          <p>Ratings</p>
+          <p>Reviewed by</p>
+          <!-- inject price, quantity ratings and reviews here -->
+        </div>
+      </section>
+      <section class="form">
+        <form action="">
+          <fieldset>
+            <legend>Purchase Details</legend>
+
+            <div class="quantity-container">
+              <label for="quantity">Quantity</label>
+              <input
+                type="number"
+                class="quantity"
+                name="quantity"
+                value="1"
+                min="1"
+                max="xx"
+              />
+            </div>
+            <fieldset>
+              <legend>Shipping adress</legend>
+              <label for="country">Country</label>
+              <select name="country" id="">
+                <option value="qatar">Qatar</option>
+              </select>
+              <label for="city">City</label>
+              <select name="city" id="">
+                <option value="doha">Doha</option>
+                <option value="al-wakrah">Al Wakrah</option>
+                <option value="dukhan">Dukhan</option>
+                <option value="alkhor">Al Khor</option>
+                <option value="alrayyan">AL Rayyan</option>
+                <option value="umm-salal">Umm Salal</option>
+                <option value="lusail">Lusail</option>
+              </select>
+              <label for="street">Street</label>
+              <input type="text" name="street" />
+              <label for="building">Building</label>
+              <input type="text" name="building" />
+            </fieldset>
+            <div class="confirm-btn-container">
+              <button type="submit">Confirm Purchase</button>
+            </div>
+          </fieldset>
+        </form>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class></div>
+      <p>&copy; | Goodbuy 2024 | CMPS350 Couse Project | G3 L51</p>
+    </footer>
+  </body>
 </html>

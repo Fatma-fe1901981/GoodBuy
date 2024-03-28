@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,114 +11,130 @@
 </head>
 
 <body>
-<header class="header">
-    <div class="logo">
-        <img src="" alt="logo image">
-        <p>GoodBuy</p>
-    </div>
-    <nav class="nav">
-        <a href="#">Home</a>
-        <a href="#">Cart</a>
-        <a href="#">Profile</a>
-        <a href="#">Login</a>
-        <select id="theme">
-            <option>light</option>
-            <option>dark</option>
-        </select>
-    </nav>
-</header>
+    <header class="header">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="./images/logo.png" alt="logo image">
+                <p>GoodBuy</p>
+            </div> 
 
-<main class="main">
-    <div class="accent-img">
-        <p>Our New Collection</p>
-        <input type="search" placeholder="SEARCH" id="search">
-    </div>
-
-    <section class="menu">
-        <ul>
-            <li><input type="button" value="New in Store"></li>
-            <li><input type="button" value="Skincare"></li>
-            <li><input type="button" value="Makeup"></li>
-            <li><input type="button" value="Perfume"></li>
-        </ul>
-    </section>
-
-    <section class="products">
-        <div class="product">
-            <img src="" alt="product image">
-            <div class="productName-fav">
-                <p>Product Name</p>
-                <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+            <div class="links">
+                <nav class="nav-links" id="nav-links">
+                    <a href="#" class="hamburger-menu">Home</a>
+                    <a href="#">Profile</a>
+                    <a href="#">Login</a>
+                </nav>
+                <a href="javascript:void(0);" class="hamburger-menu" onclick="menuDisplay()">
+                    <i class="fa fa-bars"></i>
+                </a>
             </div>
-            <div class="price-purchase">
-                <p>QR Price</p>
-                <div class="purchase-link">
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="accent-img">
+            <p>Our New Collection</p>
+            <input type="search" placeholder="SEARCH" id="search">
+        </div>
+
+        <section class="menu">
+            <ul>
+                <li><input type="button" value="New in Store"></li>
+                <li><input type="button" value="Skincare"></li>
+                <li><input type="button" value="Makeup"></li>
+                <li><input type="button" value="Perfume"></li>
+            </ul>
+        </section>
+
+        <section class="products">
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg" alt="product image">
+                <div class="productName-fav">
+                    <p>Product Name</p>
+                    <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price-purchase">
+                    <p>QR <span>XXXX</span></p>
                     <a href="#">Purchase Item</a>
                 </div>
             </div>
-        </div>
 
-        <div class="product">
-            <img src="" alt="product image">
-            <div class="productName-fav">
-                <p>Product Name</p>
-                <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
-            </div>
-            <div class="price-purchase">
-                <p>QR Price</p>
-                <div class="purchase-link">
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg" alt="product image">
+                <div class="productName-fav">
+                    <p>Product Name</p>
+                    <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price-purchase">
+                    <p>QR <span>XXXX</span></p>
                     <a href="#">Purchase Item</a>
                 </div>
             </div>
-        </div>
 
-        <div class="product">
-            <img src="" alt="product image">
-            <div class="productName-fav">
-                <p>Product Name</p>
-                <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
-            </div>
-            <div class="price-purchase">
-                <p>QR Price</p>
-                <div class="purchase-link">
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg" alt="product image">
+                <div class="productName-fav">
+                    <p>Product Name</p>
+                    <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price-purchase">
+                    <p>QR <span>XXXX</span></p>
                     <a href="#">Purchase Item</a>
                 </div>
             </div>
-        </div>
 
-        <div class="product">
-            <img src="" alt="product image">
-            <div class="productName-fav">
-                <p>Product Name</p>
-                <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
-            </div>
-            <div class="price-purchase">
-                <p>QR Price</p>
-                <div class="purchase-link">
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg" alt="product image">
+                <div class="productName-fav">
+                    <p>Product Name</p>
+                    <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price-purchase">
+                    <p>QR <span>XXXX</span></p>
                     <a href="#">Purchase Item</a>
                 </div>
             </div>
-        </div>
 
-        <div class="product">
-            <img src="" alt="product image">
-            <div class="productName-fav">
-                <p>Product Name</p>
-                <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
-            </div>
-            <div class="price-purchase">
-                <p>QR Price</p>
-                <div class="purchase-link">
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg" alt="product image">
+                <div class="productName-fav">
+                    <p>Product Name</p>
+                    <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price-purchase">
+                    <p>QR <span>XXXX</span></p>
                     <a href="#">Purchase Item</a>
                 </div>
             </div>
-        </div>
-</main>
 
-<footer class="footer">
-    <div class></div>
-    <p>&copy; | Goodbuy 2024 | CMPS350 Couse Project | G3 L51</p>
-</footer>
+            <div class="product">
+                <img src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg" alt="product image">
+                <div class="productName-fav">
+                    <p>Product Name</p>
+                    <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+                </div>
+                <div class="price-purchase">
+                    <p>QR <span>XXXX</span></p>
+                    <a href="#">Purchase Item</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
+    <footer class="footer">
+        <p>&copy; | Goodbuy 2024 | CMPS350 Couse Project | G3 L51</p>
+    </footer>
+
+    <script>
+        function menuDisplay() {
+            let element = document.getElementById("nav-links");
+            if (element.style.display === "block") {
+                element.style.display = "none";
+            } else {
+                element.style.display = "block";
+            }
+        }
+    </script>
 </body>
+
 </html>

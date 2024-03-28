@@ -71,7 +71,7 @@
       "shippingAddress": {
         "building": "246",
         "street": "Doha Zekret St",
-        "city": "Doha",
+        "city": "Al-Rayyan",
         "country": "Qatar"
       },
       "username": "amarrmairr",
@@ -103,7 +103,7 @@
       "shippingAddress": {
         "building": "579",
         "street": "Bin Mahmoud St",
-        "city": "Doha",
+        "city": "Al-Wakrah",
         "country": "Qatar"
       },
       "username": "maraamm",
@@ -119,7 +119,7 @@
       "shippingAddress": {
         "building": "680",
         "street": "Al-Qaryaan St",
-        "city": "Doha",
+        "city": "Al-Khor",
         "country": "Qatar"
       },
       "username": "mohammad",
@@ -136,7 +136,7 @@
         "building": "135",
         "street": "Al-Amraan St",
         "city": "Doha",
-        "country": "Qatar"
+        "country": "Al Rayyan"
       },
       "username": "ramzyyramyy",
       "password": "ramzyramy123",
@@ -151,7 +151,7 @@
       "shippingAddress": {
         "building": "321",
         "street": "The University St",
-        "city": "Doha",
+        "city": "Lusail",
         "country": "Qatar"
       },
       "username": "taliaa",
@@ -167,7 +167,7 @@
       "shippingAddress": {
         "building": "642",
         "street": "February 22 St",
-        "city": "Doha",
+        "city": "Umm-Salal",
         "country": "Qatar"
       },
       "username": "mansouryousef",
@@ -183,7 +183,7 @@
       "shippingAddress": {
         "building": "531",
         "street": "Omar Bin Al-Khatab St",
-        "city": "Doha",
+        "city": "Dukhan",
         "country": "Qatar"
       },
       "password": "yasminhannaa",

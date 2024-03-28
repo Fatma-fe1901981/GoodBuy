@@ -11,24 +11,8 @@
 </head>
 
 <body>
-    <header class="header">
-        <div class="nav-container">
-            <div class="logo">
-                <img src="./images/logo.png" alt="logo image">
-                <p>GoodBuy</p>
-            </div> 
-
-            <div class="links">
-                <nav class="nav-links" id="nav-links">
-                    <a href="#" class="hamburger-menu">Home</a>
-                    <a href="#">Profile</a>
-                    <a href="#">Login</a>
-                </nav>
-                <a href="javascript:void(0);" class="hamburger-menu" onclick="menuDisplay()">
-                    <i class="fa fa-bars"></i>
-                </a>
-            </div>
-        </div>
+    <header class="header" id="nav">
+        
     </header>
 
     <main class="main">
@@ -121,20 +105,8 @@
         </section>
     </main>
 
-    <footer class="footer">
-        <p>&copy; | Goodbuy 2024 | CMPS350 Couse Project | G3 L51</p>
-    </footer>
-
-    <script>
-        function menuDisplay() {
-            let element = document.getElementById("nav-links");
-            if (element.style.display === "block") {
-                element.style.display = "none";
-            } else {
-                element.style.display = "block";
-            }
-        }
-    </script>
+    <footer class="footer" id="footer"> </footer>
+    <script src="/js/common.js"></script>
 </body>
 
 </html>

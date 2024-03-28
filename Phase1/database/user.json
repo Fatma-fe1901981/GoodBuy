@@ -4,7 +4,12 @@
       "role": "customer",
       "name": "Adam",
       "surname": "Dawood",
-      "shippingAddress": "123 Main St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "123",
+        "street": "Main St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "adawood",
       "password": "aDawooD123",
       "moneyBalance": 500,
@@ -15,7 +20,12 @@
       "role": "customer",
       "name": "Leilah",
       "surname": "Saleem",
-      "shippingAddress": "456 Al-sadd St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "456",
+        "street": "Al-sadd St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "leilahSaleem",
       "password": "saleem456",
       "moneyBalance": 750,
@@ -26,7 +36,12 @@
       "role": "customer",
       "name": "Shahd",
       "surname": "Sharaf",
-      "shippingAddress": "789 Al-Arab St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "789",
+        "street": "Al-Arab St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "sharafshahd",
       "password": "shahd789s",
       "moneyBalance": 550,
@@ -37,51 +52,76 @@
       "role": "customer",
       "name": "Said",
       "surname": "Amraan",
-      "shippingAddress": "135 Al-Qaryaan St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "135",
+        "street": "Al-Qaryaan St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "amraannn",
       "password": "saidsaid",
       "moneyBalance": 600,
       "purchasedItems": [],
       "wishlist": []
-    }, 
+    },
     {
       "role": "customer",
       "name": "Amar",
       "surname": "Amir",
-      "shippingAddress": "246 Doha Zekret St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "246",
+        "street": "Doha Zekret St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "amarrmairr",
       "password": "amarxx123",
       "moneyBalance": 650,
       "purchasedItems": [],
       "wishlist": []
-    }, 
+    },
     {
       "role": "customer",
       "name": "Diana",
       "surname": "Amr",
-      "shippingAddress": "135 Al-Mansoura St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "135",
+        "street": "Al-Mansoura St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "dianaaamr",
       "password": "amrxxdiana",
       "moneyBalance": 750,
       "purchasedItems": [],
       "wishlist": []
-    }, 
+    },
     {
       "role": "customer",
       "name": "Maraam",
       "surname": "Mohanad",
-      "shippingAddress": "579 Bin Mahmoud St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "579",
+        "street": "Bin Mahmoud St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "maraamm",
       "password": "mohanad123",
       "moneyBalance": 800,
       "purchasedItems": [],
       "wishlist": []
-    }, 
+    },
     {
       "role": "customer",
       "name": "Mohammed",
       "surname": "Amran",
-      "shippingAddress": "680 Al-Qaryaan St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "680",
+        "street": "Al-Qaryaan St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "mohammad",
       "password": "amranxx123",
       "moneyBalance": 850,
@@ -92,7 +132,12 @@
       "role": "customer",
       "name": "Ramy",
       "surname": "Ramzy",
-      "shippingAddress": "135 Al-Amraan St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "135",
+        "street": "Al-Amraan St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "ramzyyramyy",
       "password": "ramzyramy123",
       "moneyBalance": 800,
@@ -103,30 +148,44 @@
       "role": "customer",
       "name": "Talia",
       "surname": "Yousef",
-      "shippingAddress": "321 The University St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "321",
+        "street": "The University St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "taliaa",
       "password": "yousef123",
       "moneyBalance": 850,
       "purchasedItems": [],
       "wishlist": []
-    }, 
+    },
     {
       "role": "customer",
       "name": "Yousef",
       "surname": "Mansour",
-      "shippingAddress": "642 February 22 St, Doha, Qatar",
+      "shippingAddress": {
+        "building": "642",
+        "street": "February 22 St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "username": "mansouryousef",
       "password": "ymansour864",
       "moneyBalance": 600,
       "purchasedItems": [],
       "wishlist": []
-    }, 
+    },
     {
       "role": "customer",
       "name": "Jasmin",
       "surname": "Hannaa",
-      "shippingAddress": "531 Omar Bin Al-Khatab St, Doha, Qatar",
-      "username": "yhanna",
+      "shippingAddress": {
+        "building": "531",
+        "street": "Omar Bin Al-Khatab St",
+        "city": "Doha",
+        "country": "Qatar"
+      },
       "password": "yasminhannaa",
       "moneyBalance": 700,
       "purchasedItems": [],
@@ -163,7 +222,7 @@
       "bankAccount": "0009876543210000",
       "itemsBeingSold": ["TL01", "TL02", "TL03"],
       "itemsSold": []
-    }, 
+    },
     {
       "role": "seller",
       "ID": "OR",
@@ -173,7 +232,7 @@
       "bankAccount": "0000192837465000",
       "itemsBeingSold": ["OR01", "OR02", "OR03"],
       "itemsSold": []
-    }, 
+    },
     {
       "role": "seller",
       "ID": "TF",
@@ -203,7 +262,7 @@
       "bankAccount": "0000246813579000",
       "itemsBeingSold": ["UB01", "UB02", "UB03"],
       "itemsSold": []
-    }, 
+    },
     {
       "role": "seller",
       "ID": "DB",
@@ -233,7 +292,7 @@
       "bankAccount": "0008642975310000",
       "itemsBeingSold": ["DG01", "DG02", "DG03"],
       "itemsSold": []
-    }, 
+    },
     {
       "role": "seller",
       "ID": "GA",
@@ -243,7 +302,7 @@
       "bankAccount": "0001289346750000",
       "itemsBeingSold": ["GA01", "GA02", "GA03"],
       "itemsSold": []
-    }, 
+    },
     {
       "role": "seller",
       "ID": "PL",

@@ -1,154 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>GoodBuy</title>
-    <link rel="stylesheet" href="css/common.css" />
-    <link rel="stylesheet" href="css/search.css" />
-    <script
-      src="https://kit.fontawesome.com/9881a1c8b4.js"
-      crossorigin="anonymous"
-    ></script>
-  </head>
 
-  <body>
-    <header class="header" id="nav"></header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GoodBuy</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/search.css" />
+  <script src="https://kit.fontawesome.com/9881a1c8b4.js" crossorigin="anonymous"></script>
+</head>
 
-    <main class="main">
-      <div class="accent-img">
-        <p>Our New Collection</p>
-        <input type="search" placeholder="SEARCH" id="search" />
-      </div>
+<body>
+  <header class="header" id="nav"></header>
 
-      <section class="menu">
-        <ul>
-          <li><input type="button" value="New in Store" /></li>
-          <li><input type="button" value="Skincare" /></li>
-          <li><input type="button" value="Makeup" /></li>
-          <li><input type="button" value="Perfume" /></li>
-        </ul>
-      </section>
+  <main class="main">
+    <div class="accent-img">
+      <p>Our New Collection</p>
+      <input type="search" placeholder="SEARCH" id="search" />
+    </div>
 
-      <section class="products">
-        <div class="product">
-          <img
-            src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg"
-            alt="product image"
-          />
-          <div class="productName-fav">
-            <p>Product Name</p>
-            <button type="button" id="heart">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="price-purchase">
-            <p>QR <span>XXXX</span></p>
-            <a href="#">Purchase Item</a>
-          </div>
-        </div>
+    <section class="menu">
+      <ul>
+        <i class="fa-solid fa-arrow-down-wide-short"></i>
+        <select name="filtering" id="filtering" class="filtering">
+          <option value="all">All</option>
+          <option value="new">New in Store</option>
+          <option value="skincare">Skincare</option>
+          <option value="makeup">Makeup</option>
+          <option value="fragrance">Fragrance</option>
+        </select>
+      </ul>
+    </section>
 
-        <div class="product">
-          <img
-            src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg"
-            alt="product image"
-          />
-          <div class="productName-fav">
-            <p>Product Name</p>
-            <button type="button" id="heart">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="price-purchase">
-            <p>QR <span>XXXX</span></p>
-            <a href="#">Purchase Item</a>
-          </div>
-        </div>
+    <section class="products">
 
-<<<<<<< Updated upstream
-=======
-        <section class="menu">
-            <ul>
-                <i class="fa-solid fa-arrow-down-wide-short"></i> 
-                <select name="filtering" id="filtering" class="filtering">
-                    <option value="all">All</option>
-                    <option value="new">New in Store</option>
-                    <option value="skincare">Skincare</option>
-                    <option value="makeup">Makeup</option>
-                    <option value="fragrance">Fragrance</option>
-                </select>               
-            </ul>
-        </section>
->>>>>>> Stashed changes
+    </section>
+  </main>
 
-        <section class="products">
-
-<<<<<<< Updated upstream
-
-        <div class="product">
-          <img
-            src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg"
-            alt="product image"
-          />
-          <div class="productName-fav">
-            <p>Product Name</p>
-            <button type="button" id="heart">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="price-purchase">
-            <p>QR <span>XXXX</span></p>
-            <a href="#">Purchase Item</a>
-          </div>
-        </div>
-
-        <div class="product">
-          <img
-            src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg"
-            alt="product image"
-          />
-          <div class="productName-fav">
-            <p>Product Name</p>
-            <button type="button" id="heart">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="price-purchase">
-            <p>QR <span>XXXX</span></p>
-            <a href="/sub-pages/cart.html">Purchase Item</a>
-          </div>
-        </div>
-
-        <div class="product">
-          <img
-            src="https://i.pinimg.com/564x/b9/92/46/b992462a11f3bd71303ceae71efd9af5.jpg"
-            alt="product image"
-          />
-          <div class="productName-fav">
-            <p>Product Name</p>
-            <button type="button" id="heart">
-              <i class="fa-regular fa-heart"></i>
-            </button>
-          </div>
-          <div class="price-purchase">
-            <p>QR <span>XXXX</span></p>
-            <a href="#">Purchase Item</a>
-          </div>
-        </div>
-      </section>
-=======
-        </section>
->>>>>>> Stashed changes
-    </main>
-
-    <footer class="footer" id="footer"></footer>
-    <script src="/js/common.js"></script>
-<<<<<<< Updated upstream
-  </body>
-</html>
-=======
-    <script src="/js/index.js"></script>
+  <footer class="footer" id="footer"></footer>
+  <script src="/js/common.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 
 </html>
->>>>>>> Stashed changes

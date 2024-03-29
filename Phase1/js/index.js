@@ -6,11 +6,13 @@ search.addEventListener('input', searchProduct);
 filtering.addEventListener('input', productsCategoryFilter);
 
 let products = [];
+const user = JSON.parse(localStorage.currentUser);
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         fetchProducts();
-        productsCategoryFilter()
+        productsCategoryFilter();
+
         // other functions????
     } catch (error) {
         console.error("Failed to load products:", error);
@@ -95,5 +97,17 @@ async function searchProduct() {
         productCardsArea.innerHTML = `<h1> No items found </h1>`
     } else {
         displayProducts(itemsAfterSearch);
+    }
+}
+
+function purchaseItem(id) {
+    if(user == undefined) {
+        alert("Please login to view products");
+    } else {
+        let product = products.find(product => product.id === id);
+        let cart = JSON.parse(localStorage.cart);
+        cart.push(product);
+        localStorage.cart = JSON.stringify(cart);
+        alert("Item added to cart");
     }
 }

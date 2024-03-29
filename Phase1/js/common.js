@@ -3,8 +3,7 @@ const footerSection = document.querySelector('#footer');
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        if (!localStorage.currentUser)  localStorage.currentUser=JSON.stringify(undefined)
-            
+        if (!localStorage.currentUser) localStorage.currentUser=JSON.stringify(undefined)
         showMenu();
         footer();
         // other functions????

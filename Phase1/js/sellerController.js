@@ -37,7 +37,6 @@ function getFormInfo(form) {
     for (const [fieldKey, fieldValue] of formData) {
         formInfo[fieldKey] = fieldValue;
     }
-
     return formInfo;
 }
 

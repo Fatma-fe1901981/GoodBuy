@@ -116,6 +116,7 @@ input[type="text"] {
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  text-align: center;
 }
 .purchase-btn {
   padding: 1% 30%;

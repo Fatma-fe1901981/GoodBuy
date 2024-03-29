@@ -4,11 +4,77 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>GoodBuy - Seller</title>
-      <link rel="stylesheet" href="css/common.css">
-      <link rel="stylesheet" href="css/sellerControl.css">
+      <link rel="stylesheet" href="/css/common.css">
+      <link rel="stylesheet" href="/css/sellerControl.css">
       <script src="https://kit.fontawesome.com/9881a1c8b4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-      
+      <header class="header" id="nav"> </header>
+
+      <main>
+            <form class="add-product" id="add-product">
+                  <div>
+                        <label for="product-name">Name</label>
+                        <input type="text" id="product-name" name="product-name">
+                  </div>
+
+                  <div>
+                        <label for="product-image">Image</label>
+                        <input type="url" id="product-image" name="product-image">
+                  </div>
+
+                  <div>
+                        <label for="product-description">Product Description</label>
+                        <textarea id="product-description" name="product-description"></textarea>
+                  </div>
+
+                  <div>
+                        <label for="product-price">Price</label>
+                        <input type="text" id="product-price" name="product-price">
+                  </div>
+
+                  <div>
+                        <label for="product-category">Category</label>
+                        <select id="product-category" name="product-category">
+                              <option value="skincare">Skincare</option>
+                              <option value="cosmetics">Cosmetics</option>
+                        </select>
+                  </div>
+
+                  <div>
+                        <label for="product-sub-category">Sub Category</label>
+                        <select type="text" id="product-sub-category" name="product-sub-category">
+                              <option value="skincare">Skincare</option>
+                              <option value="cosmetics">Cosmetics</option>
+                        </select>
+                  </div>
+
+                  <div hidden>
+                        <label for="product-brand">Brand</label>
+                        <input type="text" id="product-brand" name="product-brand">
+                  </div>
+
+                  <div>
+                        <label for="product-quantity">Quantity</label>
+                        <input type="number" id="product-quantity" name="product-quantity">
+                  </div>
+
+                  <div>
+                        <label for="product-tag">Tags</label>
+                        <select id="product-tag" name="product-tag">
+                              <option value="new">New</option>
+                              <option value="out-of-stock">Out of Stock</option>
+                        </select>
+                  </div>
+
+                  <div>
+                        <button type="submit">Add Product</button>
+                        <button type="reset">Clear</button>
+                  </div>
+            </form>
+      </main>
+
+      <footer class="footer" id="footer"> </footer>
+      <script src="/js/common.js"></script>
 </body>
 </html>

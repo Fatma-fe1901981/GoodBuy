@@ -1,5 +1,5 @@
 {
-  "customers": [
+  "users": [
     {
       "role": "customer",
       "name": "Adam",
@@ -190,9 +190,8 @@
       "moneyBalance": 700,
       "purchasedItems": [],
       "wishlist": []
-    }
-  ],
-  "sellers": [
+    },
+  
     {
       "role": "seller",
       "ID": "TO",
@@ -313,8 +312,8 @@
       "itemsBeingSold": ["PL01", "PL02", "PL03"],
       "itemsSold": []
     }
-  ],
-  "admins": [
+     ,
+
     {
       "role": "admin",
       "username": "fatma",

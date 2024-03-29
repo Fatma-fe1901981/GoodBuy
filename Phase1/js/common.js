@@ -23,8 +23,8 @@ function showMenu() {
         <div class="links">
             <nav class="nav-links" id="nav-links">
                 <a href="/index.html" class="hamburger-menu">Home</a>
-                <a href="/profile.html">Profile</a>
-                <a href="/login.html">Login</a>
+                <a href="/sub-pages/profile.html">Profile</a>
+                <a href="/sub-pages/login.html">Login</a>
             </nav>
             <a href="javascript:void(0);" class="hamburger-menu" onclick="menuDisplay()">
                 <i class="fa fa-bars"></i>

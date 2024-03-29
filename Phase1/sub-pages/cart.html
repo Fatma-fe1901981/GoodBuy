@@ -21,6 +21,7 @@
             src="https://i.pinimg.com/564x/ea/6b/aa/ea6baa26f3a013464eb4523a9012c09a.jpg"
             alt="product image"
           />
+          <button class="purchase-btn">PURCHASE</button>
           <!-- https://i.pinimg.com/564x/a4/80/8c/a4808ce3a2b67e89a8f9b7dd8a6f0584.jpg -->
         </div>
         <!-- <div class="all-details-container"> -->
@@ -62,48 +63,52 @@
         </div>
         <!-- </div> -->
       </section>
-      <section class="form">
-        <form action="">
-          <fieldset>
-            <legend>Purchase Details</legend>
 
-            <div class="quantity-container">
-              <label for="quantity">Quantity</label>
-              <input
-                type="number"
-                class="quantity"
-                name="quantity"
-                value="1"
-                min="1"
-                max="xx"
-              />
-            </div>
+      <section class="form">
+        <div class="form-expand">
+          <form action="">
             <fieldset>
-              <legend>Shipping adress</legend>
-              <label for="country">Country</label>
-              <select name="country" id="">
-                <option value="qatar">Qatar</option>
-              </select>
-              <label for="city">City</label>
-              <select name="city" id="">
-                <option value="doha">Doha</option>
-                <option value="al-wakrah">Al Wakrah</option>
-                <option value="dukhan">Dukhan</option>
-                <option value="alkhor">Al Khor</option>
-                <option value="alrayyan">AL Rayyan</option>
-                <option value="umm-salal">Umm Salal</option>
-                <option value="lusail">Lusail</option>
-              </select>
-              <label for="street">Street</label>
-              <input type="text" name="street" />
-              <label for="building">Building</label>
-              <input type="text" name="building" />
+              <legend>Purchase Details</legend>
+              <div class="quantity-container">
+                <label for="quantity">Quantity</label>
+                <input
+                  type="number"
+                  class="quantity"
+                  name="quantity"
+                  value="1"
+                  min="1"
+                  max="xx"
+                />
+              </div>
+              <fieldset>
+                <legend>Shipping adress</legend>
+                <label for="country">Country</label>
+                <select name="country" id="">
+                  <option value="qatar">Qatar</option>
+                </select>
+                <label for="city">City</label>
+                <select name="city" id="">
+                  <option value="doha">Doha</option>
+                  <option value="al-wakrah">Al Wakrah</option>
+                  <option value="dukhan">Dukhan</option>
+                  <option value="alkhor">Al Khor</option>
+                  <option value="alrayyan">AL Rayyan</option>
+                  <option value="umm-salal">Umm Salal</option>
+                  <option value="lusail">Lusail</option>
+                </select>
+                <label for="street">Street</label>
+                <input type="text" name="street" />
+                <label for="building">Building</label>
+                <input type="text" name="building" />
+              </fieldset>
+              <div class="confirm-btn-container">
+                <button class="submit-btn" type="submit">
+                  CONFIRM PURCHASE
+                </button>
+              </div>
             </fieldset>
-            <div class="confirm-btn-container">
-              <button class="submit-btn" type="submit">Confirm Purchase</button>
-            </div>
-          </fieldset>
-        </form>
+          </form>
+        </div>
       </section>
     </div>
     <footer class="footer" id="footer"></footer>

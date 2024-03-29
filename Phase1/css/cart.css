@@ -21,7 +21,7 @@ body {
 
 /* Section styling */
 section {
-  margin-bottom: 5%;
+  margin-bottom: 2%;
   /* background-color: #ffffff; */
 }
 
@@ -33,14 +33,14 @@ section {
   /* overflow: scroll; */
   max-height: 100%;
   max-width: 100%;
+  text-align: center; /* Center the button horizontally */
 }
-
 .tag {
   position: absolute;
-  top: 3%; /* Adjust as needed */
-  left: 5%; /* Adjust as needed */
+  top: 3%;
+  left: 5%;
   padding: 1% 2%;
-  background-color: #b56a30; /* Brownish-Orange */
+  background-color: #b56a30;
   color: #fff;
   border-radius: 3px;
   z-index: 1; /* Ensures the tag appears above the image */
@@ -94,12 +94,11 @@ fieldset:last-of-type {
 
 select,
 input[type="text"] {
-  width: calc(50% - 10px);
+  width: 100%;
   margin-bottom: 1%;
   padding: 2%;
   border: 1px solid #ccc;
   border-radius: 3px;
-  width: 100%;
 }
 
 /* Confirm button container styling */
@@ -107,18 +106,26 @@ input[type="text"] {
   text-align: center;
 }
 
-.submit-btn {
-  padding: 2% 38%;
-  background-color: #b56a30; /* Brownish-Orange */
+.submit-btn,
+.purchase-btn {
+  padding: 1% 0;
+  width: 100%;
+  background-color: #b56a30;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-
-.submit-btn :hover {
-  background-color: #8f4c1e; /* Darker shade of Brownish-Orange */
+.purchase-btn {
+  padding: 1% 30%;
+  justify-self: stretch;
+}
+.submit-btn:hover {
+  background-color: #8f4c1e;
+}
+.purchase-btn:hover {
+  background-color: #8f4c1e;
 }
 
 .details-expand {
@@ -128,22 +135,17 @@ input[type="text"] {
 .details-expand.show {
   display: block; /* Show the content when toggled */
 }
-/* Responsive adjustments */
-@media screen and (min-width: 40rem) {
-  .container {
-    display: grid;
-    padding: 0% 5% 0% 5%;
-  }
-  .submit-btn {
-    padding: 2% 5%;
-  }
-}
-.details-expand {
+
+.details-expand,
+.form-expand {
   display: none; /* Initially hide the details */
 }
 
 .details-expand.active {
   display: block; /* Show the details when active */
+}
+.form-expand.activef {
+  display: block;
 }
 .expand-btn {
   background: none;
@@ -178,4 +180,11 @@ input[type="text"] {
   align-items: top;
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "image side-details";
+}
+/* Responsive adjustments */
+@media screen and (min-width: 40rem) {
+  .container {
+    display: grid;
+    padding: 0% 10% 0% 10%;
+  }
 }

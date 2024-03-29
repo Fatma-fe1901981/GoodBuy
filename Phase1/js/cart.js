@@ -1,11 +1,11 @@
 document.addEventListener("DOMContentLoaded", function () {
   // Get the first expand button
-  var expandBtn = document.querySelector(".expand-btn");
+  const expandBtn = document.querySelector(".expand-btn");
 
   // Add click event listener to the expand button
   expandBtn.addEventListener("click", function () {
     // Find the corresponding details-expand div
-    var expandDiv = this.nextElementSibling;
+    const expandDiv = this.nextElementSibling;
 
     // Toggle the 'active' class to show/hide the details
     expandDiv.classList.toggle("active");
@@ -17,4 +17,18 @@ document.addEventListener("DOMContentLoaded", function () {
       this.textContent = "+";
     }
   });
+  // Get the purchase button and form expand container
+  var purchaseBtn = document.querySelector(".purchase-btn");
+  var formExpand = document.querySelector(".form-expand");
+
+  purchaseBtn.addEventListener("click", function (event) {
+    // Toggle the 'show' class on the form expand container
+    formExpand.classList.toggle("activef");
+    if (formExpand.classList.contains("activef")) {
+      this.textContent = "CANCEL";
+    } else {
+      this.textContent = "PURCHASE";
+    }
+  });
 });
+

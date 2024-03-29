@@ -78,4 +78,11 @@ body{
 
 }
 
+a{
+    color: white;
+    position: absolute;
+    left: 20px;
+    transform: translateY(-1000%);
+}
+
 

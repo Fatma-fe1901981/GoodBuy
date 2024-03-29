@@ -5,54 +5,73 @@
 main {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    .back a {
+        margin: 2rem 0rem 0rem 3rem;
+        color: #B56A30;
+        text-decoration: none;
+    
+        i {
+            font-size: 1rem;
+        }
+    }
+
+    .back a:hover {
+        color: #64320c;
+    }
+    .add-product {
+        display: flex;
+        flex-direction: column;
+        margin: 2rem 4rem 4rem 4rem;
+        padding: 2.5rem;
+        background-color: white;
+    }
+    
+    div {
+        display: flex;
+        flex-direction: column;
+        margin: 1rem;
+    }
+    
+    label {
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+    
+    }
+    
+    input[type="text"], input[type="number"], input[type="url"], select, textarea {
+        padding: 1rem 1rem;
+        border: 1px solid #090909;
+        font-size: 1rem;
+        resize: none;
+    }
+    
+    input[type="text"]:focus, input[type="number"]:focus, input[type="url"]:focus, button[type="submit"]:focus, button[type="reset"]:focus, select:focus, textarea:focus {
+        border-bottom: 3px solid #B56A30;
+        color: #B56A30;
+        outline: none;
+    }
+    
+    button[type="submit"], button[type="reset"] {
+        padding: 1rem 2rem;
+        margin: 1rem 0;
+        background-color: #B56A30;
+        color: white;
+        border: none;
+        font-size: 1rem;
+        font-weight: 700;
+    }  
+    
+    button[type="submit"]:hover {
+        color: #F1EFED;
+        background-color: #64320c;
+    }
+
+    button[type="reset"]:hover {
+        color: #F1EFED;
+        background-color: #711111;
+    }
 
 }
-
-.add-product {
-    display: flex;
-    flex-direction: column;
-    margin: 4rem 0;
-    padding: 2.5rem;
-    background-color: white;
-    width: 80%;
-}
-
-div {
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-}
-
-label {
-    font-size: 1rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-
-}
-
-input[type="text"], input[type="number"], input[type="url"], select, textarea {
-    padding: 1rem 1rem;
-    border: 1px solid #090909;
-    font-size: 1rem;
-}
-
-input[type="text"]:focus, input[type="number"]:focus, input[type="url"]:focus, button[type="submit"]:focus, button[type="reset"]:focus, select:focus, textarea:focus {
-    border-bottom: 3px solid #B56A30;
-    color: #B56A30;
-    outline: none;
-}
-
-button[type="submit"], button[type="reset"] {
-    padding: 1rem 2rem;
-    margin: 1rem 0;
-    background-color: #B56A30;
-    color: white;
-    border: none;
-    font-size: 1rem;
-    font-weight: 700;
-}
-
-
 

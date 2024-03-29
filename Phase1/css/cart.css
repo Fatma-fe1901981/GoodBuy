@@ -3,59 +3,61 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  /* border: 1px solid; */
 }
 
 /* Body styling */
 body {
-  font-family: Arial, sans-serif;
+  font-family: sans-serif;
   background-color: #f1efed; /* Light Background Color */
   color: #090605; /* Main Font Color */
 }
 
 /* Container styling */
 .container {
-  max-width: 800px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 5%;
 }
 
 /* Section styling */
 section {
-  margin-bottom: 30px;
+  margin-bottom: 5%;
+  /* background-color: #ffffff; */
 }
 
 /* Tag styling */
 .image {
   position: relative; /* Required for absolute positioning */
+  grid-area: image;
+  justify-self: stretch;
+  /* overflow: scroll; */
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .tag {
   position: absolute;
-  top: 10px; /* Adjust as needed */
-  left: 10px; /* Adjust as needed */
-  padding: 5px 10px;
+  top: 3%; /* Adjust as needed */
+  left: 5%; /* Adjust as needed */
+  padding: 1% 2%;
   background-color: #b56a30; /* Brownish-Orange */
   color: #fff;
   border-radius: 3px;
   z-index: 1; /* Ensures the tag appears above the image */
+  opacity: 75%;
 }
 .image img {
   max-width: 100%;
-  height: auto;
-}
-
-/* Side details styling */
-.side-details p {
-  margin-bottom: 10px;
-  color: #98968a; /* Secondary Font Color */
+  max-height: 100%;
+  /* overflow: scroll; */
 }
 
 /* Form styling */
 form {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  padding: 5%;
+  /* border-radius: 5px; */
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
 }
 
 fieldset {
@@ -64,39 +66,40 @@ fieldset {
 
 legend {
   font-weight: bold;
-  margin-bottom: 10px;
+  margin-bottom: 1%;
   font-size: 1.2em;
 }
 
 /* Quantity container styling */
 .quantity-container {
-  margin-bottom: 20px;
+  margin-bottom: 3%;
 }
 
 .quantity-container label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 1%;
 }
 
 .quantity {
   width: 100%;
-  padding: 8px;
+  padding: 1.5%;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
 
 /* Shipping address styling */
 fieldset:last-of-type {
-  margin-top: 20px;
+  margin-top: 3%;
 }
 
 select,
 input[type="text"] {
   width: calc(50% - 10px);
-  margin-bottom: 10px;
-  padding: 8px;
+  margin-bottom: 1%;
+  padding: 2%;
   border: 1px solid #ccc;
   border-radius: 3px;
+  width: 100%;
 }
 
 /* Confirm button container styling */
@@ -104,8 +107,8 @@ input[type="text"] {
   text-align: center;
 }
 
-button {
-  padding: 10px 20px;
+.submit-btn {
+  padding: 2% 38%;
   background-color: #b56a30; /* Brownish-Orange */
   color: #fff;
   border: none;
@@ -114,25 +117,65 @@ button {
   transition: background-color 0.3s ease;
 }
 
-button:hover {
+.submit-btn :hover {
   background-color: #8f4c1e; /* Darker shade of Brownish-Orange */
 }
 
-/* Footer styling */
-.footer {
-  margin-top: 50px;
-  text-align: center;
-  color: #98968a; /* Secondary Font Color */
+.details-expand {
+  display: none; /* Initially hide the content */
 }
 
-.footer p {
-  margin-top: 10px;
+.details-expand.show {
+  display: block; /* Show the content when toggled */
 }
-
 /* Responsive adjustments */
-@media screen and (max-width: 600px) {
-  input[type="text"],
-  select {
-    width: 100%;
+@media screen and (min-width: 40rem) {
+  .container {
+    display: grid;
+    padding: 0% 5% 0% 5%;
   }
+  .submit-btn {
+    padding: 2% 5%;
+  }
+}
+.details-expand {
+  display: none; /* Initially hide the details */
+}
+
+.details-expand.active {
+  display: block; /* Show the details when active */
+}
+.expand-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+.detail-item-expand {
+  display: grid;
+  grid-template-columns: 80% 20%;
+  padding: 2%;
+  border-bottom: 1px solid;
+  border-top: 1px solid;
+}
+.detail-item {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* background-color: #ece8e5; */
+  padding: 2%;
+}
+
+.side-details {
+  grid-area: side-details;
+  /* background-color: #ffffff; */
+  padding: 5%;
+}
+
+.details {
+  display: grid;
+
+  align-items: top;
+  grid-template-columns: 1fr 2fr;
+  grid-template-areas: "image side-details";
 }

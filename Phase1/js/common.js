@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         footer();
         // other functions????
     } catch (error) {
-        console.error("Failed to load books:", error);
+        console.error("Failed to load products:", error);
     }
 });
 
@@ -47,3 +47,4 @@ function menuDisplay() {
         element.style.display = "block";
     }
 }
+

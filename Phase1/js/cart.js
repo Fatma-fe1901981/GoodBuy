@@ -12,6 +12,11 @@ const formExpand = document.querySelector(".form-expand");
 const submitBtn = document.querySelector(".submit-btn");
 
 document.addEventListener("DOMContentLoaded", async () => {
+  if (!localStorage.currentUser) {
+    console.log("cant read user details");
+  } else {
+    console.log(localStorage.currentUser);
+  }
   // Add click event listener to the expand button
   expandBtn.addEventListener("click", function () {
     // Find the corresponding details-expand div

@@ -17,8 +17,11 @@ form.addEventListener("submit", (e)=>
     const authenticated = authentication(username,password) 
 
     if (!authenticated) {
+        localStorage.currentUser=JSON.stringify(undefined)
         alert("Incorrect user ID or password")
         
+    }else{
+        localStorage.currentUser=JSON.stringify(authenticated)
     }
     
 })
@@ -40,12 +43,14 @@ function authentication(username1,password) {
         acc = user;
         if(password=== user.password){
             alert("loged in")
-            return true
+            return acc
         }else{
-            return false
+
+            return null
         }
     }
    }
 console.log(acc);
     
 }
+

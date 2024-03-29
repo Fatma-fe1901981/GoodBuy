@@ -29,9 +29,7 @@ async function loadUsers() {
     const users = await data.json()
     usersList = users.users
     localStorage.users = JSON.stringify(usersList)
-
 }
-
 
 function authentication(username1, password) {
     let acc;

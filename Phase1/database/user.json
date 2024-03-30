@@ -229,7 +229,7 @@
       "username": "theordinary",
       "password": "theordinary",
       "bank_account": "0000123456789000",
-      "itemsBeingSold": ["TO01", "TO02", "TO03"],
+      "itemsBeingSold": [],
       "items_sold": []
     },
     {
@@ -239,7 +239,7 @@
       "username": "drunkelephant",
       "password": "drunkelephant",
       "bankAccount": "0000987654321000",
-      "itemsBeingSold": ["DE01", "DE02", "DE03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -249,7 +249,7 @@
       "username": "tula",
       "password": "tulatula",
       "bankAccount": "0009876543210000",
-      "itemsBeingSold": ["TL01", "TL02", "TL03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -259,7 +259,7 @@
       "username": "olehenriksen",
       "password": "olehenriksen",
       "bankAccount": "0000192837465000",
-      "itemsBeingSold": ["OR01", "OR02", "OR03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -269,7 +269,7 @@
       "username": "tomford",
       "password": "tomford1",
       "bankAccount": "0000245613579000",
-      "itemsBeingSold": ["TF01", "TF02", "TF03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -279,7 +279,7 @@
       "username": "pyunkangyul",
       "password": "pyunkangyul",
       "bankAccount": "0002468135790000",
-      "itemsBeingSold": ["PY01", "PY02", "PY03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -289,7 +289,7 @@
       "username": "ubeauty",
       "password": "ubeauty1",
       "bankAccount": "0000246813579000",
-      "itemsBeingSold": ["UB01", "UB02", "UB03"],
+      "itemsBeingSold": [1, 2],
       "itemsSold": []
     },
     {
@@ -299,7 +299,7 @@
       "username": "dimebeauty",
       "password": "dimebeauty",
       "bankAccount": "0000864297531000",
-      "itemsBeingSold": ["DB01", "DB02", "DB03"],
+      "itemsBeingSold": [3],
       "itemsSold": []
     },
     {
@@ -309,7 +309,7 @@
       "username": "versace",
       "password": "versace1",
       "bankAccount": "0008642975310000",
-      "itemsBeingSold": ["VC01", "VC02", "VC03"],
+      "itemsBeingSold": [4],
       "itemsSold": []
     },
     {

@@ -9,9 +9,7 @@ const productKeys = document.querySelectorAll("#detail-key");
 const purchasedQuantity = document.querySelector(".quantity");
 const productQuantity = document.querySelector("#product-quantity");
 const productQuantityNumber = parseFloat(productQuantity.innerText);
-
 const formExpand = document.querySelector(".form-expand");
-
 const productImg = document.querySelector(".image");
 const formCountry = document.querySelector("#country-txt");
 const formCity = document.querySelector("#city-txt");
@@ -57,7 +55,15 @@ function handleFormValidation(event) {
     } else {
       this.textContent = "PURCHASE";
     }
-    purchasedQuantity.max = productQuantityNumber; //max value the user can select is thax quantity if iterm
+    let productsLocal = localStorage.getItem("products");
+    let productsLocalData = JSON.parse(productsLocal);
+    const item = productsLocalData.find(
+      (i) => i.id == localStorage.clickedProductId
+    );
+    // console.log(
+    //   "Products from local storage " + JSON.stringify(item.product_quantity)
+    // );
+    purchasedQuantity.max = item.product_quantity; //max value the user can select is thax quantity if iterm
     formStreet.value = loggedInUserData.shippingAddress.street;
     formBuilding.value = loggedInUserData.shippingAddress.building;
     formCountry.value = loggedInUserData.shippingAddress.country;
@@ -106,6 +112,7 @@ async function displaySelectedItemDetails() {
   let itemsJson = await itemsData.json();
   const item = itemsJson.find((i) => i.id == localStorage.clickedProductId);
   console.log(item.product_name);
+
   detailsArea.innerHTML = `<div class="image">
   <p value="product_tag" class="tag">${item.product_tag}</p>
   <img
@@ -191,6 +198,15 @@ async function handleSubmitPurchase(event) {
     let loggedInUserData = JSON.parse(loggedInUser);
     //    console to check
     console.log("logged in username: " + loggedInUserData.username);
+    //    1.2 product from local storage
+    let productsLocal = localStorage.getItem("products");
+    let productsLocalData = JSON.parse(productsLocal);
+    const item = productsLocalData.find(
+      (i) => i.id == localStorage.clickedProductId
+    );
+    console.log(
+      "Products from local storage " + JSON.stringify(item.product_name)
+    );
     //    2:check if the logged in user is a customer
     if (loggedInUserData.role == "customer") {
       //  3:get the matching user from json using the username
@@ -213,9 +229,10 @@ async function handleSubmitPurchase(event) {
         productPriceNumber * purchasedQuantity.value;
       loggedInUserData.moneyBalance -=
         productPriceNumber * purchasedQuantity.value;
-
-      productQuantity.innerHTML =
-        productQuantityNumber - purchasedQuantity.value;
+      //if(purchasedQuantity.value<item.product_quantity)
+      item.product_quantity -= purchasedQuantity.value;
+      // localStorage.setItem("products", JSON.stringify(item));
+      productQuantity.innerHTML = item.product_quantity;
       console.log(
         "Logged in user balance after purchase(localsrotage): " +
           loggedInUserData.moneyBalance
@@ -238,10 +255,21 @@ async function handleSubmitPurchase(event) {
 
     // // 4: Update sale histories for seller
     //      1:get item id
-    // when an item is purchased
+    //const sellerStrigify = JSON.stringify(usersList);
+
+    // const seller = findObjectByKey(
+    //   usersList,
+    //   "itemsBeingSold",
+    //   localStorage.clickedProductId
+    // );
+    const usersLocal = JSON.parse(localStorage.getItem("users"));
+    console.log("seller: " + JSON.stringify(usersLocal));
+
+    // console.log("Seller of this item is: " + seller);
     // we find a seller that has that item id
     //inside the array itemsBeingSold
     //and we push the id of the item in the seller's array calledd itemsSold
+
     // // 4.2: update quantity of prduct
     //we get the id of the item that is being displayed
     //then we decrement it quantity property

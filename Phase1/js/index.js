@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     try {
         //localStorage.removeItem("currentUser"); //to test loged in verfication before purchase
         fetchProducts();
+        displayProducts();
         productsCategoryFilter();
 
         // other functions????

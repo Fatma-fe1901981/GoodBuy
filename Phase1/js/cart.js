@@ -5,6 +5,7 @@ const itemsJSON = "/database/items.json";
 const productPrice = document.getElementById("product-price"); //reference to the price of the product
 const thisProductPrice = parseFloat(productPrice.innerText); // since the product value is represented as text
 const productDetails = document.querySelectorAll("#detail-item");
+const productKeys = document.querySelectorAll("#detail-key");
 const purchasedQuantity = document.querySelector(".quantity");
 const expandBtn = document.querySelector(".expand-btn");
 const purchaseBtn = document.querySelector(".purchase-btn");
@@ -56,13 +57,22 @@ function handleFormValidation(event) {
   }
 }
 function getPurchaseDetails() {
-  const values = { purchasedQuantity };
+  // const values = {};
+  const keysArray = ["purchasedQuantity"];
+  const vealuesArray = [purchasedQuantity.value];
 
   // Loop through each selected element
   productDetails.forEach((element) => {
     // Get the text content of each element and push it into the values array
-    values.push(element.textContent);
+    vealuesArray.push(element.textContent.replace(/\n/g, "").trim());
   });
+  productKeys.forEach((key) => {
+    keysArray.push(key.textContent);
+  });
+  const values = keysArray.reduce((acc, key, index) => {
+    acc[key] = vealuesArray[index];
+    return acc;
+  }, {});
   // Now, the values array contains the text content of all selected elements
   console.log(values);
   return values;
@@ -77,19 +87,17 @@ async function handleSubmitPurchase(event) {
   event.preventDefault();
   try {
     // Step 1: Read customer data from JSON file
-    const userData = await fetch("/database/user.json");
-    const userJson = await userData.json();
-    usersList = userJson.users;
-    let users = JSON.stringify(usersList);
-    console.log("Fetch: " + users);
-    // let usersRole = findObjectByKey(usersList, "role", "customer");
-    // console.log("users of role customer: " + JSON.stringify(balances));
+    //we want to update the balance so we use let instead of const
 
-    // console.log("users of role customer: " + JSON.stringify(usersUsername));
+    let userData = await fetch("/database/user.json");
+    let userJson = await userData.json();
+    usersList = userJson.users;
+    // let users = JSON.stringify(usersList);
+    // console.log("Fetch: " + users);
     // 2: Update customer's bank account information
     //    1:get logged in user from local storage
-    const loggedInUser = localStorage.getItem("currentUser");
-    const loggedInUserData = JSON.parse(loggedInUser);
+    let loggedInUser = localStorage.getItem("currentUser");
+    let loggedInUserData = JSON.parse(loggedInUser);
     //    console to check
     console.log("logged in username: " + loggedInUserData.username);
     //    2:check if the logged in user is a customer
@@ -120,13 +128,25 @@ async function handleSubmitPurchase(event) {
         "Logged in user balance after purchase(json file): " +
           JSON.stringify(usersUsername)
       );
-    }
 
-    // // 3: Update purchase history for customer
-    // userJson.purchasedItems.push(getPurchaseDetails());
+      // 3: Update purchase history for customer
+
+      usersUsername.purchasedItems.push(getPurchaseDetails());
+      console.log(
+        "Purchased Items: " + JSON.stringify(usersUsername.purchasedItems)
+      );
+    } else
+      alert("You are not a customer. You can only purchase as a customer.");
+
     // // 4: Update sale histories for seller
-    // userJson.itemsSold.push(getPurchaseDetails());
-    // // 4.2: update quantity
+    //      1:get item id
+    // when an item is purchased
+    // we find a seller that has that item id
+    //inside the array itemsBeingSold
+    //and we push the id of the item in the seller's array calledd itemsSold
+    // // 4.2: update quantity of prduct
+    //we get the id of the item that is being displayed
+    //then we decrement it quantity property
     // // 5: Display a message to the customer
     alert("Purchase successful!");
   } catch (error) {

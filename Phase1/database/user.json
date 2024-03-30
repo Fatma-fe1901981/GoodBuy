@@ -220,7 +220,7 @@
       "purchasedItems": [],
       "wishlist": []
     },
-  
+
     {
       "role": "seller",
       "ID": "TO",
@@ -340,9 +340,7 @@
       "bankAccount": "00089126734560000",
       "itemsBeingSold": ["PL01", "PL02", "PL03"],
       "itemsSold": []
-    }
-     ,
-
+    },
     {
       "role": "admin",
       "username": "fatma",

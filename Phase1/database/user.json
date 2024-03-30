@@ -18,7 +18,7 @@
           "id": "TF-1",
           "product_name": "Cherry Red Perfume",
           "product_price": 20.99,
-          "product_quantity": 100,
+          "product_quantity": 1,
           "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
           "product_type": "Cosmetics",
           "product_category": "Makeup",
@@ -33,7 +33,7 @@
           "id": "TF-2",
           "product_name": "Cherry Red Perfume",
           "product_price": 20.99,
-          "product_quantity": 100,
+          "product_quantity": 1,
           "product_image": "https://i.pinimg.com/564x/73/50/0c/73500cc6403dce21d06ee231c4579453.jpg",
           "product_category": "Skincare",
           "product_sub_category": "Body",
@@ -229,7 +229,7 @@
       "username": "theordinary",
       "password": "theordinary",
       "bank_account": "0000123456789000",
-      "itemsBeingSold": ["TO01", "TO02", "TO03"],
+      "itemsBeingSold": [],
       "items_sold": []
     },
     {
@@ -239,7 +239,7 @@
       "username": "drunkelephant",
       "password": "drunkelephant",
       "bankAccount": "0000987654321000",
-      "itemsBeingSold": ["DE01", "DE02", "DE03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -249,7 +249,7 @@
       "username": "tula",
       "password": "tulatula",
       "bankAccount": "0009876543210000",
-      "itemsBeingSold": ["TL01", "TL02", "TL03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -259,7 +259,7 @@
       "username": "olehenriksen",
       "password": "olehenriksen",
       "bankAccount": "0000192837465000",
-      "itemsBeingSold": ["OR01", "OR02", "OR03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -269,7 +269,7 @@
       "username": "tomford",
       "password": "tomford1",
       "bankAccount": "0000245613579000",
-      "itemsBeingSold": ["TF01", "TF02", "TF03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -279,7 +279,7 @@
       "username": "pyunkangyul",
       "password": "pyunkangyul",
       "bankAccount": "0002468135790000",
-      "itemsBeingSold": ["PY01", "PY02", "PY03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -289,7 +289,7 @@
       "username": "ubeauty",
       "password": "ubeauty1",
       "bankAccount": "0000246813579000",
-      "itemsBeingSold": ["UB01", "UB02", "UB03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -299,7 +299,7 @@
       "username": "dimebeauty",
       "password": "dimebeauty",
       "bankAccount": "0000864297531000",
-      "itemsBeingSold": ["DB01", "DB02", "DB03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -309,7 +309,7 @@
       "username": "versace",
       "password": "versace1",
       "bankAccount": "0008642975310000",
-      "itemsBeingSold": ["VC01", "VC02", "VC03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -337,6 +337,21 @@
       ],
       "itemsSold": [
         {
+          "id": "TF-4",
+          "product_name": "Cover FX",
+          "product_price": 40.99,
+          "product_quantity": 3,
+          "product_image": "https://i.pinimg.com/564x/a6/8a/67/a68a679e25d75334eeb12914ef3b910f.jpg",
+          "product_category": "Makeup",
+          "product_sub_category": "Foundation",
+          "product_ratings": 4.5,
+          "product_reviews": 120,
+          "product_brand": "Tom Ford",
+          "product_tag": "new",
+          "product_description": "Cover FX provides flawless coverage with a lightweight, natural finish.",
+          "seller_ID": "TF"
+        },
+        {
           "id": "TF-2",
           "product_name": "Cherry Red Perfume",
           "product_price": 20.99,
@@ -359,7 +374,7 @@
       "username": "giorgioarmani",
       "password": "giorgioarmani",
       "bankAccount": "0001289346750000",
-      "itemsBeingSold": ["GA01", "GA02", "GA03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {
@@ -369,7 +384,7 @@
       "username": "phlur",
       "password": "phlur123",
       "bankAccount": "00089126734560000",
-      "itemsBeingSold": ["PL01", "PL02", "PL03"],
+      "itemsBeingSold": [],
       "itemsSold": []
     },
     {

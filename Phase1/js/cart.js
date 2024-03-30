@@ -9,15 +9,15 @@ const productKeys = document.querySelectorAll("#detail-key");
 const purchasedQuantity = document.querySelector(".quantity");
 const productQuantity = document.querySelector("#product-quantity");
 const productQuantityNumber = parseFloat(productQuantity.innerText);
-const expandBtn = document.querySelector(".expand-btn");
-const purchaseBtn = document.querySelector(".purchase-btn");
+
 const formExpand = document.querySelector(".form-expand");
-const submitBtn = document.querySelector(".submit-btn");
+
 const productImg = document.querySelector(".image");
 const formCountry = document.querySelector("#country-txt");
 const formCity = document.querySelector("#city-txt");
 const formStreet = document.querySelector("#street-txt");
 const formBuilding = document.querySelector("#building-txt");
+const detailsArea = document.querySelector(".details");
 
 document.addEventListener("DOMContentLoaded", async () => {
   if (!localStorage.currentUser) {
@@ -25,27 +25,22 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     console.log(localStorage.currentUser);
   }
-
-  //call function that displays the item
-  
-  // Add click event listener to the expand button
-  expandBtn.addEventListener("click", function () {
-    // Find the corresponding details-expand div
-    const expandDiv = this.nextElementSibling;
-    // Toggle the 'active' class to show/hide the details
-    expandDiv.classList.toggle("active");
-
-    // Change the button text based on the state
-    if (expandDiv.classList.contains("active")) {
-      this.textContent = "_";
-    } else {
-      this.textContent = "+";
-    }
-  });
-
-  purchaseBtn.addEventListener("click", handleFormValidation);
-  submitBtn.addEventListener("click", handleSubmitPurchase);
+  //call function that displays the item selected
+  displaySelectedItemDetails();
 });
+function handlePlusbtn() {
+  // Find the corresponding details-expand div
+  const expandDiv = this.nextElementSibling;
+  // Toggle the 'active' class to show/hide the details
+  expandDiv.classList.toggle("active");
+
+  // Change the button text based on the state
+  if (expandDiv.classList.contains("active")) {
+    this.textContent = "_";
+  } else {
+    this.textContent = "+";
+  }
+}
 function handleFormValidation(event) {
   //get logged in user
   //get displayed product price
@@ -100,7 +95,80 @@ function getPurchaseDetails() {
   console.log(values);
   return values;
 }
+async function displaySelectedItemDetails() {
+  if (!localStorage.clickedProductId) {
+    console.log("cant read product ID");
+  } else {
+    console.log(localStorage.clickedProductId);
+  }
+  //find the id that matches from items.json
+  let itemsData = await fetch("/database/items.json");
+  let itemsJson = await itemsData.json();
+  const item = itemsJson.find((i) => i.id == localStorage.clickedProductId);
+  console.log(item.product_name);
+  detailsArea.innerHTML = `<div class="image">
+  <p value="product_tag" class="tag">${item.product_tag}</p>
+  <img
+    src="${item.product_image}"
+    alt="product image"
+  />
+  <button class="purchase-btn">PURCHASE</button>
+</div>
+<div class="side-details">
+  <div class="detail-item">
+    <p id="detail-key">Product</p>
+    <p value="product_name" id="detail-item">${item.product_name}</p>
+  </div>
+  <div class="detail-item">
+    <p id="detail-key">Brand</p>
+    <p value="product_brand" id="detail-item">${item.product_brand}</p>
+  </div>
+  <div class="detail-item">
+    <p id="detail-key">Category</p>
+    <p value="product_category" id="detail-item">${item.product_category}</p>
+  </div>
+  <div class="detail-item">
+    <p id="detail-key">Sub Category</p>
+    <p value="product_sub_category" id="detail-item">${item.product_sub_category}</p>
+  </div>
+  <div class="detail-item">
+    <p id="detail-key">price</p>
+    <p value="product_price" id="product-price">${item.product_price} $</p>
+  </div>
+  <div class="detail-item">
+    <p>Available Quantity</p>
+    <p id="product-quantity">${item.product_quantity}</p>
+  </div>
+  <div class="detail-item">
+    <div>
+      <p id="detail-key">Ratings</p>
+      <p value="product_ratings" id="detail-item">${item.product_ratings}</p>
+    </div>
+    <div>
+      <p id="detail-key">Reviews</p>
+      <p value="product_reviews" id="detail-item">${item.product_reviews}</p>
+    </div>
+  </div>
+  <div class="detail-item-expand">
+    <span id="detail-key">Details</span>
+    <button class="expand-btn">+</button>
+    <div class="details-expand">
+      <p value="product_details" id="detail-item">
+      ${item.product_description}
+      </p>
+    </div>
+  </div>
+</div>
+`;
+  const expandBtn = document.querySelector(".expand-btn");
+  const purchaseBtn = document.querySelector(".purchase-btn");
+  const submitBtn = document.querySelector(".submit-btn");
 
+  // Add click event listener to the expand button
+  expandBtn.addEventListener("click", handlePlusbtn);
+  purchaseBtn.addEventListener("click", handleFormValidation);
+  submitBtn.addEventListener("click", handleSubmitPurchase);
+}
 // Function to find an object by a specific key
 function findObjectByKey(array, key, value) {
   return array.find((obj) => obj[key] === value);

@@ -54,7 +54,6 @@ function formatProductDisplay(product) {
         <img src="${product.product_image}" alt="product image">
         <div class="productName-fav">
             <p>${product.product_name}</p>
-            <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
         </div>
         <div class="price-purchase">
             <p>QR <span>${product.product_price}</span></p>

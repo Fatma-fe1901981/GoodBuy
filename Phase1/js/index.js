@@ -2,6 +2,9 @@ const productCardsArea = document.querySelector(".products");
 const filtering = document.querySelector("#filtering");
 const search = document.querySelector("#search");
 let clickedProduct;
+
+
+
 search.addEventListener("input", searchProduct);
 filtering.addEventListener("input", productsCategoryFilter);
 
@@ -120,8 +123,9 @@ function viewItem(id) {
   if (loggedInUser == undefined) {
     window.location.href = "/sub-pages/login.html";
   } else {
+    console.log("im in cart")
     window.location.href = "/sub-pages/cart.html"; // Redirect to purchase page
     //localStorage.setItem("clickedProductId", id);
-    alert(id);
+    //alert(id);
   }
 }

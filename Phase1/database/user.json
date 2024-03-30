@@ -324,8 +324,36 @@
       "username": "dolcegabbana",
       "password": "dolcegabbana",
       "bankAccount": "0008642975310000",
-      "itemsBeingSold": ["DG01", "DG02", "DG03"],
-      "itemsSold": []
+      "itemsBeingSold": [  {
+        "id": "TF-2",
+        "product_name": "Cherry Red Perfume",
+        "product_price": 20.99,
+        "product_quantity": 100,
+        "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
+        "product_category": "Skincare",
+        "product_sub_category": "Body",
+        "product_ratings": 4.5,
+        "product_reviews": 120,
+        "product_brand": "Tom Ford",
+        "product_tag": "new",
+        "seller_ID": "TF"
+      }],
+      "itemsSold": [
+        {
+          "id": "TF-2",
+          "product_name": "Cherry Red Perfume",
+          "product_price": 20.99,
+          "product_quantity": 2,
+          "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
+          "product_category": "Skincare",
+          "product_sub_category": "Body",
+          "product_ratings": 4.5,
+          "product_reviews": 120,
+          "product_brand": "Tom Ford",
+          "product_tag": "new",
+          "seller_ID": "TF"
+        }
+      ]
     },
     {
       "role": "seller",

@@ -16,7 +16,7 @@
       <header class="header" id="nav"></header>
       <section class="details">
         <div class="image">
-          <p class="tag">Out of Stock!</p>
+          <p value="product_tag" class="tag">Out of Stock!</p>
           <img
             src="https://i.pinimg.com/564x/ea/6b/aa/ea6baa26f3a013464eb4523a9012c09a.jpg"
             alt="product image"
@@ -28,36 +28,47 @@
         <div class="side-details">
           <div class="detail-item">
             <p id="detail-key">Product</p>
-            <p id="detail-item">SUNSPEL</p>
+            <p value="product_name" id="detail-item">SUNSPEL</p>
+          </div>
+          <div class="detail-item">
+            <p id="detail-key">Brand</p>
+            <p value="product_brand" id="detail-item">Tom Ford</p>
           </div>
           <div class="detail-item">
             <p id="detail-key">Category</p>
-            <p id="detail-item">Moisturiser</p>
+            <p value="product_category" id="detail-item">Cosmetics</p>
+          </div>
+          <div class="detail-item">
+            <p id="detail-key">Sub Category</p>
+            <p value="product_sub_category" id="detail-item">Moisturiser</p>
           </div>
           <div class="detail-item">
             <p id="detail-key">price</p>
-            <p id="detail-item">20$</p>
+            <p value="product_price" id="product-price">20$</p>
           </div>
           <div class="detail-item">
             <p>Available Quantity</p>
-            <p id="product-price">10</p>
+            <p id="product-quantity">10</p>
           </div>
           <div class="detail-item">
             <div>
               <p id="detail-key">Ratings</p>
-              <p id="detail-item">4.9</p>
+              <p value="product_ratings" id="detail-item">4.9</p>
             </div>
             <div>
               <p id="detail-key">Reviews</p>
-              <p id="detail-item">500</p>
+              <p value="product_reviews" id="detail-item">500</p>
             </div>
           </div>
           <div class="detail-item-expand">
             <span id="detail-key">Details</span>
             <button class="expand-btn">+</button>
             <div class="details-expand">
-              <p id="detail-item">
-                a refreshing water-gel moisturiser that contains a unique Hyaluronic Gel Matrix to instantly lock in intense hydration an continuously release it as and when your skin needs it throughout the day.
+              <p value="product_details" id="detail-item">
+                a refreshing water-gel moisturiser that contains a unique
+                Hyaluronic Gel Matrix to instantly lock in intense hydration an
+                continuously release it as and when your skin needs it
+                throughout the day.
               </p>
             </div>
           </div>
@@ -76,8 +87,9 @@
                 <input
                   type="number"
                   class="quantity"
+                  id="quantity-input"
                   name="quantity"
-                  value=""
+                  value="1"
                   min="1"
                   max="xx"
                 />
@@ -85,11 +97,25 @@
               <fieldset>
                 <legend>Shipping adress</legend>
                 <label for="country">Country</label>
-                <select name="country" id="">
+                <input
+                  id="country-txt"
+                  type="text"
+                  name="country"
+                  value=""
+                  readonly
+                />
+                <!-- <select name="country" id="country-select">
                   <option value="qatar">Qatar</option>
-                </select>
+                </select> -->
                 <label for="city">City</label>
-                <select name="city" id="">
+                <input
+                  id="city-txt"
+                  type="text"
+                  name="city"
+                  value=""
+                  readonly
+                />
+                <!-- <select name="city" id="city-select" value="">
                   <option value="doha">Doha</option>
                   <option value="al-wakrah">Al Wakrah</option>
                   <option value="dukhan">Dukhan</option>
@@ -97,11 +123,23 @@
                   <option value="alrayyan">AL Rayyan</option>
                   <option value="umm-salal">Umm Salal</option>
                   <option value="lusail">Lusail</option>
-                </select>
+                </select> -->
                 <label for="street">Street</label>
-                <input type="text" name="street" />
+                <input
+                  id="street-txt"
+                  type="text"
+                  name="street"
+                  value=""
+                  readonly
+                />
                 <label for="building">Building</label>
-                <input type="text" name="building" />
+                <input
+                  id="building-txt"
+                  type="text"
+                  name="building"
+                  value=""
+                  readonly
+                />
               </fieldset>
               <div class="confirm-btn-container">
                 <button class="submit-btn" type="submit">

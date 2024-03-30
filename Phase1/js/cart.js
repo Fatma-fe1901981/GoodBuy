@@ -3,14 +3,21 @@ let users = [];
 const userJSON = "/database/user.json";
 const itemsJSON = "/database/items.json";
 const productPrice = document.getElementById("product-price"); //reference to the price of the product
-const thisProductPrice = parseFloat(productPrice.innerText); // since the product value is represented as text
+const productPriceNumber = parseFloat(productPrice.innerText); // since the product value is represented as text
 const productDetails = document.querySelectorAll("#detail-item");
 const productKeys = document.querySelectorAll("#detail-key");
 const purchasedQuantity = document.querySelector(".quantity");
+const productQuantity = document.querySelector("#product-quantity");
+const productQuantityNumber = parseFloat(productQuantity.innerText);
 const expandBtn = document.querySelector(".expand-btn");
 const purchaseBtn = document.querySelector(".purchase-btn");
 const formExpand = document.querySelector(".form-expand");
 const submitBtn = document.querySelector(".submit-btn");
+const productImg = document.querySelector(".image");
+const formCountry = document.querySelector("#country-txt");
+const formCity = document.querySelector("#city-txt");
+const formStreet = document.querySelector("#street-txt");
+const formBuilding = document.querySelector("#building-txt");
 
 document.addEventListener("DOMContentLoaded", async () => {
   if (!localStorage.currentUser) {
@@ -18,6 +25,9 @@ document.addEventListener("DOMContentLoaded", async () => {
   } else {
     console.log(localStorage.currentUser);
   }
+
+  //call function that displays the item
+  
   // Add click event listener to the expand button
   expandBtn.addEventListener("click", function () {
     // Find the corresponding details-expand div
@@ -43,7 +53,7 @@ function handleFormValidation(event) {
   const loggedInUser = localStorage.getItem("currentUser");
   const loggedInUserData = JSON.parse(loggedInUser);
   console.log("Logged in user balance: " + loggedInUserData.moneyBalance);
-  if (loggedInUserData.moneyBalance >= thisProductPrice) {
+  if (loggedInUserData.moneyBalance >= productPriceNumber) {
     // console.log(users + productsJSON);
     // Toggle the 'show' class on the form expand container
     formExpand.classList.toggle("activef");
@@ -52,14 +62,25 @@ function handleFormValidation(event) {
     } else {
       this.textContent = "PURCHASE";
     }
+    purchasedQuantity.max = productQuantityNumber; //max value the user can select is thax quantity if iterm
+    formStreet.value = loggedInUserData.shippingAddress.street;
+    formBuilding.value = loggedInUserData.shippingAddress.building;
+    formCountry.value = loggedInUserData.shippingAddress.country;
+    formCity.value = loggedInUserData.shippingAddress.city;
   } else {
-    alert("You dont have enough balance. Or you are not logged in as a Customer.");
+    alert(
+      "You dont have enough balance. Or you are not logged in as a Customer."
+    );
   }
 }
 function getPurchaseDetails() {
   // const values = {};
-  const keysArray = ["purchasedQuantity"];
-  const vealuesArray = [purchasedQuantity.value];
+  const keysArray = ["product_quantity", "product_price", "product_image"];
+  const vealuesArray = [
+    purchasedQuantity.value,
+    productPriceNumber,
+    productImg.src,
+  ];
 
   // Loop through each selected element
   productDetails.forEach((element) => {
@@ -69,6 +90,8 @@ function getPurchaseDetails() {
   productKeys.forEach((key) => {
     keysArray.push(key.textContent);
   });
+  // console.log(productDetails.value);
+  // keysArray += productDetails.value; //attempt to change the name of the values
   const values = keysArray.reduce((acc, key, index) => {
     acc[key] = vealuesArray[index];
     return acc;
@@ -116,10 +139,15 @@ async function handleSubmitPurchase(event) {
       console.log(
         "Balance before Prchase: " + JSON.stringify(usersUsername.moneyBalance)
       );
-      console.log("Item price: " + thisProductPrice);
+      console.log("Item price: " + productPriceNumber);
       // 5: change balance
-      usersUsername.moneyBalance -= thisProductPrice;
-      loggedInUserData.moneyBalance -= thisProductPrice;
+      usersUsername.moneyBalance -=
+        productPriceNumber * purchasedQuantity.value;
+      loggedInUserData.moneyBalance -=
+        productPriceNumber * purchasedQuantity.value;
+
+      productQuantity.innerHTML =
+        productQuantityNumber - purchasedQuantity.value;
       console.log(
         "Logged in user balance after purchase(localsrotage): " +
           loggedInUserData.moneyBalance
@@ -132,6 +160,8 @@ async function handleSubmitPurchase(event) {
       // 3: Update purchase history for customer
 
       usersUsername.purchasedItems.push(getPurchaseDetails());
+      loggedInUserData.purchasedItems.push(getPurchaseDetails());
+      localStorage.setItem("currentUser", JSON.stringify(loggedInUserData));
       console.log(
         "Purchased Items: " + JSON.stringify(usersUsername.purchasedItems)
       );

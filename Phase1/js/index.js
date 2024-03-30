@@ -58,12 +58,19 @@ function formatProductDisplay(product) {
         </div>
     `);
   productCardsArea.appendChild(card);
-  document.addEventListener("click", function (event) {
-    //  e.preventDefault();
-    if (event.target.id === "link") {
-      //const clickedProduct = event.target.dataset.productId;
-      viewItem(product.id);
-    }
+  // document.addEventListener("click", function (event) {
+  //   //  e.preventDefault();
+  //   if (event.target.id === "link") {
+  //     //const clickedProduct = event.target.dataset.productId;
+  //     viewItem(product.id);
+  //   }
+  // });
+  // Select the "link" button within the card
+  const linkButton = card.querySelector("#link");
+
+  // Add click event listener to the "link" button
+  linkButton.addEventListener("click", function (event) {
+    viewItem(product.id); // Access the correct product id
   });
   // const moreBtn = document.querySelector("#link");
   // moreBtn.addEventListener("click", viewItem); //didnt work
@@ -116,12 +123,13 @@ async function searchProduct() {
 function viewItem(id) {
   console.log("Button clicked");
   const loggedInUser = localStorage.getItem("currentUser");
-  // let loggedInUserData = JSON.parse(loggedInUser);
+  let loggedInUserData = JSON.parse(loggedInUser);
   if (loggedInUser == undefined) {
     window.location.href = "/sub-pages/login.html";
   } else {
     window.location.href = "/sub-pages/cart.html"; // Redirect to purchase page
     //localStorage.setItem("clickedProductId", id);
-    alert(id);
+    localStorage.clickedProductId = id;
+    // console.log("Product Id:" + id);
   }
 }

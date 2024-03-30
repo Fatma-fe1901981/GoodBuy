@@ -16,6 +16,7 @@ const formCity = document.querySelector("#city-txt");
 const formStreet = document.querySelector("#street-txt");
 const formBuilding = document.querySelector("#building-txt");
 const detailsArea = document.querySelector(".details");
+let price;
 
 document.addEventListener("DOMContentLoaded", async () => {
   if (!localStorage.currentUser) {
@@ -46,7 +47,7 @@ function handleFormValidation(event) {
   const loggedInUser = localStorage.getItem("currentUser");
   const loggedInUserData = JSON.parse(loggedInUser);
   console.log("Logged in user balance: " + loggedInUserData.moneyBalance);
-  if (loggedInUserData.moneyBalance >= productPriceNumber) {
+  if (loggedInUserData.moneyBalance >= price) {
     // console.log(users + productsJSON);
     // Toggle the 'show' class on the form expand container
     formExpand.classList.toggle("activef");
@@ -101,6 +102,7 @@ function getPurchaseDetails() {
   console.log(values);
   return values;
 }
+
 async function displaySelectedItemDetails() {
   if (!localStorage.clickedProductId) {
     console.log("cant read product ID");
@@ -167,6 +169,7 @@ async function displaySelectedItemDetails() {
   </div>
 </div>
 `;
+  price = item.product_price;
   const expandBtn = document.querySelector(".expand-btn");
   const purchaseBtn = document.querySelector(".purchase-btn");
   const submitBtn = document.querySelector(".submit-btn");
@@ -181,6 +184,8 @@ function findObjectByKey(array, key, value) {
   return array.find((obj) => obj[key] === value);
 }
 let usersList = [];
+let itemsBeingSoldList = [];
+let soldToList = [];
 async function handleSubmitPurchase(event) {
   event.preventDefault();
   try {
@@ -250,6 +255,8 @@ async function handleSubmitPurchase(event) {
       console.log(
         "Purchased Items: " + JSON.stringify(usersUsername.purchasedItems)
       );
+
+      // 3.5: update purchase history for product
     } else
       alert("You are not a customer. You can only purchase as a customer.");
 
@@ -263,7 +270,17 @@ async function handleSubmitPurchase(event) {
     //   localStorage.clickedProductId
     // );
     const usersLocal = JSON.parse(localStorage.getItem("users"));
-    console.log("seller: " + JSON.stringify(usersLocal));
+
+    // console.log("seller: " + JSON.stringify(usersLocal));
+    // let seller = findObjectByKey(
+    //   usersLocal,
+    //   "itemsBeingSold",
+    //   localStorage.clickedProductId
+    // );
+    // console.log("seller last: " + JSON.stringify(usersLocal));
+
+    itemsBeingSoldList = usersLocal.itemsBeingSold;
+    console.log("latest console seller items being sold" + itemsBeingSoldList);
 
     // console.log("Seller of this item is: " + seller);
     // we find a seller that has that item id

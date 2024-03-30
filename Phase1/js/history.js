@@ -1,34 +1,33 @@
 
-const  userHistory= document.querySelector('#user-info');
+const userHistory = document.querySelector('#user-info');
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         let customer = JSON.parse(localStorage.currentUser)
-        if(customer!=undefined){
-        showHistory()}
+        if (customer != undefined) {
+            showHistory()
+        }
         // other functions????   
-        else{    
+        else {
             alert("you need to log in")
         }
-    
+
     } catch (error) {
-    
+
     }
 });
 
-let purchasedItemsList= []
+let purchasedItemsList = []
 
 function showHistory() {
-      const customer = JSON.parse(localStorage.currentUser)
-      console.log(customer);
-      purchasedItemsList = customer.purchasedItems
-      console.log(purchasedItemsList);
-      const htmlProducts = purchasedItemsList.map(product1=> productHtml(product1) ).join("")
-      console.log(htmlProducts);
-      userHistory.innerHTML= htmlProducts
-    
+    const customer = JSON.parse(localStorage.currentUser)
+    console.log(customer);
+    purchasedItemsList = customer.purchasedItems
+    console.log(purchasedItemsList);
+    const htmlProducts = purchasedItemsList.map(product1 => productHtml(product1)).join(" ")
+    console.log(htmlProducts);
+    userHistory.innerHTML = htmlProducts
 }
-
 
 function productHtml(product) {
     return ` 
@@ -41,6 +40,6 @@ function productHtml(product) {
         <p>QR <span>${product.product_price}</span></p>
         <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">More Information</a>
     </div>
-`   
-    
+`
+
 }

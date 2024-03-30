@@ -289,7 +289,9 @@
       "username": "ubeauty",
       "password": "ubeauty1",
       "bankAccount": "0000246813579000",
-      "itemsBeingSold": [],
+
+      "itemsBeingSold": [1, 2],
+
       "itemsSold": []
     },
     {
@@ -299,7 +301,7 @@
       "username": "dimebeauty",
       "password": "dimebeauty",
       "bankAccount": "0000864297531000",
-      "itemsBeingSold": [],
+      "itemsBeingSold": [3],
       "itemsSold": []
     },
     {
@@ -309,7 +311,7 @@
       "username": "versace",
       "password": "versace1",
       "bankAccount": "0008642975310000",
-      "itemsBeingSold": [],
+      "itemsBeingSold": [4],
       "itemsSold": []
     },
     {

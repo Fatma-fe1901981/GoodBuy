@@ -182,6 +182,10 @@ input[type="text"] {
   grid-template-columns: 1fr 2fr;
   grid-template-areas: "image side-details";
 }
+
+footer {
+  margin-top: 23.4rem;
+}
 /* Responsive adjustments */
 @media screen and (min-width: 40rem) {
   .container {

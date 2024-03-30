@@ -4,15 +4,11 @@ const  userHistory= document.querySelector('#user-info');
 document.addEventListener('DOMContentLoaded', async () => {
     try {
         let customer = JSON.parse(localStorage.currentUser)
-        if(customer!=undefined){
-        showHistory()}
+        if(customer !== 'undefined')   
+          showHistory()
         // other functions????   
-        else{    
-            alert("you need to log in")
-        }
-    
     } catch (error) {
-    
+       alert("you need to log in")
     }
 });
 

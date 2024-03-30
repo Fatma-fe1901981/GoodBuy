@@ -23,9 +23,9 @@ body {
             display: none;
         }
 
-        img {
-            width: 4.5rem;
-            height: 4.5rem;
+        .logo-img {
+            width: 1rem;
+            height:1rem;
         }
     }
 
@@ -71,6 +71,8 @@ body {
         border-bottom: 3px #B56A30 solid;
         color: #090605;
     }
+
+
 
     .hamburger-menu {
         background-color: #F1EFED;
@@ -252,6 +254,7 @@ body {
     padding: 1rem;
     
 }
+
 
 @keyframes textclip {
     to {

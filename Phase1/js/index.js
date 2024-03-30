@@ -76,10 +76,10 @@ function formatProductDisplay(product) {
 async function productsCategoryFilter() {
     productCardsArea.innerHTML = '';
 
-    let productsData = localStorage.products ? JSON.parse(localStorage.products) : await fetchProducts();
+    let productsData = JSON.parse(localStorage.products);
     let category = filtering.value.trim();
     let itemsAfterFilter = productsData.filter(
-        product => product.product_category.toLowerCase() == category
+        product => product.product_category == category
     );
     console.log(itemsAfterFilter);
     console.log(category);
@@ -100,15 +100,16 @@ async function searchProduct() {
     const productsData = await fetchProducts();
     let searchInput = search.value.trim().toLowerCase();
     let itemsAfterSearch = productsData.filter(
-        (product) => product.product_name.trim().toLowerCase().includes(searchInput)
+        (product) => product.product_name && product.product_name.trim().toLowerCase().includes(searchInput)
     );
 
     if (itemsAfterSearch.length === 0) {
-        productCardsArea.innerHTML = `<p> The item(s) you are searching for do not exist... Try again!</p>`;
+        productCardsArea.innerHTML = `<h1>No items found</h1>`;
     } else {
         displayProducts(itemsAfterSearch);
     }
 }
+
 
 // Redirect to purchase page if user is logged in or to login page if user is not logged in
 function viewItem(id) {

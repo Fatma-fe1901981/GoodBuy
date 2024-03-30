@@ -1,5 +1,7 @@
 const addProductForm = document.querySelector('#add-product');
-//const productBrand = document.querySelector('#product-brand');
+const productBrand = document.querySelector('#product-brand');
+const sellerID = document.querySelector('#seller-ID');
+
 addProductForm.addEventListener('submit', addProduct);
 
 let products = [];
@@ -7,31 +9,13 @@ let users = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
-        fetchProducts();
-        // other functions????
     } catch (error) {
         console.error("Failed to load products:", error);
     }
 });
 
-// -------------------------------------------------------------------------------
-//                    Basic CURD, READ/WRITE Form/Object Functions
-// -------------------------------------------------------------------------------
 
-async function fetchProducts() {
-    if (!localStorage.products) {
-        const productsData = await fetch('/database/items.json');
-        const productsJSON = await productsData.json();
-        localStorage.products = JSON.stringify(productsJSON);
-        products = JSON.parse(localStorage.products); 
-        console.log(products)
-        return productsData;
-    }
-    else {
-        return JSON.parse(localStorage.products);
-    }
-}
-
+// Get products info from form and save it to an object
 function getFormInfo(form) {
     const formData = new FormData(form);
     const formInfo = {};
@@ -41,58 +25,66 @@ function getFormInfo(form) {
     return formInfo;
 }
 
-async function addProduct(newProductData) {  
+// Add product to the products list
+async function addProduct(newProductData) {
     newProductData.preventDefault();
     const newProduct = getFormInfo(newProductData.target)
     await addProductHELPER(newProduct);
-    // await displayProducts();
 }
 
-async function addProductHELPER(newProduct) { 
-    const productsData = await fetchProducts();
-    products = JSON.parse(localStorage.products);
-    let sellerID = await getSellerID("TF");
-    let number = productsData.length + 1
-    newProduct.id = sellerID + "-" + number;
-    console.log(newProduct);
-    productsData.push(newProduct);
-    localStorage.products = JSON.stringify(productsData);
-}
-
-async function getSellerID(companyName) {
-    const usersData = await fetch('/database/user.json');
-    const usersJSON = await usersData.json();
-    const sellers = usersJSON.users.filter(user => user.role === 'seller');
-    const seller = sellers.find(seller => seller.companyName === companyName);
-    if (seller) {
-        return seller.ID;
+// Helper function to add product to the products list
+async function addProductHELPER(newProduct) {
+    const productsData = JSON.parse(localStorage.products);
+    let user = JSON.parse(localStorage.currentUser);
+    let notUnique = productsData.find(product => product.productName === newProduct.productName);
+    if (notUnique) {
+        alert("Product already exists");
+        updateProductQuantity(notUnique);
+        return;
     } else {
-        return null; // If seller not found
+        newProduct.id = productsData.length + 1
+        let sID = user.ID;
+        newProduct.sellerID = sID;
+        let brand = user.companyName;
+        newProduct.productBrand = brand;
+        console.log(newProduct);
+        productsData.push(newProduct);
+        user.itemsBeingSold.push(newProduct.id);
+        localStorage.products = JSON.stringify(productsData);
     }
+    console.log(productsData);
 }
 
-// async function populateDD() {
-//     const usersData = await fetch('/database/user.json');
-//     const usersJSON = await usersData.json();
-//     users = usersJSON.users;
-//     const sellers = users.filter(user => user.role === 'seller').map(seller => seller.companyName);
-//     let flag = isSeller();
-//     productBrand.innerHTML = '';
-//     if (flag) {
-//         sellers.forEach(seller => {
-//             const option = productBrand.createElement('option');
-//             option.value = seller;
-//             option.innerText = seller;
-//             productBrand.appendChild(option);
-//         });
-//     }
-//     else {
-//         const option = productBrand.createElement('option');
-//         option.value = 'Select Seller';
-//         option.innerText = 'Select Seller';
-//         productBrand.appendChild(option);
-//     }
-// }
+function updateProductQuantity(notUnique) {
+    addProductForm.innerHTML = ` `;
+    addProductForm.innerHTML = `
+        <div class="form-group">
+            <div>
+                <input type="text" name="productName" id="product-name" hidden readonly>
+
+                <label for="product-quantity">Product Quantity</label>
+                <input type="number" name="productQuantity" id="product-quantity" required>
+
+                <div>
+                    <button type="submit" onclick="updateQuantity(${notUnique})">Update</button>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+function updateQuantity(notUnique) {
+    let newQuantity = document.querySelector('#product-quantity').value;
+    notUnique.productQuantity = newQuantity;
+
+    const productsData = JSON.parse(localStorage.products);
+    const index = productsData.findIndex(product => product.id === notUnique.id);
+    productsData[index] = notUnique;
+    localStorage.products = JSON.stringify(productsData);
+    console.log("Item updated:", notUnique);
+    console.log(productsData);
+}
+
 
 /*
 "PL"

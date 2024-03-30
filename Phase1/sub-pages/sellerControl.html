@@ -51,7 +51,8 @@
                         <select type="text" id="product-sub-category" name="product-sub-category" required>
                               <option hidden>Select Sub Category</option>
                               <option value="face">Face</option>
-                              <option value="face">Body</option>
+                              <option value="body">Body</option>
+                              <option value="face">Makeup</option>
                               <option value="perfume">Perfume</option>
                               <option value="cologne">Cologne</option>
                         </select>
@@ -63,7 +64,7 @@
                   </div>
 
                   <div>
-                        <label for="product-tag">Tags</label>
+                        <label for="product-tag">Tag</label>
                         <select id="product-tag" name="product-tag" required>
                               <option value="new">New</option>
                               <option value="out-of-stock">Out of Stock</option>
@@ -71,13 +72,12 @@
                   </div>
 
                   <div>
-                        <label for="product-brand">Brand</label>
-                        <input type="text" value="TF" id="product-brand" name="product-brand" readonly>
+                        <input hidden type="text" value="" id="product-brand" name="product-brand" readonly>
+                        <input hidden type="text" value="" id="seller-ID" name="product-brand" readonly>
                   </div>
 
                   <div class="buttons">
                         <button type="submit">Submit Product</button>
-                        <button type="reset">Clear</button>
                   </div>
             </form>
       </main>

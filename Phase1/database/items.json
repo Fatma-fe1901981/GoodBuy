@@ -1,6 +1,6 @@
 [
   {
-    "id": "TF-1",
+    "id": 1,
     "product_name": "DILIS NICHE COLLECTION",
     "product_price": 50.99,
     "product_quantity": 20,
@@ -16,7 +16,7 @@
   },
 
   {
-    "id": "TF-2",
+    "id": 2,
     "product_name": "SUNSPEL",
     "product_price": 19.99,
     "product_quantity": 100,
@@ -32,7 +32,7 @@
   },
 
   {
-    "id": "TF-3",
+    "id": 3,
     "product_name": "BECCA",
     "product_price": 20.99,
     "product_quantity": 100,
@@ -48,7 +48,7 @@
   },
 
   {
-    "id": "TF-4",
+    "id": 4,
     "product_name": "Cover FX",
     "product_price": 40.99,
     "product_quantity": 50,

@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 });
 
+// Fetch products from the database folder 
 async function fetchProducts() {
     if (!localStorage.products) {
         const productsData = await fetch("/database/items.json");
@@ -33,6 +34,7 @@ async function fetchProducts() {
     }
 }
 
+// Display products on the page 
 async function displayProducts(products) {
     if (products.length == 0) {
         const productsData = await fetchProducts();
@@ -44,6 +46,7 @@ async function displayProducts(products) {
     }
 }
 
+// Format product information on the page in a card format 
 function formatProductDisplay(product) {
     let card = document.createElement("div");
     card.classList.add("product");
@@ -59,26 +62,17 @@ function formatProductDisplay(product) {
         </div>
     `);
     productCardsArea.appendChild(card);
-    // document.addEventListener("click", function (event) {
-    //   //  e.preventDefault();
-    //   if (event.target.id === "link") {
-    //     //const clickedProduct = event.target.dataset.productId;
-    //     viewItem(product.id);
-    //   }
-    // });
-    // Select the "link" button within the card
+
     const linkButton = card.querySelector("#link");
 
-    // Add click event listener to the "link" button
     linkButton.addEventListener("click", function (event) {
-        viewItem(product.id); // Access the correct product id
+        viewItem(product.id); 
     });
-    // const moreBtn = document.querySelector("#link");
-    // moreBtn.addEventListener("click", viewItem); //didnt work
-
+    
     return injectedInfo;
 }
 
+// Filter products by category and display the result on the page
 async function productsCategoryFilter() {
     productCardsArea.innerHTML = '';
 
@@ -99,6 +93,7 @@ async function productsCategoryFilter() {
     }
 }
 
+// Search for a product by name and display the result on the page 
 async function searchProduct() {
     productCardsArea.innerHTML = '';
 
@@ -115,7 +110,7 @@ async function searchProduct() {
     }
 }
 
-
+// Redirect to purchase page if user is logged in or to login page if user is not logged in
 function viewItem(id) {
     console.log("Button clicked");
     let loggedInUser = localStorage.getItem("currentUser");
@@ -124,8 +119,6 @@ function viewItem(id) {
         window.location.href = "/sub-pages/login.html";
     } else {
         window.location.href = "/sub-pages/cart.html"; // Redirect to purchase page
-        //localStorage.setItem("clickedProductId", id);
         localStorage.clickedProductId = id;
-        // console.log("Product Id:" + id);
     }
 }

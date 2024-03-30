@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (!localStorage.currentUser) localStorage.currentUser=JSON.stringify(undefined)
         showMenu();
         footer();
-        // other functions????
     } catch (error) {
         console.error("Failed to load products:", error);
     }

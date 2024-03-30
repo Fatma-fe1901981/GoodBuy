@@ -15,34 +15,18 @@
       "moneyBalance": 500,
       "purchasedItems": [
         {
-          "id": "TF-1",
-          "product_name": "Cherry Red Perfume",
-          "product_price": 20.99,
-          "product_quantity": 1,
-          "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
-          "product_type": "Cosmetics",
-          "product_category": "Makeup",
-          "product_sub_category": "Perfumes",
-          "product_ratings": 4.5,
-          "product_reviews": 120,
-          "product_brand": "Tom Ford",
-          "product_tag": "new",
-          "seller_ID": "TF"
+          "id": 1,
+          "product_name": "DILIS NICHE COLLECTION",
+          "product_price": 50.99,
+          "product_quantity": 2
         },
         {
-          "id": "TF-2",
-          "product_name": "Cherry Red Perfume",
-          "product_price": 20.99,
-          "product_quantity": 1,
-          "product_image": "https://i.pinimg.com/564x/73/50/0c/73500cc6403dce21d06ee231c4579453.jpg",
-          "product_category": "Skincare",
-          "product_sub_category": "Body",
-          "product_ratings": 4.5,
-          "product_reviews": 120,
-          "product_brand": "Tom Ford",
-          "product_tag": "new",
-          "seller_ID": "TF"
+          "id": 2,
+          "product_name": "SUNSPEL",
+          "product_price": 19.99,
+          "product_quantity": 100
         }
+
       ],
       "wishlist": []
     },
@@ -322,51 +306,10 @@
       "password": "dolcegabbana",
       "bankAccount": "0008642975310000",
       "itemsBeingSold": [
-        {
-          "id": "TF-2",
-          "product_name": "Cherry Red Perfume",
-          "product_price": 20.99,
-          "product_quantity": 100,
-          "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
-          "product_category": "Skincare",
-          "product_sub_category": "Body",
-          "product_ratings": 4.5,
-          "product_reviews": 120,
-          "product_brand": "Tom Ford",
-          "product_tag": "new",
-          "seller_ID": "TF"
-        }
+     
       ],
       "itemsSold": [
-        {
-          "id": "TF-4",
-          "product_name": "Cover FX",
-          "product_price": 40.99,
-          "product_quantity": 3,
-          "product_image": "https://i.pinimg.com/564x/a6/8a/67/a68a679e25d75334eeb12914ef3b910f.jpg",
-          "product_category": "Makeup",
-          "product_sub_category": "Foundation",
-          "product_ratings": 4.5,
-          "product_reviews": 120,
-          "product_brand": "Tom Ford",
-          "product_tag": "new",
-          "product_description": "Cover FX provides flawless coverage with a lightweight, natural finish.",
-          "seller_ID": "TF"
-        },
-        {
-          "id": "TF-2",
-          "product_name": "Cherry Red Perfume",
-          "product_price": 20.99,
-          "product_quantity": 2,
-          "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
-          "product_category": "Skincare",
-          "product_sub_category": "Body",
-          "product_ratings": 4.5,
-          "product_reviews": 120,
-          "product_brand": "Tom Ford",
-          "product_tag": "new",
-          "seller_ID": "TF"
-        }
+      
       ]
     },
     {

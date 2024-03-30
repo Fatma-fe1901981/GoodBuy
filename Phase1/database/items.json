@@ -12,7 +12,8 @@
     "product_brand": "DILIS",
     "product_tag": "new",
     "product_description": "Captivate the senses with our exquisite perfume, a harmonious blend of floral and woody notes.",
-    "seller_ID": "TF"
+    "seller_ID": "TF",
+    "SoldTo":[ "adawood"]
   },
 
   {
@@ -28,7 +29,11 @@
     "product_brand": "Tom Ford",
     "product_tag": "new",
     "product_description": "Indulge in the captivating allure of our new perfume, a harmonious blend of delicate florals and exotic spices. Evoking a sense of mystery and sophistication, this enchanting fragrance reveals layers of sensual musk and warm amber, leaving a lasting impression wherever you go. Experience the essence of luxury with every spritz, as the intoxicating aroma transports you to a world of timeless elegance and refined beauty.",
-    "seller_ID": "TF"
+    "seller_ID": "TF",
+    "SoldTo":["adawood"
+
+    ]
+
   },
 
   {
@@ -44,7 +49,10 @@
     "product_brand": "Tom Ford",
     "product_tag": "new",
     "product_description": "Becca's radiant highlighter enhances your natural glow with luminous shimmer using all natural ingridents.",
-    "seller_ID": "TF"
+    "seller_ID": "TF",
+    "SoldTo":[
+
+    ]
   },
 
   {
@@ -60,6 +68,9 @@
     "product_brand": "Tom Ford",
     "product_tag": "new",
     "product_description": "Cover FX provides flawless coverage with a lightweight, natural finish.",
-    "seller_ID": "TF"
+    "seller_ID": "TF",
+    "SoldTo":[
+
+    ]
   }
 ]

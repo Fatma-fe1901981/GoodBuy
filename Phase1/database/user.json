@@ -15,33 +15,38 @@
       "moneyBalance": 500,
       "purchasedItems": [
         {
-          "id": 1,
-          "name": "Moisturizing Cream",
-          "original_price": 20.99,
-          "discount_price": 17.99,
-          "available_quantity": 100,
-          "picture": "moisturizing_cream.jpg",
-          "category": "Skincare",
-          "sub_category": "Moisturizers",
-          "ratings": 4.5,
-          "reviews": 120,
-          "brand_name": "GlowUp",
-          "tags": ["sale", "new"]
-        },
-        {
-          "id": 2,
-          "name": "Anti-Aging Serum",
-          "original_price": 35.99,
-          "discount_price": null,
-          "available_quantity": 50,
-          "picture": "anti_aging_serum.jpg",
-          "category": "Skincare",
-          "sub_category": "Serums",
-          "ratings": 4.8,
-          "reviews": 200,
-          "brand_name": "Youthful Glow",
-          "tags": ["new"]
+          "id": "TF-1",
+          "product_name": "Cherry Red Perfume",
+          "product_price": 20.99,
+          "product_quantity": 100,
+          "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
+          "product_type": "Cosmetics",
+          "product_category": "Makeup",
+          "product_sub_category": "Perfumes",
+          "product_ratings": 4.5,
+          "product_reviews": 120,
+          "product_brand": "Tom Ford",
+          "product_tag": "new",
+          "seller_ID": "TF"
         }
+       ,
+       {
+        "id": "TF-1",
+        "product_name": "Cherry Red Perfume",
+        "product_price": 20.99,
+        "product_quantity": 100,
+        "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
+        "product_type": "Cosmetics",
+        "product_category": "Makeup",
+        "product_sub_category": "Perfumes",
+        "product_ratings": 4.5,
+        "product_reviews": 120,
+        "product_brand": "Tom Ford",
+        "product_tag": "new",
+        "seller_ID": "TF"
+      }
+
+
       ],
       "wishlist": []
     },

@@ -52,7 +52,7 @@ function formatProductDisplay(product) {
         </div>
         <div class="price-purchase">
             <p>QR <span>${product.product_price}</span></p>
-            <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">Purchase Item</a>
+            <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">More Information</a>
         </div>
     `   
     productCardsArea.appendChild(card);

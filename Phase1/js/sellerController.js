@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.error("Failed to load products:", error);
     }
 });
+
 // -------------------------------------------------------------------------------
 //                    Basic CURD, READ/WRITE Form/Object Functions
 // -------------------------------------------------------------------------------

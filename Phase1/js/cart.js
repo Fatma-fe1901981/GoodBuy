@@ -53,7 +53,7 @@ function handleFormValidation(event) {
       this.textContent = "PURCHASE";
     }
   } else {
-    alert("You dont have enough balance");
+    alert("You dont have enough balance. Or you are not logged in as a Customer.");
   }
 }
 function getPurchaseDetails() {

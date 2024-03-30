@@ -1,50 +1,52 @@
-const productCardsArea = document.querySelector('.products');
-const filtering = document.querySelector('#filtering');
-const search = document.querySelector('#search');
+const productCardsArea = document.querySelector(".products");
+const filtering = document.querySelector("#filtering");
+const search = document.querySelector("#search");
 
-search.addEventListener('input', searchProduct);
-filtering.addEventListener('input', productsCategoryFilter);
+search.addEventListener("input", searchProduct);
+filtering.addEventListener("input", productsCategoryFilter);
 
 let products = [];
 
-document.addEventListener('DOMContentLoaded', async () => {
-    try {
-        fetchProducts();
-        productsCategoryFilter();
+document.addEventListener("DOMContentLoaded", async () => {
+  try {
+    // localStorage.removeItem("currentUser"); //to test loged in verfication before purchase
+    fetchProducts();
+    productsCategoryFilter();
 
-        // other functions????
-    } catch (error) {
-        console.error("Failed to load products:", error);
-    }
+    // other functions????
+  } catch (error) {
+    console.error("Failed to load products:", error);
+  }
 });
 
 async function fetchProducts() {
-    if (!localStorage.products) {
-        const productsData = await fetch('/database/items.json');
-        const productsJSON = await productsData.json();
-        localStorage.products = JSON.stringify(productsJSON);
-        products = JSON.parse(localStorage.products); 
-        console.log(products)
-        return productsData;
-    }
-    else {
-        return JSON.parse(localStorage.products);
-    }
+  if (!localStorage.products) {
+    const productsData = await fetch("/database/items.json");
+    const productsJSON = await productsData.json();
+    localStorage.products = JSON.stringify(productsJSON);
+    products = JSON.parse(localStorage.products);
+    console.log(products);
+    return productsData;
+  } else {
+    return JSON.parse(localStorage.products);
+  }
 }
 
 async function displayProducts(products) {
-    if(products.length == 0 ) {
-        const productsData = await fetchProducts();
-        productsData.map(eachProduct => formatProductDisplay(eachProduct)).join(' ');
-    } else if(products.length > 0 ) {
-        products.map(eachProduct => formatProductDisplay(eachProduct)).join(' ');
-    }
+  if (products.length == 0) {
+    const productsData = await fetchProducts();
+    productsData
+      .map((eachProduct) => formatProductDisplay(eachProduct))
+      .join(" ");
+  } else if (products.length > 0) {
+    products.map((eachProduct) => formatProductDisplay(eachProduct)).join(" ");
+  }
 }
 
 function formatProductDisplay(product) {
-    let card = document.createElement('div');
-    card.classList.add('product');
-    let injectedInfo = card.innerHTML = ` 
+  let card = document.createElement("div");
+  card.classList.add("product");
+  let injectedInfo = (card.innerHTML = ` 
         <img src="${product.product_image}" alt="product image">
         <div class="productName-fav">
             <p>${product.product_name}</p>
@@ -52,63 +54,70 @@ function formatProductDisplay(product) {
         </div>
         <div class="price-purchase">
             <p>QR <span>${product.product_price}</span></p>
-            <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">More Information</a>
+            <button id="link" >More Information</button>
         </div>
-    `   
-    productCardsArea.appendChild(card);
+    `);
+  productCardsArea.appendChild(card);
 
-    return injectedInfo;
+  // const moreBtn = document.querySelector("#link");
+  document.addEventListener("click", function (event) {
+    if (event.target.id === "link") {
+      viewItem();
+    }
+  });
+  // moreBtn.addEventListener("click", viewItem);
+  return injectedInfo;
 }
 
-async function productsCategoryFilter() {    
-    productCardsArea.innerHTML = ` `
+async function productsCategoryFilter() {
+  productCardsArea.innerHTML = ` `;
 
-    const productsData = await fetchProducts();
+  const productsData = await fetchProducts();
 
-    let category = filtering.value.trim().toLowerCase(); 
-    let itemsAfterFilter = [];
+  let category = filtering.value.trim().toLowerCase();
+  let itemsAfterFilter = [];
 
-    if(category == "all") {
-        productCardsArea.innerHTML = ` `;
-        displayProducts(productsData);
-    } else if(category !== "all") {
-        itemsAfterFilter = productsData.filter(product => product.product_category === category.toLowerCase().trim()); 
-        if(itemsAfterFilter.length == 0) {
-            productCardsArea.innerHTML = ` `;
-            productCardsArea.innerHTML = `<h1> No items found in this category </h1>`
-        } else {
-            console.log(itemsAfterFilter)
-            displayProducts(itemsAfterFilter);
-        }   
-
+  if (category == "all") {
+    productCardsArea.innerHTML = ` `;
+    displayProducts(productsData);
+  } else if (category !== "all") {
+    itemsAfterFilter = productsData.filter(
+      (product) => product.product_category === category.toLowerCase().trim()
+    );
+    if (itemsAfterFilter.length == 0) {
+      productCardsArea.innerHTML = ` `;
+      productCardsArea.innerHTML = `<h1> No items found in this category </h1>`;
+    } else {
+      console.log(itemsAfterFilter);
+      displayProducts(itemsAfterFilter);
     }
+  }
 }
 
 async function searchProduct() {
-    productCardsArea.innerHTML = ` `
+  productCardsArea.innerHTML = ` `;
 
-    const productsData = await fetchProducts();
-    let searchInput = search.value.trim().toLowerCase();
-    let itemsAfterSearch = productsData.filter(product => product.product_name.trim().toLowerCase() === searchInput);
+  const productsData = await fetchProducts();
+  let searchInput = search.value.trim().toLowerCase();
+  let itemsAfterSearch = productsData.filter(
+    (product) => product.product_name.trim().toLowerCase() === searchInput
+  );
 
-    if(itemsAfterSearch.length == 0) {
-        productCardsArea.innerHTML = ` `;
-        productCardsArea.innerHTML = `<h1> No items found </h1>`
-    } else {
-        displayProducts(itemsAfterSearch);
-    }
+  if (itemsAfterSearch.length == 0) {
+    productCardsArea.innerHTML = ` `;
+    productCardsArea.innerHTML = `<h1> No items found </h1>`;
+  } else {
+    displayProducts(itemsAfterSearch);
+  }
 }
 
-function purchaseItem(id) {
-    const user = JSON.parse(localStorage.currentUser);
-    if(user == undefined) {
-        alert("Please login to view products");
-    } else {
-        if(user.role == "customer") {
-            alert("Item purchased successfully");
-            window.location.href = "/sub-pages/purchase.html"; // Redirect to purchase page
-        } else {
-            alert("Please login as a customer to purchase items");
-        }
-    }
+function viewItem() {
+  console.log("Button clicked");
+  const loggedInUser = localStorage.getItem("currentUser");
+  // let loggedInUserData = JSON.parse(loggedInUser);
+  if (loggedInUser == undefined) {
+    window.location.href = "/sub-pages/login.html";
+  } else {
+    window.location.href = "/sub-pages/cart.html"; // Redirect to purchase page
+  }
 }

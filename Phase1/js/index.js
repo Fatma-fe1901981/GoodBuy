@@ -6,7 +6,6 @@ search.addEventListener('input', searchProduct);
 filtering.addEventListener('input', productsCategoryFilter);
 
 let products = [];
-const user = JSON.parse(localStorage.currentUser);
 
 document.addEventListener('DOMContentLoaded', async () => {
     try {
@@ -53,9 +52,9 @@ function formatProductDisplay(product) {
         </div>
         <div class="price-purchase">
             <p>QR <span>${product.product_price}</span></p>
-            <a href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">Purchase Item</a>
+            <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">Purchase Item</a>
         </div>
-    `
+    `   
     productCardsArea.appendChild(card);
 
     return injectedInfo;
@@ -101,13 +100,15 @@ async function searchProduct() {
 }
 
 function purchaseItem(id) {
+    const user = JSON.parse(localStorage.currentUser);
     if(user == undefined) {
         alert("Please login to view products");
     } else {
-        let product = products.find(product => product.id === id);
-        let cart = JSON.parse(localStorage.cart);
-        cart.push(product);
-        localStorage.cart = JSON.stringify(cart);
-        alert("Item added to cart");
+        if(user.role == "customer") {
+            alert("Item purchased successfully");
+            window.location.href = "/sub-pages/purchase.html"; // Redirect to purchase page
+        } else {
+            alert("Please login as a customer to purchase items");
+        }
     }
 }

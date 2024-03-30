@@ -13,33 +13,33 @@
       
       <main>
             <div class="back">
-                  <a href="/sub-pages/profile.html"><i class="fa-solid fa-chevron-left"> Back</i></a>
+                  <a href="/sub-pages/history.html"><i class="fa-solid fa-chevron-left"> Back</i></a>
             </div>
       
             <form class="add-product" id="add-product">
                   <div>
-                        <label for="product-name">Name</label>
-                        <input type="text" id="product-name" name="product-name" required> 
+                        <label for="product_name">Name</label>
+                        <input type="text" id="product_name" name="product_name" required> 
                   </div>
 
                   <div>
-                        <label for="product-image">Image</label>
-                        <input type="url" id="product-image" name="product-image" required>
+                        <label for="product_image">Image</label>
+                        <input type="url" id="product_image" name="product_image" required>
                   </div>
 
                   <div>
-                        <label for="product-description">Product Description</label>
-                        <textarea id="product-description" name="product-description" rows="6" minlength="150" maxlength="500"></textarea>
+                        <label for="product_description">Product Description</label>
+                        <textarea id="product_description" name="product_description" rows="6" minlength="150" maxlength="500"></textarea>
                   </div>
 
                   <div>
-                        <label for="product-price">Price</label>
-                        <input type="number" step="0.01" id="product-price" name="product-price" min="1">
+                        <label for="product_price">Price</label>
+                        <input type="number" step="0.01" id="product_price" name="product_price" min="1">
                   </div>
 
                   <div>
-                        <label for="product-category">Category</label>
-                        <select id="product-category" name="product-category" required>
+                        <label for="product_category">Category</label>
+                        <select id="product_category" name="product_category" required>
                               <option hidden>Select Category</option>
                               <option value="skincare">Skincare</option>
                               <option value="cosmetics">Cosmetics</option>
@@ -47,37 +47,37 @@
                   </div>
 
                   <div>
-                        <label for="product-sub-category">Sub Category</label>
-                        <select type="text" id="product-sub-category" name="product-sub-category" required>
+                        <label for="product_sub_category">Sub Category</label>
+                        <select type="text" id="product_sub_category" name="product_sub_category" required>
                               <option hidden>Select Sub Category</option>
                               <option value="face">Face</option>
-                              <option value="face">Body</option>
+                              <option value="body">Body</option>
+                              <option value="face">Makeup</option>
                               <option value="perfume">Perfume</option>
                               <option value="cologne">Cologne</option>
                         </select>
                   </div>
 
                   <div>
-                        <label for="product-quantity">Quantity</label>
-                        <input type="number" id="product-quantity" name="product-quantity" min="1" required>
+                        <label for="product_quantity">Quantity</label>
+                        <input type="number" id="product_quantity" name="product_quantity" min="1" required>
                   </div>
 
                   <div>
-                        <label for="product-tag">Tags</label>
-                        <select id="product-tag" name="product-tag" required>
+                        <label for="product_tag">Tag</label>
+                        <select id="product_tag" name="product_tag" required>
                               <option value="new">New</option>
                               <option value="out-of-stock">Out of Stock</option>
                         </select>
                   </div>
 
                   <div>
-                        <label for="product-brand">Brand</label>
-                        <input type="text" value="TF" id="product-brand" name="product-brand" readonly>
+                        <input hidden type="text" value="" id="product_brand" name="product_brand" readonly>
+                        <input hidden type="text" value="" id="seller_ID" name="seller_ID" readonly>
                   </div>
 
                   <div class="buttons">
                         <button type="submit">Submit Product</button>
-                        <button type="reset">Clear</button>
                   </div>
             </form>
       </main>

@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
- function showMenu() {
+// Display the Hamberger menu and the logo in any page
+function showMenu() {
     nav.innerHTML = `
     <div class="nav-container">
         <div class="nav-container">
@@ -33,10 +34,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     </div>`;
 }
 
+// Display the footer in any page
 function footer() {
     footerSection.innerHTML = `<p>&copy; | Goodbuy 2024 | CMPS350 Couse Project | G3 L51</p>`;
 }
 
+// Display or Hide the Hamberger menu
 function menuDisplay() {
     let element = document.getElementById("nav-links");
     if (element.style.display === "block") {

@@ -1,21 +1,39 @@
 
 const userHistory = document.querySelector('#user-info');
+const sellingInfo=document.querySelector('#selling-div')
+const soldInfo=document.querySelector('#sold-div')
+const addProductForm = document.querySelector('#btn-add');
+addProductForm.addEventListener('click', addProducBtn);
 
 document.addEventListener('DOMContentLoaded', async () => {
+ 
     try {
-        let customer = JSON.parse(localStorage.currentUser)
+         const user = JSON.parse(localStorage.currentUser)
+        if(user !== "undefined")  
+        {  if (user.role==="customer") {
+            console.log("im customer");
+               showHistoryCustomer();
+             
+            }else if(user.role==="seller"){  
+                showHistoryseller();
+                console.log("im seller");
+                document.getElementById("btn-add").style.display= "block";
 
-        if(customer !== 'undefined')   
-            showHistory()
-        // other functions????   
+             }
+        } else {
+            console.log("you are an admin");
+        }
+            
     } catch (error) {
         alert("you need to log in")
     }
 });
 
 let purchasedItemsList = []
+let sellingList=[]
+let SoldList=[]
 
-function showHistory() {
+function showHistoryCustomer() {
     const customer = JSON.parse(localStorage.currentUser)
     console.log(customer);
     purchasedItemsList = customer.purchasedItems
@@ -25,16 +43,36 @@ function showHistory() {
     userHistory.innerHTML = htmlProducts
 }
 
+function showHistoryseller(){
+    document.getElementById("soldInfo").style.display= "block";
+    document.getElementById("selling-products").style.display= "block";
+    const seller = JSON.parse(localStorage.currentUser)
+   sellingList=seller.itemsBeingSold
+   SoldList =seller.itemsSold
+    const htmlSold = SoldList.map(product1 => productHtml(product1)).join(" ")
+    const htmlSelling=sellingList.map(product1 => productHtml(product1)).join(" ")
+    sellingInfo.innerHTML=htmlSelling
+    soldInfo.innerHTML= htmlSold
+}
+
+
 function productHtml(product) {
     return ` 
         <img src="${product.product_image}" alt="product image">
         <div class="productName-fav">
             <p>${product.product_name}</p>
-            <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
         </div>
         <div class="price-purchase">
             <p>QR <span>${product.product_price}</span></p>
-            <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">More Information</a>
+        </div>
+        <div class="quantity">
+        <p>quantity: <span>${product.product_quantity}</span></p>
         </div>
     `
 }
+
+function addProducBtn() {
+    window.location.href = "/sub-pages/sellerControl.html";
+}
+
+

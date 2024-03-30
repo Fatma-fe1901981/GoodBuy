@@ -35,23 +35,14 @@ document.addEventListener("DOMContentLoaded", async () => {
   purchaseBtn.addEventListener("click", handleFormValidation);
   submitBtn.addEventListener("click", handleSubmitPurchase);
 });
-
-async function getSellerID(companyName) {
-  const usersData = await fetch("/database/user.json");
-  const usersJSON = await usersData.json();
-  const sellers = usersJSON.users.filter((user) => user.role === "seller");
-  const seller = sellers.find((seller) => seller.companyName === companyName);
-  if (seller) {
-    return seller.ID;
-  } else {
-    return null; // If seller not found
-  }
-}
-async function handleFormValidation(event) {
+function handleFormValidation(event) {
   //get logged in user
   //get displayed product price
   //compare them
-  if (10 >= thisProductPrice) {
+  const loggedInUser = localStorage.getItem("currentUser");
+  const loggedInUserData = JSON.parse(loggedInUser);
+  console.log("Logged in user balance: " + loggedInUserData.moneyBalance);
+  if (loggedInUserData.moneyBalance >= thisProductPrice) {
     // console.log(users + productsJSON);
     // Toggle the 'show' class on the form expand container
     formExpand.classList.toggle("activef");
@@ -65,7 +56,7 @@ async function handleFormValidation(event) {
   }
 }
 function getPurchaseDetails() {
-  const purchaseDetails = { purchasedQuantity };
+  const values = { purchasedQuantity };
 
   // Loop through each selected element
   productDetails.forEach((element) => {
@@ -74,24 +65,69 @@ function getPurchaseDetails() {
   });
   // Now, the values array contains the text content of all selected elements
   console.log(values);
-  return purchaseDetails;
+  return values;
 }
 
+// Function to find an object by a specific key
+function findObjectByKey(array, key, value) {
+  return array.find((obj) => obj[key] === value);
+}
+let usersList = [];
 async function handleSubmitPurchase(event) {
   event.preventDefault();
   try {
     // Step 1: Read customer data from JSON file
     const userData = await fetch("/database/user.json");
     const userJson = await userData.json();
-    console.log(userJson);
+    usersList = userJson.users;
+    let users = JSON.stringify(usersList);
+    console.log("Fetch: " + users);
+    // let usersRole = findObjectByKey(usersList, "role", "customer");
+    // console.log("users of role customer: " + JSON.stringify(balances));
+
+    // console.log("users of role customer: " + JSON.stringify(usersUsername));
     // 2: Update customer's bank account information
-    userJson.user.moneyBalance -= thisProductPrice;
-    // 3: Update purchase history for customer
-    userJson.user.purchasedItems.push(getPurchaseDetails());
-    // 4: Update sale histories for seller
-    userJson.user.itemsSold.push(getPurchaseDetails());
-    // 4.2: update quantity
-    // 5: Display a message to the customer
+    //    1:get logged in user from local storage
+    const loggedInUser = localStorage.getItem("currentUser");
+    const loggedInUserData = JSON.parse(loggedInUser);
+    //    console to check
+    console.log("logged in username: " + loggedInUserData.username);
+    //    2:check if the logged in user is a customer
+    if (loggedInUserData.role == "customer") {
+      //  3:get the matching user from json using the username
+      let usersUsername = findObjectByKey(
+        usersList,
+        "username",
+        loggedInUserData.username
+      );
+      console.log(
+        "the customer that matches the logged in user from json file: " +
+          JSON.stringify(usersUsername)
+      );
+      //  4: check balance before
+      console.log(
+        "Balance before Prchase: " + JSON.stringify(usersUsername.moneyBalance)
+      );
+      console.log("Item price: " + thisProductPrice);
+      // 5: change balance
+      usersUsername.moneyBalance -= thisProductPrice;
+      loggedInUserData.moneyBalance -= thisProductPrice;
+      console.log(
+        "Logged in user balance after purchase(localsrotage): " +
+          loggedInUserData.moneyBalance
+      );
+      console.log(
+        "Logged in user balance after purchase(json file): " +
+          JSON.stringify(usersUsername)
+      );
+    }
+
+    // // 3: Update purchase history for customer
+    // userJson.purchasedItems.push(getPurchaseDetails());
+    // // 4: Update sale histories for seller
+    // userJson.itemsSold.push(getPurchaseDetails());
+    // // 4.2: update quantity
+    // // 5: Display a message to the customer
     alert("Purchase successful!");
   } catch (error) {
     console.error("Error confirming purchase:", error);

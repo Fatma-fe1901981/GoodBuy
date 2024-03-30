@@ -2,6 +2,8 @@
 const userHistory = document.querySelector('#user-info');
 const sellingInfo=document.querySelector('#selling-div')
 const soldInfo=document.querySelector('#sold-div')
+const addProductForm = document.querySelector('#btn-add');
+addProductForm.addEventListener('click', addProducBtn);
 
 document.addEventListener('DOMContentLoaded', async () => {
  
@@ -22,7 +24,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             console.log("you are an admin");
         }
             
-        // other functions????   
     } catch (error) {
         alert("you need to log in")
     }
@@ -68,6 +69,10 @@ function productHtml(product) {
         <p>quantity: <span>${product.product_quantity}</span></p>
         </div>
     `
+}
+
+function addProducBtn() {
+    window.location.href = "/sub-pages/sellerControl.html";
 }
 
 

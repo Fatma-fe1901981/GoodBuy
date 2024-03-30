@@ -27,15 +27,14 @@ function showHistory() {
 
 function productHtml(product) {
     return ` 
-    <img src="${product.product_image}" alt="product image">
-    <div class="productName-fav">
-        <p>${product.product_name}</p>
-        <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
-    </div>
-    <div class="price-purchase">
-        <p>QR <span>${product.product_price}</span></p>
-        <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">More Information</a>
-    </div>
-`
-
+        <img src="${product.product_image}" alt="product image">
+        <div class="productName-fav">
+            <p>${product.product_name}</p>
+            <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
+        </div>
+        <div class="price-purchase">
+            <p>QR <span>${product.product_price}</span></p>
+            <a id="link" href="/sub-pages/cart.html" onclick="purchaseItem(${product.id})">More Information</a>
+        </div>
+    `
 }

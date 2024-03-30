@@ -2,6 +2,7 @@ const productCardsArea = document.querySelector(".products");
 const filtering = document.querySelector("#filtering");
 const search = document.querySelector("#search");
 let clickedProduct;
+
 search.addEventListener("input", searchProduct);
 filtering.addEventListener("input", productsCategoryFilter);
 

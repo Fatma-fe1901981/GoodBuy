@@ -1,7 +1,7 @@
 const productCardsArea = document.querySelector(".products");
 const filtering = document.querySelector("#filtering");
 const search = document.querySelector("#search");
-
+let clickedProduct;
 search.addEventListener("input", searchProduct);
 filtering.addEventListener("input", productsCategoryFilter);
 
@@ -9,7 +9,7 @@ let products = [];
 
 document.addEventListener("DOMContentLoaded", async () => {
   try {
-    // localStorage.removeItem("currentUser"); //to test loged in verfication before purchase
+    //localStorage.removeItem("currentUser"); //to test loged in verfication before purchase
     fetchProducts();
     productsCategoryFilter();
 
@@ -58,14 +58,16 @@ function formatProductDisplay(product) {
         </div>
     `);
   productCardsArea.appendChild(card);
-
-  // const moreBtn = document.querySelector("#link");
   document.addEventListener("click", function (event) {
+    e.preventDefault();
     if (event.target.id === "link") {
-      viewItem();
+      const clickedProduct = event.target.dataset.productId;
+      viewItem(clickedProduct);
     }
   });
-  // moreBtn.addEventListener("click", viewItem);
+  // const moreBtn = document.querySelector("#link");
+  // moreBtn.addEventListener("click", viewItem); //didnt work
+
   return injectedInfo;
 }
 
@@ -111,7 +113,7 @@ async function searchProduct() {
   }
 }
 
-function viewItem() {
+function viewItem(id) {
   console.log("Button clicked");
   const loggedInUser = localStorage.getItem("currentUser");
   // let loggedInUserData = JSON.parse(loggedInUser);
@@ -119,5 +121,7 @@ function viewItem() {
     window.location.href = "/sub-pages/login.html";
   } else {
     window.location.href = "/sub-pages/cart.html"; // Redirect to purchase page
+    //localStorage.setItem("clickedProductId", id);
+    alert(id);
   }
 }

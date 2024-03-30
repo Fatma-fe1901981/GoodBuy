@@ -48,12 +48,16 @@ function showHistoryseller() {
     document.getElementById("soldInfo").style.display = "block";
     document.getElementById("selling-products").style.display = "block";
     const seller = JSON.parse(localStorage.currentUser)
-    sellingList = seller.itemsBeingSold
-    SoldList = seller.itemsSold
-    const htmlSold = SoldList.map(product1 => productHtml(product1)).join(" ")
-    const htmlSelling = sellingList.map(product1 => productHtml(product1)).join(" ")
-    sellingInfo.innerHTML = htmlSelling
-    soldInfo.innerHTML = htmlSold
+    sellingList=seller.itemsBeingSold
+    SoldList =seller.itemsSold
+     const htmlSold = SoldList.map(product1 => productHtml(product1)).join(" ")
+     const htmlSelling=sellingList.map(product1 => productHtml(product1)+`  <div class="soldTo">
+     <p>sold to: <span>${product1.sold_to}</span></p>
+     </div>`).join(" ")
+ 
+     sellingInfo.innerHTML=htmlSelling
+     soldInfo.innerHTML= htmlSold
+ 
 }
 
 // Format product information on the page in a card format

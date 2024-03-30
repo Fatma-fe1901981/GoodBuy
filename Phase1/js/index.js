@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     //localStorage.removeItem("currentUser"); //to test loged in verfication before purchase
     fetchProducts();
+    displayProducts();
     productsCategoryFilter();
 
     // other functions????
@@ -54,7 +55,6 @@ function formatProductDisplay(product) {
         <img src="${product.product_image}" alt="product image">
         <div class="productName-fav">
             <p>${product.product_name}</p>
-            <button type="button" id="heart"><i class="fa-regular fa-heart"></i></button>
         </div>
         <div class="price-purchase">
             <p>QR <span>${product.product_price}</span></p>
@@ -77,9 +77,9 @@ async function productsCategoryFilter() {
   productCardsArea.innerHTML = "";
 
   let productsData = JSON.parse(localStorage.products);
-  let category = filtering.value.trim();
+  let category = filtering.value.trim().toLowerCase(); // Convert to lowercase
   let itemsAfterFilter = productsData.filter(
-    (product) => product.product_category == category
+    (product) => product.product_category.toLowerCase() === category
   );
   console.log(itemsAfterFilter);
   console.log(category);

@@ -72,6 +72,8 @@ body {
         color: #090605;
     }
 
+
+
     .hamburger-menu {
         background-color: #F1EFED;
         color: #B56A30;
@@ -252,6 +254,7 @@ body {
     padding: 1rem;
     
 }
+
 
 @keyframes textclip {
     to {

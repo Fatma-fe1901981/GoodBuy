@@ -11,20 +11,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 });
 
-function showMenu() {
+ function showMenu() {
     nav.innerHTML = `
     <div class="nav-container">
         <div class="nav-container">
         <div class="logo">
-            <img src="/images/logo.png" alt="logo image">
+            <img src="/images/logo.png" alt="logo image" id="">
             <p>GoodBuy</p>
         </div> 
 
         <div class="links">
             <nav class="nav-links" id="nav-links">
                 <a href="/index.html" class="hamburger-menu">Home</a>
-                <a href="/sub-pages/profile.html">Profile</a>
                 <a href="/sub-pages/login.html">Login</a>
+                <a href="/sub-pages/history.html">History</a>
             </nav>
             <a href="javascript:void(0);" class="hamburger-menu" onclick="menuDisplay()">
                 <i class="fa fa-bars"></i>

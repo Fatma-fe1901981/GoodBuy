@@ -59,10 +59,10 @@ function formatProductDisplay(product) {
     `);
   productCardsArea.appendChild(card);
   document.addEventListener("click", function (event) {
-    e.preventDefault();
+    //  e.preventDefault();
     if (event.target.id === "link") {
-      const clickedProduct = event.target.dataset.productId;
-      viewItem(clickedProduct);
+      //const clickedProduct = event.target.dataset.productId;
+      viewItem(product.id);
     }
   });
   // const moreBtn = document.querySelector("#link");

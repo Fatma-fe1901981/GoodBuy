@@ -5,47 +5,52 @@
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>GoodBuy - History</title>
-      <link rel="stylesheet" href="/css/common.css">
       <link rel="stylesheet" href="/css/history.css">
+      <link rel="stylesheet" href="/css/common.css">
       <script src="https://kit.fontawesome.com/9881a1c8b4.js" crossorigin="anonymous"></script>
 </head>
 
 
 <body>
       <header class="header" id="nav"> </header>
-
-      <Button type="submit" id="btn-add">Add product</Button>
       
-      <section class="products">
-      
-            <div class="product" id="user-info">
-
+      <main class="main">
+            <div>
+                  <button type="submit" id="btn-add">Add product</button>
             </div>
-      </section>
 
-      <section class="sellingInfo" id="selling-products">
-        <h1>selling:</h1>
-        <div id="selling-div">
-
-        </div>
-          
-      </section>
-
-      <section class="soldInfo" id="soldInfo">
-        <h1>sold:</h1>
-        <div id="sold-div">
-
-        </div>
-
-      </section>
-
-
-
+            <section class="products">
+                  <div class="product" id="user-info">
+      
+                  </div>
+            </section>
+      
+            <section class="selling-products" id="selling-products">
+                  <h1>selling:</h1>
+                  <div class="selling-div" id="selling-div">
+                        <section class="products">
+                              <div class="product" id="productSelling">
+      
+                              </div>
+                        </section>
+                  </div>
+            </section>
+      
+            <section class="soldInfo" id="soldInfo">
+                  <h1>sold:</h1>
+                  <div class="sold-div" id="sold-div">
+                        <section class="products">
+                              <div class="product" id="productSold">
+      
+                              </div>
+                        </section>
+                  </div>
+            </section>
+      </main>
 
       <footer class="footer" id="footer"></footer>
       <script src="/js/common.js"></script>
       <script src="/js/history.js"></script>
-
 </body>
 
 </html>

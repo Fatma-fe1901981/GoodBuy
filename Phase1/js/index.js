@@ -77,9 +77,9 @@ async function productsCategoryFilter() {
     productCardsArea.innerHTML = '';
 
     let productsData = JSON.parse(localStorage.products);
-    let category = filtering.value.trim();
+    let category = filtering.value.trim().toLowerCase(); // Convert to lowercase
     let itemsAfterFilter = productsData.filter(
-        product => product.product_category == category
+        product => product.product_category.toLowerCase() === category
     );
     console.log(itemsAfterFilter);
     console.log(category);

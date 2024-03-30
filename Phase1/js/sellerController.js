@@ -1,6 +1,7 @@
 const addProductForm = document.querySelector('#add-product');
-const productBrand = document.querySelector('#product-brand');
-const sellerID = document.querySelector('#seller-ID');
+const productBrand = document.querySelector('#product_brand');
+const productName = document.querySelector('#product_name');
+const sellerID = document.querySelector('#seller_ID');
 
 addProductForm.addEventListener('submit', addProduct);
 
@@ -36,7 +37,8 @@ async function addProduct(newProductData) {
 async function addProductHELPER(newProduct) {
     const productsData = JSON.parse(localStorage.products);
     let user = JSON.parse(localStorage.currentUser);
-    let notUnique = productsData.find(product => product.productName === newProduct.productName);
+
+    let notUnique = productsData.find(product => product.productName === newProduct.product_name);
     if (notUnique) {
         alert("Product already exists");
         updateProductQuantity(notUnique);
@@ -44,9 +46,9 @@ async function addProductHELPER(newProduct) {
     } else {
         newProduct.id = productsData.length + 1
         let sID = user.ID;
-        newProduct.sellerID = sID;
+        newProduct.seller_ID = sID;
         let brand = user.companyName;
-        newProduct.productBrand = brand;
+        newProduct.product_brand = brand;
         console.log(newProduct);
         productsData.push(newProduct);
         user.itemsBeingSold.push(newProduct.id);
@@ -55,35 +57,35 @@ async function addProductHELPER(newProduct) {
     console.log(productsData);
 }
 
-function updateProductQuantity(notUnique) {
-    addProductForm.innerHTML = ` `;
-    addProductForm.innerHTML = `
-        <div class="form-group">
-            <div>
-                <input type="text" name="productName" id="product-name" hidden readonly>
+// function updateProductQuantity(notUnique) {
+//     addProductForm.innerHTML = ` `;
+//     addProductForm.innerHTML = `
+//         <div class="form-group">
+//             <div>
+//                 <input type="text" name="productName" id="product-name" hidden readonly>
 
-                <label for="product-quantity">Product Quantity</label>
-                <input type="number" name="productQuantity" id="product-quantity" required>
+//                 <label for="product-quantity">Product Quantity</label>
+//                 <input type="number" name="productQuantity" id="product-quantity" required>
 
-                <div>
-                    <button type="submit" onclick="updateQuantity(${notUnique})">Update</button>
-                </div>
-            </div>
-        </div>
-    `;
-}
+//                 <div>
+//                     <button type="submit" onclick="updateQuantity(${notUnique})">Update</button>
+//                 </div>
+//             </div>
+//         </div>
+//     `;
+// }
 
-function updateQuantity(notUnique) {
-    let newQuantity = document.querySelector('#product-quantity').value;
-    notUnique.productQuantity = newQuantity;
+// function updateQuantity(notUnique) {
+//     let newQuantity = document.querySelector('#product-quantity').value;
+//     notUnique.productQuantity = newQuantity;
 
-    const productsData = JSON.parse(localStorage.products);
-    const index = productsData.findIndex(product => product.id === notUnique.id);
-    productsData[index] = notUnique;
-    localStorage.products = JSON.stringify(productsData);
-    console.log("Item updated:", notUnique);
-    console.log(productsData);
-}
+//     const productsData = JSON.parse(localStorage.products);
+//     const index = productsData.findIndex(product => product.id === notUnique.id);
+//     productsData[index] = notUnique;
+//     localStorage.products = JSON.stringify(productsData);
+//     console.log("Item updated:", notUnique);
+//     console.log(productsData);
+// }
 
 
 /*

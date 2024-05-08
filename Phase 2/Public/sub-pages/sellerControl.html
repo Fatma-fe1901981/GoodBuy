@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>GoodBuy - Seller</title>
+      <link rel="stylesheet" href="/css/common.css">
+      <link rel="stylesheet" href="/css/sellerControl.css">
+      <script src="https://kit.fontawesome.com/9881a1c8b4.js" crossorigin="anonymous"></script>
+</head>
+<body>
+      <header class="header" id="nav"> </header>
+      
+      <main>
+            <div class="back">
+                  <a href="/sub-pages/history.html"><i class="fa-solid fa-chevron-left"> Back</i></a>
+            </div>
+      
+            <form class="add-product" id="add-product">
+                  <div>
+                        <label for="product_name">Name</label>
+                        <input type="text" id="product_name" name="product_name" required> 
+                  </div>
+
+                  <div>
+                        <label for="product_image">Image</label>
+                        <input type="url" id="product_image" name="product_image" required>
+                  </div>
+
+                  <div>
+                        <label for="product_description">Product Description</label>
+                        <textarea id="product_description" name="product_description" rows="6" minlength="150" maxlength="500"></textarea>
+                  </div>
+
+                  <div>
+                        <label for="product_price">Price</label>
+                        <input type="number" step="0.01" id="product_price" name="product_price" min="1">
+                  </div>
+
+                  <div>
+                        <label for="product_category">Category</label>
+                        <select id="product_category" name="product_category" required>
+                              <option hidden>Select Category</option>
+                              <option value="skincare">Skincare</option>
+                              <option value="cosmetics">Cosmetics</option>
+                        </select>
+                  </div>
+
+                  <div>
+                        <label for="product_sub_category">Sub Category</label>
+                        <select type="text" id="product_sub_category" name="product_sub_category" required>
+                              <option hidden>Select Sub Category</option>
+                              <option value="face">Face</option>
+                              <option value="body">Body</option>
+                              <option value="face">Makeup</option>
+                              <option value="perfume">Perfume</option>
+                              <option value="cologne">Cologne</option>
+                        </select>
+                  </div>
+
+                  <div>
+                        <label for="product_quantity">Quantity</label>
+                        <input type="number" id="product_quantity" name="product_quantity" min="1" required>
+                  </div>
+
+                  <div>
+                        <label for="product_tag">Tag</label>
+                        <select id="product_tag" name="product_tag" required>
+                              <option value="new">New</option>
+                              <option value="out-of-stock">Out of Stock</option>
+                        </select>
+                  </div>
+
+                  <div>
+                        <input hidden type="text" value="" id="product_brand" name="product_brand" readonly>
+                        <input hidden type="text" value="" id="seller_ID" name="seller_ID" readonly>
+                  </div>
+
+                  <div class="buttons">
+                        <button type="submit">Submit Product</button>
+                  </div>
+            </form>
+      </main>
+
+      <footer class="footer" id="footer"> </footer>
+      <script src="/js/common.js"></script>
+      <script type="module" src="/js/sellerController.js"></script>
+</body>
+</html>

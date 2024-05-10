@@ -1,0 +1,74 @@
+[
+    {
+        "itemId": 1,
+        "userId": 1,
+        "rating": 4.5,
+        "text": "I absolutely love the DILIS NICHE COLLECTION. The scent is captivating and lasts all day. Highly recommend!"
+    },
+    {
+        "itemId": 1,
+        "userId": 2,
+        "rating": 4.0,
+        "text": "The SUNSPEL perfume has a unique blend of florals and spices. It's a great addition to my collection."
+    },
+    {
+        "itemId": 1,
+        "userId": 3,
+        "rating": 5.0,
+        "text": "The BECCA highlighter is amazing! It enhances my natural glow and the shimmer is just perfect."
+    },
+    {
+        "itemId": 1,
+        "userId": 4,
+        "rating": 3.5,
+        "text": "The Cover FX foundation provides good coverage, but it feels a bit heavy on my skin."
+    },
+    {
+        "itemId": 2,
+        "userId": 1,
+        "rating": 4.5,
+        "text": "The fifth product is fantastic! It's definitely worth the price and I would buy it again."
+    },
+    {
+        "itemId": 2,
+        "userId": 2,
+        "rating": 4.0,
+        "text": "The DILIS NICHE COLLECTION is good, but I've had better. It's still a decent choice for its price."
+    },
+    {
+        "itemId": 2,
+        "userId": 3,
+        "rating": 5.0,
+        "text": "The SUNSPEL perfume is my new favorite! The scent is not too strong and not too light, just perfect!"
+    },
+    {
+        "itemId": 2,
+        "userId": 4,
+        "rating": 3.5,
+        "text": "The BECCA highlighter is okay. It does give a nice shimmer, but it doesn't last as long as I'd like."
+    },
+    {
+        "itemId": 3,
+        "userId": 1,
+        "rating": 4.5,
+        "text": "The Cover FX foundation is great! It provides flawless coverage and doesn't feel heavy on my skin."
+    },
+    {
+        "itemId": 3,
+        "userId": 2,
+        "rating": 4.0,
+        "text": "The fifth product is good value for money. It's not the best I've had, but for the price, it's definitely worth it."
+    },
+    {
+        "itemId": 3,
+        "userId": 3,
+        "rating": 5.0,
+        "text": "The DILIS NICHE COLLECTION is amazing! The scent is unique and long-lasting. I get compliments every time I wear it."
+    },
+    {
+        "itemId": 3,
+        "userId": 4,
+        "rating": 3.5,
+        "text": "The SUNSPEL perfume is nice, but it's not my favorite. The scent is a bit too floral for my taste."
+    }
+]

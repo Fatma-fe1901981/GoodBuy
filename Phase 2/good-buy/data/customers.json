@@ -1,0 +1,452 @@
+[
+    {
+        "id": 1,
+        "role": "customer",
+        "username": "adamd",
+        "firstname": "Adam",
+        "surname": "Dawood",
+        "password" :  "password1",
+        "moneyBalance": 500,
+        "address": {
+            "building": "Building 9",
+            "street": "123 Main St",
+            "city": "Doha",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 2,
+        "role": "customer",
+        "username": "leilahs",
+        "firstname": "Leilah",
+        "surname": "Saleem",
+        "password" :  "password1",
+        "moneyBalance": 750,
+        "address": {
+            "building": "Building 9",
+            "street": "123 Main St",
+            "city": "Londen",
+            "country": "UK"
+        }
+    },
+    {
+        "id": 3,
+        "role": "customer",
+        "username": "leilahs",
+        "firstname": "Leilah",
+        "surname": "Saleem",
+        "password" :  "password1",
+        "moneyBalance": 900,
+        "address": {
+            "building": "Building 3",
+            "street": "789 Oak St",
+            "city": "Chicago",
+            "country": "USA"
+        }
+    }, 
+    {
+        "id": 4,
+        "role": "customer",
+        "username": "saidaaa",
+        "firstname": "Saidaa",
+        "surname": "Amraan",
+        "password" :  "password1",
+        "moneyBalance": 1000,
+        "address": {
+            "building": "Building 3",
+            "street": "321 Pine St",
+            "city": "San Francisco",
+            "country": "USA"
+        }
+    },
+    {
+        "id": 5,
+        "role": "customer",
+        "username": "ramzyy",
+        "firstname": "Ramy",
+        "surname": "Ramzy",
+        "password" :  "password1",
+        "moneyBalance": 500,
+        "address": {
+            "building": "Building 7",
+            "street": "234 Main St",
+            "city": "Doha",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 6,
+        "role": "customer",
+        "username": "myousef",
+        "firstname": "Yousef",
+        "surname": "Mansour",
+        "password" :  "password1",
+        "moneyBalance": 750,
+        "address": {
+            "building": "Building 7",
+            "street": "567 Main St",
+            "city": "Doha",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 7,
+        "role": "customer",
+        "username": "leilahs",
+        "firstname": "Leilah",
+        "surname": "Saleem",
+        "password" :  "password1",
+        "moneyBalance": 900,
+        "address": {
+            "building": "Building 3",
+            "street": "789 Oak St",
+            "city": "Chicago",
+            "country": "USA"
+        }
+    }, 
+    {
+        "id": 8,
+        "role": "customer",
+        "username": "tailaay",
+        "firstname": "Talia",
+        "surname": "Yousef",
+        "password" :  "password1",
+        "moneyBalance": 1000,
+        "address": {
+            "building": "Building 4",
+            "street": "321 Pine St",
+            "city": "San Francisco",
+            "country": "USA"
+        }
+    },
+    {
+        "id": 9,
+        "role": "customer",
+        "username": "mmaramm",
+        "firstname": "Maraam",
+        "surname": "Mohanad",
+        "password" :  "password1",
+        "moneyBalance": 600,
+        "address": {
+            "building": "Building 9",
+            "street": "123 Main St",
+            "city": "Doha",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 10,
+        "role": "customer",
+        "username": "dianaa",
+        "firstname": "Diana",
+        "surname": "Amr",
+        "password" :  "password1",
+        "moneyBalance": 790,
+        "address": {
+            "building": "Building 8",
+            "street": "123 Main St",
+            "city": "Londen",
+            "country": "UK"
+        }
+    },
+    {
+        "id": 11,
+        "role": "customer",
+        "username": "aamir",
+        "firstname": "Amar",
+        "surname": "Amir",
+        "password" :  "password1",
+        "moneyBalance": 900,
+        "address": {
+            "building": "Building 3",
+            "street": "789 Oak St",
+            "city": "Chicago",
+            "country": "USA"
+        }
+    }, 
+    {
+        "id": 12,
+        "role": "customer",
+        "username": "sshahd",
+        "firstname": "Shahd",
+        "surname": "Sharaf",
+        "password" :  "password1",
+        "moneyBalance": 300,
+        "address": {
+            "building": "Building 5",
+            "street": "123 Main St",
+            "city": "Londen",
+            "country": "UK"
+        }
+    },
+    {
+        "id": 13,
+        "role": "customer",
+        "username": "nadias",
+        "firstname": "Nadia",
+        "surname": "Saeed",
+        "password" :  "password1",
+        "moneyBalance": 850,
+        "address": {
+            "building": "Building 6",
+            "street": "456 Elm St",
+            "city": "New York",
+            "country": "USA"
+        }
+    },
+    {
+        "id": 14,
+        "role": "customer",
+        "username": "omarh",
+        "firstname": "Omar",
+        "surname": "Hassan",
+        "password" :  "password1",
+        "moneyBalance": 700,
+        "address": {
+            "building": "Building 2",
+            "street": "789 Oak St",
+            "city": "Los Angeles",
+            "country": "USA"
+        }
+    },
+    {
+        "id": 15,
+        "role": "customer",
+        "username": "lauram",
+        "firstname": "Laura",
+        "surname": "Mason",
+        "password" :  "password1",
+        "moneyBalance": 950,
+        "address": {
+            "building": "Building 10",
+            "street": "567 Maple St",
+            "city": "Toronto",
+            "country": "Canada"
+        }
+    },
+    {
+        "id": 16,
+        "role": "customer",
+        "username": "nathanj",
+        "firstname": "Nathan",
+        "surname": "Johnson",
+        "password" :  "password1",
+        "moneyBalance": 620,
+        "address": {
+            "building": "Building 4",
+            "street": "789 Oak St",
+            "city": "Sydney",
+            "country": "Australia"
+        }
+    },
+    {
+        "id": 17,
+        "role": "customer",
+        "username": "sarahf",
+        "firstname": "Sarah",
+        "surname": "Fisher",
+        "password" :  "password1",
+        "moneyBalance": 800,
+        "address": {
+            "building": "Building 8",
+            "street": "456 Elm St",
+            "city": "London",
+            "country": "UK"
+        }
+    },
+    {
+        "id": 18,
+        "role": "customer",
+        "username": "jackw",
+        "firstname": "Jack",
+        "surname": "Wilson",
+        "password" :  "password1",
+        "moneyBalance": 550,
+        "address": {
+            "building": "Building 5",
+            "street": "123 Oak St",
+            "city": "Toronto",
+            "country": "Canada"
+        }
+    },
+    {
+        "id": 19,
+        "role": "customer",
+        "username": "emilyc",
+        "firstname": "Emily",
+        "surname": "Chen",
+        "password" :  "password1",
+        "moneyBalance": 720,
+        "address": {
+            "building": "Building 11",
+            "street": "789 Elm St",
+            "city": "Sydney",
+            "country": "Australia"
+        }
+    },
+    {
+        "id": 20,
+        "role": "customer",
+        "username": "davidm",
+        "firstname": "David",
+        "surname": "Miller",
+        "password" :  "password1",
+        "moneyBalance": 880,
+        "address": {
+            "building": "Building 7",
+            "street": "456 Oak St",
+            "city": "New York",
+            "country": "USA"
+        }
+    },
+    {
+        "id": 21,
+        "role": "customer",
+        "username": "oliviat",
+        "firstname": "Olivia",
+        "surname": "Taylor",
+        "password" :  "password1",
+        "moneyBalance": 670,
+        "address": {
+            "building": "Building 9",
+            "street": "123 Elm St",
+            "city": "Toronto",
+            "country": "Canada"
+        }
+    },
+    {
+        "id": 22,
+        "role": "customer",
+        "username": "ethans",
+        "firstname": "Ethan",
+        "surname": "Smith",
+        "password" :  "password1",
+        "moneyBalance": 920,
+        "address": {
+            "building": "Building 12",
+            "street": "789 Maple St",
+            "city": "Sydney",
+            "country": "Australia"
+        }
+    },
+    {
+        "id": 23,
+        "role": "customer",
+        "username": "chloew",
+        "firstname": "Chloe",
+        "surname": "Williams",
+        "password" :  "password1",
+        "moneyBalance": 600,
+        "address": {
+            "building": "Building 6",
+            "street": "456 Maple St",
+            "city": "London",
+            "country": "UK"
+        }
+    },
+    {
+        "id": 24,
+        "role": "customer",
+        "username": "ethanh",
+        "firstname": "Ethan",
+        "surname": "Hernandez",
+        "password" :  "password1",
+        "moneyBalance": 770,
+        "address": {
+            "building": "Building 10",
+            "street": "789 Maple St",
+            "city": "New York",
+            "country": "USA"
+        }
+    },
+    {
+        "id": 25,
+        "role": "customer",
+        "username": "nadeemq",
+        "firstname": "Nadeem",
+        "surname": "Qasim",
+        "password" :  "password1",
+        "moneyBalance": 850,
+        "address": {
+            "building": "Building 3",
+            "street": "789 Palm St",
+            "city": "Lusail",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 26,
+        "role": "customer",
+        "username": "layanm",
+        "firstname": "Layan",
+        "surname": "Mohammed",
+        "password" :  "password1",
+        "moneyBalance": 700,
+        "address": {
+            "building": "Building 5",
+            "street": "123 Pearl St",
+            "city": "Lusail",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 27,
+        "role": "customer",
+        "username": "abdullahs",
+        "firstname": "Abdullah",
+        "surname": "Saeed",
+        "password" :  "password1",
+        "moneyBalance": 950,
+        "address": {
+            "building": "Building 8",
+            "street": "567 Coral St",
+            "city": "Lusail",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 28,
+        "role": "customer",
+        "username": "nooraa",
+        "firstname": "Noora",
+        "surname": "Ahmed",
+        "password" :  "password1",
+        "moneyBalance": 620,
+        "address": {
+            "building": "Building 2",
+            "street": "789 Jade St",
+            "city": "Lusail",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 29,
+        "role": "customer",
+        "username": "mohammedr",
+        "firstname": "Mohammed",
+        "surname": "Rashid",
+        "password" :  "password1",
+        "moneyBalance": 800,
+        "address": {
+            "building": "Building 10",
+            "street": "456 Ruby St",
+            "city": "Lusail",
+            "country": "Qatar"
+        }
+    },
+    {
+        "id": 30,
+        "role": "customer",
+        "username": "salmans",
+        "firstname": "Salman",
+        "surname": "Saeed",
+        "password" :  "password1",
+        "moneyBalance": 720,
+        "address": {
+            "building": "Building 6",
+            "street": "123 Sapphire St",
+            "city": "Doha",
+            "country": "Qatar"
+        }
+    }
+]

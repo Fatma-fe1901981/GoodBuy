@@ -10,17 +10,77 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Items {
-  id              Int      @id @default(autoincrement())
-  name            String
-  price           Float
-  quantity        Int
-  image           String
-  category        String
-  subCategory     String
-  brand           String
-  tag             String
-  description     String
-  sellerId        Int
+generator dbml {
+  provider = "prisma-dbml-generator"
 }
 
+model Users {
+  id                  Int       @id @default(autoincrement())
+  role                String
+  username            String
+  firstname           String
+  surname             String
+  password            String
+  moneyBalance        Float
+  addresses           Addresses[]
+  sales               Sales[]
+  reviews             Reviews[]
+}
+
+model Addresses {
+  id                  Int       @id @default(autoincrement())
+  building            String
+  street              String
+  city                String
+  country             String
+  userId              Int
+  user                Users     @relation(fields: [userId], references: [id])
+}
+
+model Sellers {
+  id                  Int       @id @default(autoincrement())
+  role                String
+  username            String
+  password            String
+  brand               String
+  items               Items[]
+  sales               Sales[]
+}
+
+model Items {
+  id                  Int       @id @default(autoincrement())
+  name                String
+  price               Float
+  quantity            Int
+  image               String
+  category            String
+  subCategory         String
+  brand               String
+  tag                 String
+  description         String
+  sellerId            Int
+  seller              Sellers    @relation(fields: [sellerId], references: [id])
+  sales               Sales[]
+  reviews             Reviews[]
+}
+
+model Sales {
+  id                  Int       @id @default(autoincrement())
+  sellerId            Int
+  userId              Int
+  itemId              Int
+  soldOn              DateTime
+  seller              Sellers    @relation(fields: [sellerId], references: [id])
+  user                Users      @relation(fields: [userId], references: [id])
+  item                Items      @relation(fields: [itemId], references: [id])
+}
+
+model Reviews {
+  id                  Int       @id @default(autoincrement())
+  itemId              Int
+  userId              Int
+  rating              Float
+  text                String
+  item                Items      @relation(fields: [itemId], references: [id])
+  user                Users      @relation(fields: [userId], references: [id])
+}

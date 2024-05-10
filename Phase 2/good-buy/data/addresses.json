@@ -1,0 +1,212 @@
+[
+    {
+        "userId": 1,
+        "building": "Building 9",
+        "street": "123 Main St",
+        "city": "Doha",
+        "country": "Qatar"
+    },
+    {
+        "userId": 2,
+        "building": "Building 9",
+        "street": "123 Main St",
+        "city": "Londen",
+        "country": "UK"
+    },
+    {
+        "userId": 3,
+        "building": "Building 3",
+        "street": "789 Oak St",
+        "city": "Chicago",
+        "country": "USA"
+    },
+    {
+        "userId": 4,
+        "building": "Building 3",
+        "street": "321 Pine St",
+        "city": "San Francisco",
+        "country": "USA"
+    },
+    {
+        "userId": 5,
+        "building": "Building 7",
+        "street": "234 Main St",
+        "city": "Doha",
+        "country": "Qatar"
+    },
+    {
+        "userId": 6,
+        "building": "Building 7",
+        "street": "567 Main St",
+        "city": "Doha",
+        "country": "Qatar"
+    },
+    {
+        "userId": 7,
+        "building": "Building 3",
+        "street": "789 Oak St",
+        "city": "Chicago",
+        "country": "USA"
+    },
+    {
+        "userId": 8,
+        "building": "Building 4",
+        "street": "321 Pine St",
+        "city": "San Francisco",
+        "country": "USA"
+    },
+    {
+        "userId": 9,
+        "building": "Building 9",
+        "street": "123 Main St",
+        "city": "Doha",
+        "country": "Qatar"
+    },
+    {
+        "userId": 10,
+        "building": "Building 8",
+        "street": "123 Main St",
+        "city": "Londen",
+        "country": "UK"
+    },
+    {
+        "userId": 11,
+        "building": "Building 3",
+        "street": "789 Oak St",
+        "city": "Chicago",
+        "country": "USA"
+    },
+    {
+        "userId": 12,
+        "building": "Building 5",
+        "street": "123 Main St",
+        "city": "Londen",
+        "country": "UK"
+    },
+    {
+        "userId": 13,
+        "building": "Building 6",
+        "street": "456 Elm St",
+        "city": "New York",
+        "country": "USA"
+    },
+    {
+        "userId": 14,
+        "building": "Building 2",
+        "street": "789 Oak St",
+        "city": "Los Angeles",
+        "country": "USA"
+    },
+    {
+        "userId": 15,
+        "building": "Building 10",
+        "street": "567 Maple St",
+        "city": "Toronto",
+        "country": "Canada"
+    },
+    {
+        "userId": 16,
+        "building": "Building 4",
+        "street": "789 Oak St",
+        "city": "Sydney",
+        "country": "Australia"
+    },
+    {
+        "userId": 17,
+        "building": "Building 8",
+        "street": "456 Elm St",
+        "city": "London",
+        "country": "UK"
+    },
+    {
+        "userId": 18,
+        "building": "Building 5",
+        "street": "123 Oak St",
+        "city": "Toronto",
+        "country": "Canada"
+    },
+    {
+        "userId": 19,
+        "building": "Building 11",
+        "street": "789 Elm St",
+        "city": "Sydney",
+        "country": "Australia"
+    },
+    {
+        "userId": 20,
+        "building": "Building 7",
+        "street": "456 Oak St",
+        "city": "New York",
+        "country": "USA"
+    },
+    {
+        "userId": 21,
+        "building": "Building 9",
+        "street": "123 Elm St",
+        "city": "Toronto",
+        "country": "Canada"
+    },
+    {
+        "userId": 22,
+        "building": "Building 12",
+        "street": "789 Maple St",
+        "city": "Sydney",
+        "country": "Australia"
+    },
+    {
+        "userId": 23,
+        "building": "Building 6",
+        "street": "456 Maple St",
+        "city": "London",
+        "country": "UK"
+    },
+    {
+        "userId": 24,
+        "building": "Building 10",
+        "street": "789 Maple St",
+        "city": "New York",
+        "country": "USA"
+    },
+    {
+        "userId": 25,
+        "building": "Building 3",
+        "street": "789 Palm St",
+        "city": "Lusail",
+        "country": "Qatar"
+    },
+    {
+        "userId": 26,
+        "building": "Building 5",
+        "street": "123 Pearl St",
+        "city": "Lusail",
+        "country": "Qatar"
+    },
+    {
+        "userId": 27,
+        "building": "Building 8",
+        "street": "567 Coral St",
+        "city": "Lusail",
+        "country": "Qatar"
+    },
+    {
+        "userId": 28,
+        "building": "Building 2",
+        "street": "789 Jade St",
+        "city": "Lusail",
+        "country": "Qatar"
+    },
+    {
+        "userId": 29,
+        "building": "Building 10",
+        "street": "456 Ruby St",
+        "city": "Lusail",
+        "country": "Qatar"
+    },
+    {
+        "userId": 30,
+        "building": "Building 6",
+        "street": "123 Sapphire St",
+        "city": "Doha",
+        "country": "Qatar"
+    }
+]

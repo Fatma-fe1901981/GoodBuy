@@ -5,14 +5,8 @@
         "username": "adamd",
         "firstname": "Adam",
         "surname": "Dawood",
-        "password" :  "password1",
-        "moneyBalance": 500,
-        "address": {
-            "building": "Building 9",
-            "street": "123 Main St",
-            "city": "Doha",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 500
     },
     {
         "id": 2,
@@ -20,14 +14,8 @@
         "username": "leilahs",
         "firstname": "Leilah",
         "surname": "Saleem",
-        "password" :  "password1",
-        "moneyBalance": 750,
-        "address": {
-            "building": "Building 9",
-            "street": "123 Main St",
-            "city": "Londen",
-            "country": "UK"
-        }
+        "password": "password1",
+        "moneyBalance": 750
     },
     {
         "id": 3,
@@ -35,29 +23,17 @@
         "username": "leilahs",
         "firstname": "Leilah",
         "surname": "Saleem",
-        "password" :  "password1",
-        "moneyBalance": 900,
-        "address": {
-            "building": "Building 3",
-            "street": "789 Oak St",
-            "city": "Chicago",
-            "country": "USA"
-        }
-    }, 
+        "password": "password1",
+        "moneyBalance": 900
+    },
     {
         "id": 4,
         "role": "customer",
         "username": "saidaaa",
         "firstname": "Saidaa",
         "surname": "Amraan",
-        "password" :  "password1",
-        "moneyBalance": 1000,
-        "address": {
-            "building": "Building 3",
-            "street": "321 Pine St",
-            "city": "San Francisco",
-            "country": "USA"
-        }
+        "password": "password1",
+        "moneyBalance": 1000
     },
     {
         "id": 5,
@@ -65,14 +41,8 @@
         "username": "ramzyy",
         "firstname": "Ramy",
         "surname": "Ramzy",
-        "password" :  "password1",
-        "moneyBalance": 500,
-        "address": {
-            "building": "Building 7",
-            "street": "234 Main St",
-            "city": "Doha",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 500
     },
     {
         "id": 6,
@@ -80,14 +50,8 @@
         "username": "myousef",
         "firstname": "Yousef",
         "surname": "Mansour",
-        "password" :  "password1",
-        "moneyBalance": 750,
-        "address": {
-            "building": "Building 7",
-            "street": "567 Main St",
-            "city": "Doha",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 7
     },
     {
         "id": 7,
@@ -95,29 +59,16 @@
         "username": "leilahs",
         "firstname": "Leilah",
         "surname": "Saleem",
-        "password" :  "password1",
-        "moneyBalance": 900,
-        "address": {
-            "building": "Building 3",
-            "street": "789 Oak St",
-            "city": "Chicago",
-            "country": "USA"
-        }
-    }, 
+        "password": "password1"
+    },
     {
         "id": 8,
         "role": "customer",
         "username": "tailaay",
         "firstname": "Talia",
         "surname": "Yousef",
-        "password" :  "password1",
-        "moneyBalance": 1000,
-        "address": {
-            "building": "Building 4",
-            "street": "321 Pine St",
-            "city": "San Francisco",
-            "country": "USA"
-        }
+        "password": "password1",
+        "moneyBalance": 1000
     },
     {
         "id": 9,
@@ -125,14 +76,7 @@
         "username": "mmaramm",
         "firstname": "Maraam",
         "surname": "Mohanad",
-        "password" :  "password1",
-        "moneyBalance": 600,
-        "address": {
-            "building": "Building 9",
-            "street": "123 Main St",
-            "city": "Doha",
-            "country": "Qatar"
-        }
+        "password": "password1"
     },
     {
         "id": 10,
@@ -140,14 +84,8 @@
         "username": "dianaa",
         "firstname": "Diana",
         "surname": "Amr",
-        "password" :  "password1",
-        "moneyBalance": 790,
-        "address": {
-            "building": "Building 8",
-            "street": "123 Main St",
-            "city": "Londen",
-            "country": "UK"
-        }
+        "password": "password1",
+        "moneyBalance": 790
     },
     {
         "id": 11,
@@ -155,29 +93,17 @@
         "username": "aamir",
         "firstname": "Amar",
         "surname": "Amir",
-        "password" :  "password1",
-        "moneyBalance": 900,
-        "address": {
-            "building": "Building 3",
-            "street": "789 Oak St",
-            "city": "Chicago",
-            "country": "USA"
-        }
-    }, 
+        "password": "password1",
+        "moneyBalance": 900
+    },
     {
         "id": 12,
         "role": "customer",
         "username": "sshahd",
         "firstname": "Shahd",
         "surname": "Sharaf",
-        "password" :  "password1",
-        "moneyBalance": 300,
-        "address": {
-            "building": "Building 5",
-            "street": "123 Main St",
-            "city": "Londen",
-            "country": "UK"
-        }
+        "password": "password1",
+        "moneyBalance": 300
     },
     {
         "id": 13,
@@ -185,14 +111,8 @@
         "username": "nadias",
         "firstname": "Nadia",
         "surname": "Saeed",
-        "password" :  "password1",
-        "moneyBalance": 850,
-        "address": {
-            "building": "Building 6",
-            "street": "456 Elm St",
-            "city": "New York",
-            "country": "USA"
-        }
+        "password": "password1",
+        "moneyBalance": 850
     },
     {
         "id": 14,
@@ -200,14 +120,8 @@
         "username": "omarh",
         "firstname": "Omar",
         "surname": "Hassan",
-        "password" :  "password1",
-        "moneyBalance": 700,
-        "address": {
-            "building": "Building 2",
-            "street": "789 Oak St",
-            "city": "Los Angeles",
-            "country": "USA"
-        }
+        "password": "password1",
+        "moneyBalance": 700
     },
     {
         "id": 15,
@@ -215,14 +129,8 @@
         "username": "lauram",
         "firstname": "Laura",
         "surname": "Mason",
-        "password" :  "password1",
-        "moneyBalance": 950,
-        "address": {
-            "building": "Building 10",
-            "street": "567 Maple St",
-            "city": "Toronto",
-            "country": "Canada"
-        }
+        "password": "password1",
+        "moneyBalance": 950
     },
     {
         "id": 16,
@@ -230,14 +138,8 @@
         "username": "nathanj",
         "firstname": "Nathan",
         "surname": "Johnson",
-        "password" :  "password1",
-        "moneyBalance": 620,
-        "address": {
-            "building": "Building 4",
-            "street": "789 Oak St",
-            "city": "Sydney",
-            "country": "Australia"
-        }
+        "password": "password1",
+        "moneyBalance": 620
     },
     {
         "id": 17,
@@ -245,14 +147,8 @@
         "username": "sarahf",
         "firstname": "Sarah",
         "surname": "Fisher",
-        "password" :  "password1",
-        "moneyBalance": 800,
-        "address": {
-            "building": "Building 8",
-            "street": "456 Elm St",
-            "city": "London",
-            "country": "UK"
-        }
+        "password": "password1",
+        "moneyBalance": 800
     },
     {
         "id": 18,
@@ -260,14 +156,8 @@
         "username": "jackw",
         "firstname": "Jack",
         "surname": "Wilson",
-        "password" :  "password1",
-        "moneyBalance": 550,
-        "address": {
-            "building": "Building 5",
-            "street": "123 Oak St",
-            "city": "Toronto",
-            "country": "Canada"
-        }
+        "password": "password1",
+        "moneyBalance": 550
     },
     {
         "id": 19,
@@ -275,14 +165,8 @@
         "username": "emilyc",
         "firstname": "Emily",
         "surname": "Chen",
-        "password" :  "password1",
-        "moneyBalance": 720,
-        "address": {
-            "building": "Building 11",
-            "street": "789 Elm St",
-            "city": "Sydney",
-            "country": "Australia"
-        }
+        "password": "password1",
+        "moneyBalance": 720
     },
     {
         "id": 20,
@@ -290,14 +174,8 @@
         "username": "davidm",
         "firstname": "David",
         "surname": "Miller",
-        "password" :  "password1",
-        "moneyBalance": 880,
-        "address": {
-            "building": "Building 7",
-            "street": "456 Oak St",
-            "city": "New York",
-            "country": "USA"
-        }
+        "password": "password1",
+        "moneyBalance": 880
     },
     {
         "id": 21,
@@ -305,14 +183,8 @@
         "username": "oliviat",
         "firstname": "Olivia",
         "surname": "Taylor",
-        "password" :  "password1",
-        "moneyBalance": 670,
-        "address": {
-            "building": "Building 9",
-            "street": "123 Elm St",
-            "city": "Toronto",
-            "country": "Canada"
-        }
+        "password": "password1",
+        "moneyBalance": 670
     },
     {
         "id": 22,
@@ -320,14 +192,8 @@
         "username": "ethans",
         "firstname": "Ethan",
         "surname": "Smith",
-        "password" :  "password1",
-        "moneyBalance": 920,
-        "address": {
-            "building": "Building 12",
-            "street": "789 Maple St",
-            "city": "Sydney",
-            "country": "Australia"
-        }
+        "password": "password1",
+        "moneyBalance": 920
     },
     {
         "id": 23,
@@ -335,14 +201,8 @@
         "username": "chloew",
         "firstname": "Chloe",
         "surname": "Williams",
-        "password" :  "password1",
-        "moneyBalance": 600,
-        "address": {
-            "building": "Building 6",
-            "street": "456 Maple St",
-            "city": "London",
-            "country": "UK"
-        }
+        "password": "password1",
+        "moneyBalance": 600
     },
     {
         "id": 24,
@@ -350,14 +210,8 @@
         "username": "ethanh",
         "firstname": "Ethan",
         "surname": "Hernandez",
-        "password" :  "password1",
-        "moneyBalance": 770,
-        "address": {
-            "building": "Building 10",
-            "street": "789 Maple St",
-            "city": "New York",
-            "country": "USA"
-        }
+        "password": "password1",
+        "moneyBalance": 770
     },
     {
         "id": 25,
@@ -365,14 +219,8 @@
         "username": "nadeemq",
         "firstname": "Nadeem",
         "surname": "Qasim",
-        "password" :  "password1",
-        "moneyBalance": 850,
-        "address": {
-            "building": "Building 3",
-            "street": "789 Palm St",
-            "city": "Lusail",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 850
     },
     {
         "id": 26,
@@ -380,14 +228,8 @@
         "username": "layanm",
         "firstname": "Layan",
         "surname": "Mohammed",
-        "password" :  "password1",
-        "moneyBalance": 700,
-        "address": {
-            "building": "Building 5",
-            "street": "123 Pearl St",
-            "city": "Lusail",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 700
     },
     {
         "id": 27,
@@ -395,14 +237,8 @@
         "username": "abdullahs",
         "firstname": "Abdullah",
         "surname": "Saeed",
-        "password" :  "password1",
-        "moneyBalance": 950,
-        "address": {
-            "building": "Building 8",
-            "street": "567 Coral St",
-            "city": "Lusail",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 950
     },
     {
         "id": 28,
@@ -410,14 +246,8 @@
         "username": "nooraa",
         "firstname": "Noora",
         "surname": "Ahmed",
-        "password" :  "password1",
-        "moneyBalance": 620,
-        "address": {
-            "building": "Building 2",
-            "street": "789 Jade St",
-            "city": "Lusail",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 620
     },
     {
         "id": 29,
@@ -425,14 +255,8 @@
         "username": "mohammedr",
         "firstname": "Mohammed",
         "surname": "Rashid",
-        "password" :  "password1",
-        "moneyBalance": 800,
-        "address": {
-            "building": "Building 10",
-            "street": "456 Ruby St",
-            "city": "Lusail",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 800
     },
     {
         "id": 30,
@@ -440,13 +264,7 @@
         "username": "salmans",
         "firstname": "Salman",
         "surname": "Saeed",
-        "password" :  "password1",
-        "moneyBalance": 720,
-        "address": {
-            "building": "Building 6",
-            "street": "123 Sapphire St",
-            "city": "Doha",
-            "country": "Qatar"
-        }
+        "password": "password1",
+        "moneyBalance": 720
     }
 ]

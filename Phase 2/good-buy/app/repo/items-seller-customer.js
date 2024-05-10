@@ -18,14 +18,6 @@ class ItemsSellerCustomer {
         }
     }
 
-    async getCustomer() {
-        try {
-            return await prisma.customer.findMany()
-        } catch (error) {
-            return { error: error.message }
-        }
-    }
-
     async createItem(data) {
         try {
             return await prisma.items.create({ data })
@@ -42,6 +34,6 @@ class ItemsSellerCustomer {
         }
     }
 
-    
+
 
 }

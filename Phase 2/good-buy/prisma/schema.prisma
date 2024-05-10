@@ -9,3 +9,18 @@ datasource db {
   provider = "sqlite"
   url      = env("DATABASE_URL")
 }
+
+model Items {
+  id              Int      @id @default(autoincrement())
+  name            String
+  price           Float
+  quantity        Int
+  image           String
+  category        String
+  subCategory     String
+  brand           String
+  tag             String
+  description     String
+  sellerId        Int
+}
+

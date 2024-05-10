@@ -59,7 +59,8 @@
         "username": "leilahs",
         "firstname": "Leilah",
         "surname": "Saleem",
-        "password": "password1"
+        "password": "password1",
+        "moneyBalance": 1000
     },
     {
         "id": 8,
@@ -76,7 +77,8 @@
         "username": "mmaramm",
         "firstname": "Maraam",
         "surname": "Mohanad",
-        "password": "password1"
+        "password": "password1",
+        "moneyBalance": 1000
     },
     {
         "id": 10,

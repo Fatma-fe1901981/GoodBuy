@@ -1,0 +1,88 @@
+//// ------------------------------------------------------
+//// THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+//// ------------------------------------------------------
+
+Table Users {
+  id Int [pk, increment]
+  role String [not null]
+  username String [not null]
+  firstname String [not null]
+  surname String [not null]
+  password String [not null]
+  moneyBalance Float [not null]
+  addresses Addresses [not null]
+  sales Sales [not null]
+  reviews Reviews [not null]
+}
+
+Table Addresses {
+  id Int [pk, increment]
+  building String [not null]
+  street String [not null]
+  city String [not null]
+  country String [not null]
+  userId Int [not null]
+  user Users [not null]
+}
+
+Table Sellers {
+  id Int [pk, increment]
+  role String [not null]
+  username String [not null]
+  password String [not null]
+  brand String [not null]
+  items Items [not null]
+  sales Sales [not null]
+}
+
+Table Items {
+  id Int [pk, increment]
+  name String [not null]
+  price Float [not null]
+  quantity Int [not null]
+  image String [not null]
+  category String [not null]
+  subCategory String [not null]
+  brand String [not null]
+  tag String [not null]
+  description String [not null]
+  sellerId Int [not null]
+  seller Sellers [not null]
+  sales Sales [not null]
+  reviews Reviews [not null]
+}
+
+Table Sales {
+  id Int [pk, increment]
+  sellerId Int [not null]
+  userId Int [not null]
+  itemId Int [not null]
+  soldOn DateTime [not null]
+  seller Sellers [not null]
+  user Users [not null]
+  item Items [not null]
+}
+
+Table Reviews {
+  id Int [pk, increment]
+  itemId Int [not null]
+  userId Int [not null]
+  rating Float [not null]
+  text String [not null]
+  item Items [not null]
+  user Users [not null]
+}
+
+Ref: Addresses.userId > Users.id
+
+Ref: Items.sellerId > Sellers.id
+
+Ref: Sales.sellerId > Sellers.id
+
+Ref: Sales.userId > Users.id
+
+Ref: Sales.itemId > Items.id
+
+Ref: Reviews.itemId > Items.id
+
+Ref: Reviews.userId > Users.id

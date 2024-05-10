@@ -60,12 +60,12 @@ model Items {
   description         String
   sellerId            Int
   seller              Sellers    @relation(fields: [sellerId], references: [id])
-  sales               Sales[]
+  sales               Sales[]    
   reviews             Reviews[]
 }
 
 model Sales {
-  id                  Int       @id @default(autoincrement())
+  id                  Int        @id @default(autoincrement())
   sellerId            Int
   userId              Int
   itemId              Int
@@ -76,7 +76,7 @@ model Sales {
 }
 
 model Reviews {
-  id                  Int       @id @default(autoincrement())
+  id                  Int        @id @default(autoincrement())
   itemId              Int
   userId              Int
   rating              Float

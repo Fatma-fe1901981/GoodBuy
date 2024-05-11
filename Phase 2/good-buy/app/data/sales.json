@@ -1,0 +1,352 @@
+[
+    {
+        "id": 2,
+        "sellerId": 2,
+        "userId": 1,
+        "itemId": 1,
+        "soldOn": "2024-01-01T00:00:00.000Z"
+    },
+    {
+        "id": 2,
+        "sellerId": 2,
+        "userId": 2,
+        "itemId": 2,
+        "soldOn": "2024-01-04T00:00:00.000Z"
+    },
+    {
+        "id": 3,
+        "sellerId": 3,
+        "userId": 3,
+        "itemId": 3,
+        "soldOn": "2024-01-07T00:00:00.000Z"
+    },
+    {
+        "id": 4,
+        "sellerId": 4,
+        "userId": 4,
+        "itemId": 4,
+        "soldOn": "2024-01-10T00:00:00.000Z"
+    },
+    {
+        "id": 5,
+        "sellerId": 5,
+        "userId": 5,
+        "itemId": 5,
+        "soldOn": "2024-01-13T00:00:00.000Z"
+    },
+    {
+        "id": 6,
+        "sellerId": 6,
+        "userId": 6,
+        "itemId": 6,
+        "soldOn": "2024-01-16T00:00:00.000Z"
+    },
+    {
+        "id": 7,
+        "sellerId": 7,
+        "userId": 7,
+        "itemId": 7,
+        "soldOn": "2024-01-19T00:00:00.000Z"
+    },
+    {
+        "id": 8,
+        "sellerId": 8,
+        "userId": 8,
+        "itemId": 8,
+        "soldOn": "2024-01-22T00:00:00.000Z"
+    },
+    {
+        "id": 9,
+        "sellerId": 9,
+        "userId": 9,
+        "itemId": 9,
+        "soldOn": "2024-01-25T00:00:00.000Z"
+    },
+    {
+        "id": 10,
+        "sellerId": 10,
+        "userId": 10,
+        "itemId": 10,
+        "soldOn": "2024-01-28T00:00:00.000Z"
+    },
+    {
+        "id": 11,
+        "sellerId": 11,
+        "userId": 11,
+        "itemId": 11,
+        "soldOn": "2024-02-01T00:00:00.000Z"
+    },
+    {
+        "id": 12,
+        "sellerId": 12,
+        "userId": 12,
+        "itemId": 12,
+        "soldOn": "2024-02-04T00:00:00.000Z"
+    },
+    {
+        "id": 13,
+        "sellerId": 13,
+        "userId": 13,
+        "itemId": 13,
+        "soldOn": "2024-02-07T00:00:00.000Z"
+    },
+    {
+        "id": 14,
+        "sellerId": 14,
+        "userId": 14,
+        "itemId": 14,
+        "soldOn": "2024-02-10T00:00:00.000Z"
+    },
+    {
+        "id": 15,
+        "sellerId": 15,
+        "userId": 15,
+        "itemId": 15,
+        "soldOn": "2024-02-13T00:00:00.000Z"
+    },
+    {
+        "id": 16,
+        "sellerId": 16,
+        "userId": 16,
+        "itemId": 16,
+        "soldOn": "2024-02-16T00:00:00.000Z"
+    },
+    {
+        "id": 17,
+        "sellerId": 17,
+        "userId": 17,
+        "itemId": 17,
+        "soldOn": "2024-02-19T00:00:00.000Z"
+    },
+    {
+        "id": 18,
+        "sellerId": 18,
+        "userId": 18,
+        "itemId": 18,
+        "soldOn": "2024-02-22T00:00:00.000Z"
+    },
+    {
+        "id": 19,
+        "sellerId": 19,
+        "userId": 19,
+        "itemId": 19,
+        "soldOn": "2024-02-25T00:00:00.000Z"
+    },
+    {
+        "id": 20,
+        "sellerId": 20,
+        "userId": 20,
+        "itemId": 20,
+        "soldOn": "2024-02-28T00:00:00.000Z"
+    },
+    {
+        "id": 21,
+        "sellerId": 21,
+        "userId": 21,
+        "itemId": 21,
+        "soldOn": "2024-03-02T00:00:00.000Z"
+    },
+    {
+        "id": 22,
+        "sellerId": 22,
+        "userId": 22,
+        "itemId": 22,
+        "soldOn": "2024-03-05T00:00:00.000Z"
+    },
+    {
+        "id": 23,
+        "sellerId": 23,
+        "userId": 23,
+        "itemId": 23,
+        "soldOn": "2024-03-08T00:00:00.000Z"
+    },
+    {
+        "id": 24,
+        "sellerId": 24,
+        "userId": 24,
+        "itemId": 24,
+        "soldOn": "2024-03-11T00:00:00.000Z"
+    },
+    {
+        "id": 25,
+        "sellerId": 25,
+        "userId": 25,
+        "itemId": 25,
+        "soldOn": "2024-03-14T00:00:00.000Z"
+    },
+    {
+        "id": 26,
+        "sellerId": 26,
+        "userId": 26,
+        "itemId": 26,
+        "soldOn": "2024-03-17T00:00:00.000Z"
+    },
+    {
+        "id": 27,
+        "sellerId": 27,
+        "userId": 27,
+        "itemId": 27,
+        "soldOn": "2024-03-20T00:00:00.000Z"
+    },
+    {
+        "id": 28,
+        "sellerId": 28,
+        "userId": 28,
+        "itemId": 28,
+        "soldOn": "2024-03-23T00:00:00.000Z"
+    },
+    {
+        "id": 29,
+        "sellerId": 29,
+        "userId": 29,
+        "itemId": 29,
+        "soldOn": "2024-03-26T00:00:00.000Z"
+    },
+    {
+        "id": 30,
+        "sellerId": 30,
+        "userId": 30,
+        "itemId": 30,
+        "soldOn": "2024-03-29T00:00:00.000Z"
+    },
+    {
+        "id": 31,
+        "sellerId": 1,
+        "userId": 2,
+        "itemId": 1,
+        "soldOn": "2024-04-01T00:00:00.000Z"
+    },
+    {
+        "id": 32,
+        "sellerId": 2,
+        "userId": 3,
+        "itemId": 2,
+        "soldOn": "2024-04-04T00:00:00.000Z"
+    },
+    {
+        "id": 33,
+        "sellerId": 3,
+        "userId": 4,
+        "itemId": 3,
+        "soldOn": "2024-04-07T00:00:00.000Z"
+    },
+    {
+        "id": 34,
+        "sellerId": 4,
+        "userId": 5,
+        "itemId": 4,
+        "soldOn": "2024-04-10T00:00:00.000Z"
+    },
+    {
+        "id": 35,
+        "sellerId": 5,
+        "userId": 6,
+        "itemId": 5,
+        "soldOn": "2024-04-13T00:00:00.000Z"
+    },
+    {
+        "id": 36,
+        "sellerId": 6,
+        "userId": 7,
+        "itemId": 6,
+        "soldOn": "2024-04-16T00:00:00.000Z"
+    },
+    {
+        "id": 37,
+        "sellerId": 7,
+        "userId": 8,
+        "itemId": 7,
+        "soldOn": "2024-04-19T00:00:00.000Z"
+    },
+    {
+        "id": 38,
+        "sellerId": 8,
+        "userId": 9,
+        "itemId": 8,
+        "soldOn": "2024-04-22T00:00:00.000Z"
+    },
+    {
+        "id": 39,
+        "sellerId": 9,
+        "userId": 10,
+        "itemId": 9,
+        "soldOn": "2024-04-25T00:00:00.000Z"
+    },
+    {
+        "id": 40,
+        "sellerId": 10,
+        "userId": 11,
+        "itemId": 10,
+        "soldOn": "2024-04-28T00:00:00.000Z"
+    },
+    {
+        "id": 41,
+        "sellerId": 11,
+        "userId": 12,
+        "itemId": 11,
+        "soldOn": "2024-01-01T00:00:00.000Z"
+    },
+    {
+        "id": 42,
+        "sellerId": 12,
+        "userId": 13,
+        "itemId": 12,
+        "soldOn": "2024-05-04T00:00:00.000Z"
+    },
+    {
+        "id": 43,
+        "sellerId": 13,
+        "userId": 14,
+        "itemId": 13,
+        "soldOn": "2024-05-07T00:00:00.000Z"
+    },
+    {
+        "id": 44,
+        "sellerId": 14,
+        "userId": 15,
+        "itemId": 14,
+        "soldOn": "2024-03-10T00:00:00.000Z"
+    },
+    {
+        "id": 45,
+        "sellerId": 15,
+        "userId": 16,
+        "itemId": 15,
+        "soldOn": "2024-04-13T00:00:00.000Z"
+    },
+    {
+        "id": 46,
+        "sellerId": 16,
+        "userId": 17,
+        "itemId": 16,
+        "soldOn": "2024-04-16T00:00:00.000Z"
+    },
+    {
+        "id": 47,
+        "sellerId": 17,
+        "userId": 18,
+        "itemId": 17,
+        "soldOn": "2024-04-19T00:00:00.000Z"
+    },
+    {
+        "id": 48,
+        "sellerId": 18,
+        "userId": 19,
+        "itemId": 18,
+        "soldOn": "2024-04-22T00:00:00.000Z"
+    },
+    {
+        "id": 49,
+        "sellerId": 19,
+        "userId": 20,
+        "itemId": 19,
+        "soldOn": "2024-04-25T00:00:00.000Z"
+    },
+    {
+        "id": 50,
+        "sellerId": 20,
+        "userId": 21,
+        "itemId": 20,
+        "soldOn": "2024-05-01T00:00:00.000Z"
+    }
+]

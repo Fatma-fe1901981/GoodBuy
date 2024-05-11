@@ -1,0 +1,76 @@
+[
+  {
+    "id": 1,
+    "product_name": "DILIS NICHE COLLECTION",
+    "product_price": 50.99,
+    "product_quantity": 20,
+    "product_image": "https://i.pinimg.com/564x/a4/80/8c/a4808ce3a2b67e89a8f9b7dd8a6f0584.jpg",
+    "product_category": "Cosmetics",
+    "product_sub_category": "Perfumes",
+    "product_ratings": 4.5,
+    "product_reviews": 120,
+    "product_brand": "DILIS",
+    "product_tag": "new",
+    "product_description": "Captivate the senses with our exquisite perfume, a harmonious blend of floral and woody notes.",
+    "seller_ID": "TF",
+    "SoldTo":[ "adawood"]
+  },
+
+  {
+    "id": 2,
+    "product_name": "SUNSPEL",
+    "product_price": 19.99,
+    "product_quantity": 100,
+    "product_image": "https://i.pinimg.com/564x/ea/6b/aa/ea6baa26f3a013464eb4523a9012c09a.jpg",
+    "product_category": "Cosmetics",
+    "product_sub_category": "Perfumes",
+    "product_ratings": 4.9,
+    "product_reviews": 120,
+    "product_brand": "Tom Ford",
+    "product_tag": "new",
+    "product_description": "Indulge in the captivating allure of our new perfume, a harmonious blend of delicate florals and exotic spices. Evoking a sense of mystery and sophistication, this enchanting fragrance reveals layers of sensual musk and warm amber, leaving a lasting impression wherever you go. Experience the essence of luxury with every spritz, as the intoxicating aroma transports you to a world of timeless elegance and refined beauty.",
+    "seller_ID": "TF",
+    "SoldTo":["adawood"
+
+    ]
+
+  },
+
+  {
+    "id": 3,
+    "product_name": "BECCA",
+    "product_price": 20.99,
+    "product_quantity": 100,
+    "product_image": "https://i.pinimg.com/564x/d9/10/ee/d910ee8041783c76f92b2e400b7b8b7d.jpg",
+    "product_category": "Makeup",
+    "product_sub_category": "Highlighter",
+    "product_ratings": 4.5,
+    "product_reviews": 120,
+    "product_brand": "Tom Ford",
+    "product_tag": "new",
+    "product_description": "Becca's radiant highlighter enhances your natural glow with luminous shimmer using all natural ingridents.",
+    "seller_ID": "TF",
+    "SoldTo":[
+
+    ]
+  },
+
+  {
+    "id": 4,
+    "product_name": "Cover FX",
+    "product_price": 1000.99,
+    "product_quantity": 50,
+    "product_image": "https://i.pinimg.com/564x/a6/8a/67/a68a679e25d75334eeb12914ef3b910f.jpg",
+    "product_category": "Makeup",
+    "product_sub_category": "Foundation",
+    "product_ratings": 4.5,
+    "product_reviews": 120,
+    "product_brand": "Tom Ford",
+    "product_tag": "new",
+    "product_description": "Cover FX provides flawless coverage with a lightweight, natural finish.",
+    "seller_ID": "TF",
+    "SoldTo":[
+
+    ]
+  }
+]

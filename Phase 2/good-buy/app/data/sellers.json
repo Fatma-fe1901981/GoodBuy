@@ -1,0 +1,212 @@
+[
+    {
+        "id": 1,
+        "role": "seller",
+        "username": "tomford",
+        "password" :  "password1",
+        "brand" : "Tom Ford"
+    },
+    {
+        "id": 2,
+        "role": "seller",
+        "username": "gucci",
+        "password" :  "password1",
+        "brand" : "Gucci"
+    },
+    {
+        "id": 3,
+        "role": "seller",
+        "username": "prada",
+        "password" :  "password1",
+        "brand" : "Prada"
+    },
+    {
+        "id": 4,
+        "role": "seller",
+        "username": "versace",
+        "password" :  "password1",
+        "brand" : "Versace"
+    },
+    {
+        "id": 5,
+        "role": "seller",
+        "username": "chanel",
+        "password" :  "password1",
+        "brand" : "Chanel"
+    },
+    {
+        "id": 6,
+        "role": "seller",
+        "username": "dior",
+        "password" :  "password1",
+        "brand" : "Dior"
+    },
+    {
+        "id": 7,
+        "role": "seller",
+        "username": "louisvuitton",
+        "password" :  "password1",
+        "brand" : "Louis Vuitton"
+    },
+    {
+        "id": 8,
+        "role": "seller",
+        "username": "calvinklein",
+        "password" :  "password1",
+        "brand" : "Calvin Klein"
+    },
+    {
+        "id": 9,
+        "role": "seller",
+        "username": "armani",
+        "password" :  "password1",
+        "brand" : "Armani"
+    },
+    {
+        "id": 10,
+        "role": "seller",
+        "username": "ralphlauren",
+        "password" :  "password1",
+        "brand" : "Ralph Lauren"
+    },
+    {
+        "id": 11,
+        "role": "seller",
+        "username": "burberry",
+        "password" :  "password1",
+        "brand" : "Burberry"
+    },
+    {
+        "id": 12,
+        "role": "seller",
+        "username": "coach",
+        "password" :  "password1",
+        "brand" : "Coach"
+    },
+    {
+        "id": 13,
+        "role": "seller",
+        "username": "hugoboss",
+        "password" :  "password1",
+        "brand" : "Hugo Boss"
+    },
+    {
+        "id": 14,
+        "role": "seller",
+        "username": "fendi",
+        "password" :  "password1",
+        "brand" : "Fendi"
+    },
+    {
+        "id": 15,
+        "role": "seller",
+        "username": "givenchy",
+        "password" :  "password1",
+        "brand" : "Givenchy"
+    },
+    {
+        "id": 16,
+        "role": "seller",
+        "username": "michaelkors",
+        "password" :  "password1",
+        "brand" : "Michael Kors"
+    },
+    {
+        "id": 17,
+        "role": "seller",
+        "username": "balenciaga",
+        "password" :  "password1",
+        "brand" : "Balenciaga"
+    },
+    {
+        "id": 18,
+        "role": "seller",
+        "username": "jimmychoo",
+        "password" :  "password1",
+        "brand" : "Jimmy Choo"
+    },
+    {
+        "id": 19,
+        "role": "seller",
+        "username": "hermes",
+        "password" :  "password1",
+        "brand" : "Hermes"
+    },
+    {
+        "id": 20,
+        "role": "seller",
+        "username": "bottegaveneta",
+        "password" :  "password1",
+        "brand" : "Bottega Veneta"
+    },
+    {
+        "id": 21,
+        "role": "seller",
+        "username": "cartier",
+        "password" :  "password1",
+        "brand" : "Cartier"
+    },
+    {
+        "id": 22,
+        "role": "seller",
+        "username": "tiffany",
+        "password" :  "password1",
+        "brand" : "Tiffany & Co."
+    },
+    {
+        "id": 23,
+        "role": "seller",
+        "username": "bulgari",
+        "password" :  "password1",
+        "brand" : "Bulgari"
+    },
+    {
+        "id": 24,
+        "role": "seller",
+        "username": "omega",
+        "password" :  "password1",
+        "brand" : "Omega"
+    },
+    {
+        "id": 25,
+        "role": "seller",
+        "username": "rolex",
+        "password" :  "password1",
+        "brand" : "Rolex"
+    },
+    {
+        "id": 26,
+        "role": "seller",
+        "username": "patekphilippe",
+        "password" :  "password1",
+        "brand" : "Patek Philippe"
+    },
+    {
+        "id": 27,
+        "role": "seller",
+        "username": "audemarspiguet",
+        "password" :  "password1",
+        "brand" : "Audemars Piguet"
+    },
+    {
+        "id": 28,
+        "role": "seller",
+        "username": "breitling",
+        "password" :  "password1",
+        "brand" : "Breitling"
+    },
+    {
+        "id": 29,
+        "role": "seller",
+        "username": "hublot",
+        "password" :  "password1",
+        "brand" : "Hublot"
+    },
+    {
+        "id": 30,
+        "role": "seller",
+        "username": "iwc",
+        "password" :  "password1",
+        "brand" : "IWC Schaffhausen"
+    }
+]

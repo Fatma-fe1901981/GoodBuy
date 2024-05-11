@@ -1,0 +1,272 @@
+[
+    {
+        "id": 1,
+        "role": "customer",
+        "username": "adamd",
+        "firstname": "Adam",
+        "surname": "Dawood",
+        "password": "password1",
+        "moneyBalance": 500
+    },
+    {
+        "id": 2,
+        "role": "customer",
+        "username": "leilahs",
+        "firstname": "Leilah",
+        "surname": "Saleem",
+        "password": "password1",
+        "moneyBalance": 750
+    },
+    {
+        "id": 3,
+        "role": "customer",
+        "username": "leilahs",
+        "firstname": "Leilah",
+        "surname": "Saleem",
+        "password": "password1",
+        "moneyBalance": 900
+    },
+    {
+        "id": 4,
+        "role": "customer",
+        "username": "saidaaa",
+        "firstname": "Saidaa",
+        "surname": "Amraan",
+        "password": "password1",
+        "moneyBalance": 1000
+    },
+    {
+        "id": 5,
+        "role": "customer",
+        "username": "ramzyy",
+        "firstname": "Ramy",
+        "surname": "Ramzy",
+        "password": "password1",
+        "moneyBalance": 500
+    },
+    {
+        "id": 6,
+        "role": "customer",
+        "username": "myousef",
+        "firstname": "Yousef",
+        "surname": "Mansour",
+        "password": "password1",
+        "moneyBalance": 7
+    },
+    {
+        "id": 7,
+        "role": "customer",
+        "username": "leilahs",
+        "firstname": "Leilah",
+        "surname": "Saleem",
+        "password": "password1",
+        "moneyBalance": 1000
+    },
+    {
+        "id": 8,
+        "role": "customer",
+        "username": "tailaay",
+        "firstname": "Talia",
+        "surname": "Yousef",
+        "password": "password1",
+        "moneyBalance": 1000
+    },
+    {
+        "id": 9,
+        "role": "customer",
+        "username": "mmaramm",
+        "firstname": "Maraam",
+        "surname": "Mohanad",
+        "password": "password1",
+        "moneyBalance": 1000
+    },
+    {
+        "id": 10,
+        "role": "customer",
+        "username": "dianaa",
+        "firstname": "Diana",
+        "surname": "Amr",
+        "password": "password1",
+        "moneyBalance": 790
+    },
+    {
+        "id": 11,
+        "role": "customer",
+        "username": "aamir",
+        "firstname": "Amar",
+        "surname": "Amir",
+        "password": "password1",
+        "moneyBalance": 900
+    },
+    {
+        "id": 12,
+        "role": "customer",
+        "username": "sshahd",
+        "firstname": "Shahd",
+        "surname": "Sharaf",
+        "password": "password1",
+        "moneyBalance": 300
+    },
+    {
+        "id": 13,
+        "role": "customer",
+        "username": "nadias",
+        "firstname": "Nadia",
+        "surname": "Saeed",
+        "password": "password1",
+        "moneyBalance": 850
+    },
+    {
+        "id": 14,
+        "role": "customer",
+        "username": "omarh",
+        "firstname": "Omar",
+        "surname": "Hassan",
+        "password": "password1",
+        "moneyBalance": 700
+    },
+    {
+        "id": 15,
+        "role": "customer",
+        "username": "lauram",
+        "firstname": "Laura",
+        "surname": "Mason",
+        "password": "password1",
+        "moneyBalance": 950
+    },
+    {
+        "id": 16,
+        "role": "customer",
+        "username": "nathanj",
+        "firstname": "Nathan",
+        "surname": "Johnson",
+        "password": "password1",
+        "moneyBalance": 620
+    },
+    {
+        "id": 17,
+        "role": "customer",
+        "username": "sarahf",
+        "firstname": "Sarah",
+        "surname": "Fisher",
+        "password": "password1",
+        "moneyBalance": 800
+    },
+    {
+        "id": 18,
+        "role": "customer",
+        "username": "jackw",
+        "firstname": "Jack",
+        "surname": "Wilson",
+        "password": "password1",
+        "moneyBalance": 550
+    },
+    {
+        "id": 19,
+        "role": "customer",
+        "username": "emilyc",
+        "firstname": "Emily",
+        "surname": "Chen",
+        "password": "password1",
+        "moneyBalance": 720
+    },
+    {
+        "id": 20,
+        "role": "customer",
+        "username": "davidm",
+        "firstname": "David",
+        "surname": "Miller",
+        "password": "password1",
+        "moneyBalance": 880
+    },
+    {
+        "id": 21,
+        "role": "customer",
+        "username": "oliviat",
+        "firstname": "Olivia",
+        "surname": "Taylor",
+        "password": "password1",
+        "moneyBalance": 670
+    },
+    {
+        "id": 22,
+        "role": "customer",
+        "username": "ethans",
+        "firstname": "Ethan",
+        "surname": "Smith",
+        "password": "password1",
+        "moneyBalance": 920
+    },
+    {
+        "id": 23,
+        "role": "customer",
+        "username": "chloew",
+        "firstname": "Chloe",
+        "surname": "Williams",
+        "password": "password1",
+        "moneyBalance": 600
+    },
+    {
+        "id": 24,
+        "role": "customer",
+        "username": "ethanh",
+        "firstname": "Ethan",
+        "surname": "Hernandez",
+        "password": "password1",
+        "moneyBalance": 770
+    },
+    {
+        "id": 25,
+        "role": "customer",
+        "username": "nadeemq",
+        "firstname": "Nadeem",
+        "surname": "Qasim",
+        "password": "password1",
+        "moneyBalance": 850
+    },
+    {
+        "id": 26,
+        "role": "customer",
+        "username": "layanm",
+        "firstname": "Layan",
+        "surname": "Mohammed",
+        "password": "password1",
+        "moneyBalance": 700
+    },
+    {
+        "id": 27,
+        "role": "customer",
+        "username": "abdullahs",
+        "firstname": "Abdullah",
+        "surname": "Saeed",
+        "password": "password1",
+        "moneyBalance": 950
+    },
+    {
+        "id": 28,
+        "role": "customer",
+        "username": "nooraa",
+        "firstname": "Noora",
+        "surname": "Ahmed",
+        "password": "password1",
+        "moneyBalance": 620
+    },
+    {
+        "id": 29,
+        "role": "customer",
+        "username": "mohammedr",
+        "firstname": "Mohammed",
+        "surname": "Rashid",
+        "password": "password1",
+        "moneyBalance": 800
+    },
+    {
+        "id": 30,
+        "role": "customer",
+        "username": "salmans",
+        "firstname": "Salman",
+        "surname": "Saeed",
+        "password": "password1",
+        "moneyBalance": 720
+    }
+]

@@ -1,0 +1,5 @@
+Colors Hexes:
+#B56A30 - Brownish-Orange
+#F1EFED - Background Color Light Mode
+#090605 - Font Color Main (Black-Like)
+#98968A - Font Color Secondaey (Grey)

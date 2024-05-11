@@ -31,33 +31,30 @@ async function seed() {
             prisma.reviews.deleteMany(),
 
             // Seed users
-            await prisma.users.createMany({ 
+            prisma.users.createMany({ 
                 data: users }),
 
             // Seed addresses
-            await prisma.addresses.createMany({ 
+            prisma.addresses.createMany({ 
                 data: addresses }),
 
             // Seed sellers
-            await prisma.sellers.createMany({ 
+            prisma.sellers.createMany({ 
                 data: sellers }),
 
             // seed items
-            await prisma.items.createMany({
+            prisma.items.createMany({
                 data: items,
             }),
 
             // seed reviews
-            await prisma.reviews.createMany({
+            prisma.reviews.createMany({
                 data: reviews,
             }),
 
             // seed sales
-            await prisma.sales.createMany({
-                data: sales.map((sale) => ({
-                    ...sale,
-                    quantity: Math.floor(Math.random() * 20) + 1,
-                })),
+            prisma.sales.createMany({
+                data: sales,
             }),
         ])
 

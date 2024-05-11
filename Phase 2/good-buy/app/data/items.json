@@ -10,7 +10,7 @@
         "subCategory": "Perfumes",
         "brand": "Jimmy Choo",
         "tag": "new",
-        "description": "Captivate the senses with our exquisite perfume, a harmonious blend of floral and woody notes.",
+        "description": "Captivate the senses with our exquisite perfume, a harmonious blend of floral and woody notes."
     },
     {
         "id": 2,
@@ -93,7 +93,7 @@
     {
         "id": 8,
         "sellerId": 26,
-        "name": "Nautilus Watch",
+        "name": "Nautilus",
         "price": 2999.99,
         "quantity": 5,
         "image": "https://source.unsplash.com/1600x900/?watch",
@@ -101,7 +101,7 @@
         "subCategory": "Perfumes",
         "brand": "Patek Philippe",
         "tag": "new",
-        "description": "Experience timeless luxury with our Nautilus Watch. With its elegant design and precision craftsmanship, it's a true masterpiece of horology."
+        "description": "Experience timeless luxury with our Nautilus fusion of scents. With its elegant design and precision craftsmanship, it's a true masterpiece of horology."
     },
     {
         "id": 9,
@@ -167,6 +167,19 @@
         "brand": "Armani",
         "tag": "new",
         "description": "Unlock the secrets of seduction with Armani Code. This captivating fragrance exudes confidence and allure."
+    },
+    {
+        "id": 14,
+        "sellerId": 7,
+        "name": "Classic Red",
+        "price": 1999.99,
+        "quantity": 8,
+        "image": "https://source.unsplash.com/1600x900/?bag",
+        "category": "Cosmetics",
+        "subCategory": "Makeup",
+        "brand": "Louis Vuitton",
+        "tag": "new",
+        "description": "Elevate your style with our Classic Red lipstik. Crafted from the finest materials, it's the epitome of luxury and sophistication."
     },
     {
         "id": 15,
@@ -274,41 +287,41 @@
     },
     {
         "id": 23,
-        "sellerId": 25,
+        "sellerId": 1,
         "name": "Oud Wood",
         "price": 119.99,
         "quantity": 10,
         "image": "https://source.unsplash.com/1600x900/?perfume",
         "category": "Cosmetics",
         "subCategory": "Perfumes",
-        "brand": "Rolex",
+        "brand": "Tom Ford",
         "tag": "new",
-        "description": "Experience the exotic allure of Oud Wood. With its rich and intoxicating aroma, it's the perfect fragrance for the discerning gentleman."
+        "description": "Experience the exotic allure of Oud Wood. With its rich blend of oud and spices, it's the perfect fragrance for the discerning gentleman."
     },
     {
         "id": 24,
-        "sellerId": 13,
-        "name": "Dark Blue",
-        "price": 59.99,
-        "quantity": 20,
-        "image": "https://source.unsplash.com/1600x900/?perfume",
+        "sellerId": 30,
+        "name": "Golden Shimmer",
+        "price": 299.99,
+        "quantity": 30,
+        "image": "https://source.unsplash.com/1600x900/?shoes",
         "category": "Cosmetics",
-        "subCategory": "Perfumes",
-        "brand": "Hugo Boss",
+        "subCategory": "Makeup",
+        "brand": "IWC Schaffhausen",
         "tag": "new",
-        "description": "Embrace your inner confidence with Dark Blue. With its bold and masculine scent, it's the perfect fragrance for the modern man."
+        "description": "Step out in style with our Golden Sneakers. With their luxurious design and superior comfort, they're sure to turn heads wherever you go."
     },
     {
         "id": 25,
-        "sellerId": 5,
-        "name": "No. 5",
-        "price": 129.99,
-        "quantity": 15,
-        "image": "https://source.unsplash.com/1600x900/?perfume",
+        "sellerId": 20,
+        "name": "Calendula Herbal Extract Toner",
+        "price": 39.99,
+        "quantity": 40,
+        "image": "https://source.unsplash.com/1600x900/?toner",
         "category": "Cosmetics",
-        "subCategory": "Perfumes",
-        "brand": "Chanel",
+        "subCategory": "Skincare",
+        "brand": "Bottega Veneta",
         "tag": "new",
-        "description": "Experience the timeless elegance of No. 5. With its classic floral scent, it's the epitome of French sophistication."
+        "description": "Refresh and revitalize your skin with our Calendula Herbal Extract Toner. Enriched with natural botanicals, it's the perfect way to hydrate and tone your complexion."
     }
 ]

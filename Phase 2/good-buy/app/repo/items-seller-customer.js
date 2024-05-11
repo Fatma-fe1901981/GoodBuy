@@ -2,6 +2,12 @@ import { PrismaClient } from '@prisma/client'
 const prisma = new PrismaClient()
 
 class ItemsSellerCustomer {
+    //1-get all items
+    //2-get items by category
+    //3-get item by id
+    //3-update items [id]
+    //4-get items by seller
+    //5-add item
     async getItems() {
         try {
             return await prisma.items.findMany()

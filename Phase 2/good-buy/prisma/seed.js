@@ -19,7 +19,7 @@ async function seed() {
         const items = await fs.readJSON(itemsPath)
         const sales = await fs.readJSON(salesPath)
         const reviews = await fs.readJSON(reviewsPath)
-        
+
         // Start a transaction
         await prisma.$transaction([
             // Delete all existing entries in the database
@@ -31,17 +31,34 @@ async function seed() {
             prisma.reviews.deleteMany(),
 
             // Seed users
-            prisma.users.createMany({ data: users }),
+            await prisma.users.createMany({ 
+                data: users }),
+
             // Seed addresses
-            prisma.addresses.createMany({ data: addresses }),
+            await prisma.addresses.createMany({ 
+                data: addresses }),
+
             // Seed sellers
-            prisma.sellers.createMany({ data: sellers }),
-            // Seed items
-            prisma.items.createMany({ data: items }),
-            // Seed sales
-            prisma.sales.createMany({ data: sales }),
-            // Seed reviews
-            prisma.reviews.createMany({ data: reviews })
+            await prisma.sellers.createMany({ 
+                data: sellers }),
+
+            // seed items
+            await prisma.items.createMany({
+                data: items,
+            }),
+
+            // seed reviews
+            await prisma.reviews.createMany({
+                data: reviews,
+            }),
+
+            // seed sales
+            await prisma.sales.createMany({
+                data: sales.map((sale) => ({
+                    ...sale,
+                    quantity: Math.floor(Math.random() * 20) + 1,
+                })),
+            }),
         ])
 
         console.log('Seeding completed successfully.')
@@ -53,4 +70,5 @@ async function seed() {
     }
 }
 
+seed()
 
